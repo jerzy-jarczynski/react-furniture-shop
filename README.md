@@ -28,3 +28,7 @@ Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na 
 Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy jednostkowe, formatowanie oraz lintowanie
 dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
 
+## Podsumowanie
+
+Udało się zrealizować projekt.
+
