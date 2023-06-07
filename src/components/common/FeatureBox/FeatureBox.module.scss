@@ -4,6 +4,20 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
+  &:hover {
+    .iconWrapper {
+      color: #ffffff;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
 
   .iconWrapper {
     height: 60px;
@@ -61,18 +75,5 @@
     }
   }
 
-  &.active {
-    .iconWrapper {
-      color: #ffffff;
-
-      &::after {
-        background-color: $primary;
-        border-color: $primary;
-      }
-    }
-
-    .content {
-      color: $primary;
-    }
-  }
+  
 }
