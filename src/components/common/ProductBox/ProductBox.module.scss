@@ -75,4 +75,14 @@
     justify-content: space-between;
     align-items: center;
   }
+  .btnoldprice {
+    background-color: #fff;
+    color: gray;
+    text-decoration: line-through;
+    text-decoration-color: #000;
+    text-decoration-thickness: 1px;
+  }
+  .price {
+    display: flex;
+  }
 }
