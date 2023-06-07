@@ -5,6 +5,10 @@
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
+  .buttons {
+    display: none;
+  }
+
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
@@ -27,11 +31,6 @@
       color: #ffffff;
       padding: 30px 15px 5px 15px;
     }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 
   .content {
@@ -39,7 +38,7 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
+      color: $text-color;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -74,5 +73,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  :hover {
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .price {
+      background-color: $primary;
+    }
+    h5 {
+      color: $primary;
+    }
   }
 }
