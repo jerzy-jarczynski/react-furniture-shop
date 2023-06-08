@@ -76,10 +76,10 @@
     align-items: center;
   }
   .btnoldprice {
-    background-color: #fff;
-    color: gray;
+    background-color: $white;
+    color: $gray;
     text-decoration: line-through;
-    text-decoration-color: #000;
+    text-decoration-color: $text-color;
     text-decoration-thickness: 1px;
   }
   .price {
