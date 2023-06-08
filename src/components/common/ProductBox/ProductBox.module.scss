@@ -75,16 +75,13 @@
     align-items: center;
   }
 
-  :hover {
+  &:hover {
     .buttons {
       display: flex;
       justify-content: space-between;
     }
-    .price {
+    .price a {
       background-color: $primary;
-    }
-    h5 {
-      color: $primary;
     }
   }
 }
