@@ -11,6 +11,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    min-width: 211px;
+    box-sizing: border-box;
+    cursor: pointer;
 
     .icon:first-child {
       color: $primary;
@@ -23,15 +26,51 @@
       position: absolute;
       right: 10px;
       z-index: 0;
+      transition: $basic-transition;
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
+    .selected {
       padding: 5px 30px 5px 35px;
+    }
+
+    .dropdown {
+      margin: 0;
+      padding: 0;
+      background-color: $color-light;
       position: relative;
-      z-index: 1;
+      z-index: 99;
+      list-style-type: none;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      border: 0px solid black;
+      width: calc(100% + 2px);
+      overflow: hidden;
+      max-height: 0;
+      transition: $basic-transition;
+
+      li {
+        padding: 5px 30px 5px 35px;
+        cursor: pointer;
+        transition: $basic-transition;
+      }
+
+      li:hover {
+        background-color: $primary;
+        color: $color-light;
+      }
+    }
+
+    &:hover {
+      .dropdown {
+        max-height: 172px;
+        border: 1px solid black;
+      }
+
+      .icon:last-child {
+        transform: rotate(180deg);
+      }
     }
   }
 
