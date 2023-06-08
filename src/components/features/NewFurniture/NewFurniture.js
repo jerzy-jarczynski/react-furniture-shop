@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareBarForm from '../CompareBoxForm/CompareBarForm';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    activeCompare: [],
   };
 
   handlePageChange(newPage) {
@@ -18,13 +20,22 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  compare = [];
+  handleCompareClick(newCompare, activeCompare) {
+    this.compare.push({ newCompare });
+    this.compare.splice(4, 1);
+    this.setState({ activeCompare: this.compare });
+  }
+
+  compareRenderHelper = false;
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
-
+    //console.log(this.state);
+    //console.log('compare: ', this.compare);
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -69,10 +80,16 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
+                <ProductBox
+                  {...item}
+                  action={() => this.handleCompareClick(item.name)}
+                />
               </div>
             ))}
           </div>
+        </div>
+        <div className={this.compare.length >= 1 ? '' : styles.invisible}>
+          <CompareBarForm compareState={this.state.activeCompare} />
         </div>
       </div>
     );

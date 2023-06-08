@@ -1,0 +1,74 @@
+@import '../../../styles/settings.scss';
+
+.compare {
+    
+    border: 1px solid $form-border-color;
+    position: fixed;
+    bottom: 0;
+    left: 1%;
+    width: auto;
+    height: 80px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    background-color: $color-light;
+    z-index: 2;
+}
+
+.boxes {
+    display: inline-flex;
+    .box:nth-child(even) {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+.box {
+    border: 1px solid $form-border-color;
+    height: 76px;
+    width: 80px;
+    text-align: center;
+    &:hover {
+        background-color: black;
+            opacity: 0.4;
+            justify-content: center;
+            align-items: center;
+        .delete {
+            text-align: center;
+            display: flex;
+            position: relative;
+            width: 76px;
+            height: 80px;
+            z-index: 3;
+            left: 25px;
+            top: 10px;
+            cursor: pointer;
+            color: $color-light;
+            
+        }
+    }
+}
+
+.btn {
+    margin-left: 3px;
+    margin-right: 3px;
+    position: relative;
+    bottom: 10%;
+    padding: 3.5px;
+    color: $color-light;
+    background-color: $primary;
+    
+    &:hover {
+        text-decoration: none;
+        color: $text-color;
+        
+    }
+}
+
+.invisible {
+    display: none;
+}
+
+.delete {
+    display: none;
+}
