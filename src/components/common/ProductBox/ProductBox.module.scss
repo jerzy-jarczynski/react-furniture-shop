@@ -75,14 +75,11 @@
     justify-content: space-between;
     align-items: center;
   }
-  .btnoldprice {
-    background-color: $white;
-    color: $gray;
+  
+  .oldPrice {
     text-decoration: line-through;
+    color: $gray;
     text-decoration-color: $text-color;
-    text-decoration-thickness: 1px;
   }
-  .price {
-    display: flex;
-  }
+  
 }
