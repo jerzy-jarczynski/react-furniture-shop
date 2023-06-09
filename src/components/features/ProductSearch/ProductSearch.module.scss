@@ -11,6 +11,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    min-width: 210px;
+    box-sizing: border-box;
 
     .icon:first-child {
       color: $primary;
@@ -28,13 +30,30 @@
 
     .categoryList {
       -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
+      border: 0 solid black;
+      background-color: $color-light;
+      position: absolute;
       z-index: 1;
       font-size: 14px;
       outline: none;
+      top: 100%;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: none;
+      width: calc(100% + 2px);
+      li {
+        padding: 5px 30px 5px 35px;
+      }
+    }
+    .selected {
+      padding: 5px 30px 5px 35px;
+    }
+    &:hover {
+      .categoryList {
+        display: block;
+        border: 1px solid black;
+      }
     }
   }
 
