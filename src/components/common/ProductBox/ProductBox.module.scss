@@ -76,3 +76,19 @@
     align-items: center;
   }
 }
+
+// Media
+
+@media (max-width: 577px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 991px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
