@@ -72,3 +72,13 @@
 .delete {
     display: none;
 }
+
+.image {
+    height: 76px;
+    width: 80px;
+    img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+}

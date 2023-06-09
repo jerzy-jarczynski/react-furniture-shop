@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import CompareBarForm from '../CompareBoxForm/CompareBarForm';
+import shortid from 'shortid';
 
 class NewFurniture extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class NewFurniture extends React.Component {
 
   compare = [];
   handleCompareClick(newCompare, activeCompare) {
-    this.compare.push({ newCompare });
+    this.compare.push({ name: newCompare, id: shortid() });
     this.compare.splice(4, 1);
     this.setState({ activeCompare: this.compare });
   }
