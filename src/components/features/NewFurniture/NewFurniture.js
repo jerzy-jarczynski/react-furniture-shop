@@ -7,40 +7,50 @@ import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
 class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
-  };
+  constructor(props) {
+    super(props);
 
-  handlePageChange = newPage => {
+    this.state = {
+      activePage: 0,
+      activeCategory: 'bed',
+      productsOnPage: 8,
+    };
+
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleSwipeLeft = this.handleSwipeLeft.bind(this);
+    this.handleSwipeRight = this.handleSwipeRight.bind(this);
+  }
+
+  handlePageChange(newPage) {
     this.setState({ activePage: newPage });
-  };
+  }
 
-  handleCategoryChange = newCategory => {
+  handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
-  };
+  }
 
   // Swipeable action functions
-  handleSwipeLeft = () => {
+  handleSwipeLeft() {
     const { activePage } = this.state;
     if (activePage < this.calculatePagesCount() - 1) {
       this.setState({ activePage: activePage + 1 });
     }
-  };
+  }
 
-  handleSwipeRight = () => {
+  handleSwipeRight() {
     const { activePage } = this.state;
     if (activePage > 0) {
       this.setState({ activePage: activePage - 1 });
     }
-  };
+  }
 
-  calculatePagesCount = () => {
+  calculatePagesCount() {
     const { products } = this.props;
     const { activeCategory } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    return Math.ceil(categoryProducts.length / 8);
-  };
+    return Math.ceil(categoryProducts.length / this.state.productsOnPage);
+  }
 
   render() {
     const { categories, products } = this.props;
@@ -52,7 +62,7 @@ class NewFurniture extends React.Component {
       dots.push(
         <li key={i}>
           <a
-            onClick={() => this.handlePageChange(i)}
+            onClick={this.handlePageChange.bind(this, i)}
             className={i === activePage ? styles.active : ''}
           >
             page {i}
@@ -63,8 +73,8 @@ class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const displayedProducts = categoryProducts.slice(
-      activePage * 8,
-      (activePage + 1) * 8
+      activePage * this.state.productsOnPage,
+      (activePage + 1) * this.state.productsOnPage
     );
 
     return (
@@ -81,8 +91,8 @@ class NewFurniture extends React.Component {
                     {categories.map(item => (
                       <li key={item.id}>
                         <a
-                          className={item.id === activeCategory && styles.active}
-                          onClick={() => this.handleCategoryChange(item.id)}
+                          className={item.id === activeCategory ? styles.active : ''}
+                          onClick={this.handleCategoryChange.bind(this, item.id)}
                         >
                           {item.name}
                         </a>
@@ -110,7 +120,6 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
-  children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
