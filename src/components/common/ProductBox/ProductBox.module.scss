@@ -6,7 +6,7 @@
   margin-bottom: 2rem;
 
   .buttons {
-    display: none;
+    visibility: hidden;
   }
 
   .photo {
@@ -77,6 +77,7 @@
 
   &:hover {
     .buttons {
+      visibility: visible;
       display: flex;
       justify-content: space-between;
     }
