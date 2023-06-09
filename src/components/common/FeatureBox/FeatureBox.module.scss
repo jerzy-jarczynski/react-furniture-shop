@@ -1,35 +1,37 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $featureBox-border-color;
+  border: 1px solid $featurebox-border;
   text-align: center;
   margin-top: 40px;
+  
   a {
-    color: $text-color;
-    
+    color: $featurebox-content-text;
   }
+
   &:hover {
     .iconWrapper {
-      color: $color-light;
+      color: $featurebox-hover-icon;
 
       &::after {
-        background-color: $primary;
-        border-color: $primary;
+        background-color: $featurebox-hover-bg;
+        border-color: $featurebox-hover-border;
       }
     }
 
     .content {
-      color: $primary;
+      color: $featurebox-content-text;
     }
-    a {
-      color: $primary;
+
+    .link {
+      color: $featurebox-hover-text;
     }
   }
 
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
-    color: $text-color;
+    color: $featurebox-text;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +43,7 @@
 
     &::before {
       content: "";
-      border: 1px solid $featureBox-border-color;
+      border: 1px solid $featurebox-border;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -49,7 +51,7 @@
       width: 76px;
       height: 76px;
       border-radius: 100%;
-      background-color: $color-light;
+      background-color: $featurebox-bg;
       z-index: -1;
     }
 
@@ -62,13 +64,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border: 1px solid $featureBox-border-color;
+      border: 1px solid $featurebox-border;
     }
   }
 
   .content {
     text-transform: uppercase;
-    color: $text-color;
+    color: $featurebox-content-color;
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
@@ -81,6 +83,4 @@
     p {
     }
   }
-
-  
 }

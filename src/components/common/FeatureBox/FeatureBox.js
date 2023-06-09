@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './FeatureBox.module.scss';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const FeatureBox = ({ active, icon, children }) => (
   <div className={styles.root}>
@@ -13,7 +14,9 @@ const FeatureBox = ({ active, icon, children }) => (
       </div>
     )}
     <div className={styles.content}>
-      <a href='#'>{children}</a>
+      <Link to={'#'} className={styles.link}>
+        {children}
+      </Link>
     </div>
   </div>
 );
