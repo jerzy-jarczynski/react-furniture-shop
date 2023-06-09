@@ -3,14 +3,20 @@
 .root {
   border: 1px solid $productsearch-border-color;
   display: inline-flex;
-  height: 45px;
+  min-height: 45px;
   color: $text-color;
+  display: flex;
+  flex-direction: column;
+
+  &>* {
+    height: 35px;
+  }
 
   .category {
-    border-right: 1px solid $productsearch-border-color;
     display: flex;
     align-items: center;
     position: relative;
+    order: 2;
 
     .icon:first-child {
       color: $productsearch-border-icon;
@@ -39,12 +45,15 @@
     display: flex;
     align-items: center;
     position: relative;
+    border-bottom: 1px solid $productsearch-border-color;
+    width: 100%;
 
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
+      width: 100%;
 
       &::placeholder {
         color: $productsearch-border-placeholder;
@@ -55,6 +64,30 @@
       border: 0;
       background-color: $productsearch-border-button-bg;
       outline: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .root {
+    min-height: 35px;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+
+    .category {
+      border-right: 1px solid $productsearch-border-color;
+      order: 0;
+    }
+
+    .searchField {
+      border-bottom: 0px solid $productsearch-border-color;
+
+      button {
+        border: 0;
+        background-color: $productsearch-border-button-bg;
+        outline: none;
+      }
     }
   }
 }
