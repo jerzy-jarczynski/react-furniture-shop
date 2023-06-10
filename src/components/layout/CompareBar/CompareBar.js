@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 import Button from '../../common/Button/Button';
 import styles from './CompareBar.module.scss';
 import React, { useEffect, useState } from 'react';

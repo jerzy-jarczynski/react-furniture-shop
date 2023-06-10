@@ -21,6 +21,7 @@ class NewFurniture extends React.Component {
   }
 
   compare = [];
+
   handleCompareClick(newCompare, activeCompare) {
     this.compare.push({ name: newCompare, id: shortid() });
     this.compare.splice(4, 1);
@@ -30,8 +31,7 @@ class NewFurniture extends React.Component {
   deleteCompareProduct(newCompares) {
     //this.compare.find(id => id === this.compare.id);
     //this.compare.splice(id,1);
-
-    this.setState({ activeCompare: newCompares });
+    //this.setState({ activeCompare: newCompares });
   }
 
   render() {

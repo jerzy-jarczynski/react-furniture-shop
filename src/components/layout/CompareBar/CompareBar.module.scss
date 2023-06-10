@@ -34,18 +34,21 @@
             opacity: 0.4;
             justify-content: center;
             align-items: center;
+            width: 82px;
+            height: 78px;
         .delete {
             text-align: center;
             display: flex;
+            visibility: visible;
             position: relative;
-            width: 76px;
-            height: 80px;
+            height: 100%;
+            width: 100%;
             z-index: 3;
             left: 25px;
             top: 10px;
             cursor: pointer;
             color: $color-light;
-            
+            margin-bottom: 0;
         }
     }
 }
@@ -53,8 +56,8 @@
 .btn {
     margin-left: 3px;
     margin-right: 3px;
-    position: relative;
-    bottom: 10%;
+    position: absolute;
+    top: 30%;
     padding: 3.5px;
     color: $color-light;
     background-color: $primary;
@@ -67,7 +70,7 @@
 }
 
 .invisible {
-    display: none;
+    visibility: hidden;
 }
 
 .delete {
@@ -81,5 +84,6 @@
         object-fit: contain;
         height: 100%;
         width: 100%;
+        z-index: 99;
     }
 }
