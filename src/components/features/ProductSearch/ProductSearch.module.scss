@@ -12,7 +12,6 @@
     align-items: center;
     position: relative;
     min-width: 210px;
-    box-sizing: border-box;
 
     .icon:first-child {
       color: $primary;
@@ -30,53 +29,73 @@
 
     .categoryList {
       -webkit-appearance: none;
-      border: 0 solid black;
-      background-color: $color-light;
-      position: absolute;
+      border: 0;
+      background-color: transparent;
       z-index: 1;
       font-size: 14px;
       outline: none;
-      top: 100%;
-      margin: 0;
-      padding: 0;
       list-style-type: none;
-      display: none;
-      width: calc(100% + 2px);
-      li {
-        padding: 5px 30px 5px 35px;
+      margin: 0;
+      padding: 5px 30px 5px 40px;
+      width: 100%;
+      ul {
+        display: none;
       }
-    }
-    .selected {
-      padding: 5px 30px 5px 35px;
-    }
-    &:hover {
-      .categoryList {
-        display: block;
-        border: 1px solid black;
+      &:hover {
+        ul {
+          display: block;
+          list-style-type: none;
+          top: 100%;
+          left: 0;
+          padding: 5px 30px 5px 40px;
+          width: 100%;
+          overflow: hidden;
+          margin: 0;
+          position: absolute;
+          border: 1px solid black;
+          background-color: $color-light;
+          z-index: 99;
+        }
+      }
+      ul:hover {
+        ul {
+          display: block;
+          list-style-type: none;
+          top: 100%;
+          left: 0;
+          padding: 5px 30px 5px 40px;
+          width: 100%;
+          overflow: hidden;
+          margin: 0;
+          position: absolute;
+          border: 1px solid black;
+          background-color: $color-light;
+          z-index: 99;
+        }
       }
     }
   }
+}
 
-  .searchField {
-    display: flex;
-    align-items: center;
-    position: relative;
+.searchField {
+  display: flex;
+  align-items: center;
+  position: relative;
 
-    input {
-      border: 0;
-      padding-left: 10px;
-      font-size: 14px;
-      outline: none;
+  input {
+    border: 0;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
 
-      &::placeholder {
-        color: $text-color;
-      }
+    &::placeholder {
+      color: $text-color;
     }
+  }
 
-    button {
-      border: 0;
-      background-color: transparent;
-      outline: none;
-    }
+  button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
   }
 }
