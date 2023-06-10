@@ -16,6 +16,7 @@
         margin: 0 0 1.5rem 0;
         padding: 0;
         list-style: none;
+
         li {
           a {
             font-size: 14px;
@@ -44,7 +45,7 @@
   .bottomBar {
     background-color: $footer-claim-bg;
 
-    :global(.container) > :global(.row) {
+    :global(.container)> :global(.row) {
       height: 95px;
     }
 
@@ -73,6 +74,7 @@
 
             &:hover {
               color: $footer-socialmedia-hover-color;
+              animation: animation-pulse-icon $animation-time-icon $animation-iteration-count;
             }
           }
         }

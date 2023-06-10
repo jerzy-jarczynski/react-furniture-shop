@@ -14,7 +14,7 @@ $smoke-gray: #d8d8d8;
 $semi-white: #e1e1e1;
 $solitude-white: #f4f5f7;
 $darker-solitude-white: #e0e3ed;
-$orange: #d58e32;          
+$orange: #d58e32;
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
 
@@ -112,3 +112,72 @@ $primary: #d58e32;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+// Animation settings
+$animation-bg: rgb(194, 55, 0);
+$animation-btn: rgb(160, 33, 1);
+$animation-text: rgb(247, 142, 5);
+$animation-icon: rgb(255, 208, 0);
+
+// Animation time, set 0 if no aniamtion
+$animation-time-bg: 0.25s;
+$animation-time-btn: 0.25s;
+$animation-time-text: 0.25s;
+$animation-time-icon: 0.25s;
+
+// Set number of iteration of "infinite"
+$animation-iteration-count: 2;
+
+// Animation keyframes
+@keyframes animation-pulse-bg {
+    50% {
+        background-color: $animation-bg;
+        border-color: $animation-bg;
+    }
+
+    100% {
+        background-color: $primary;
+    }
+}
+
+;
+
+@keyframes animation-pulse-btn {
+    50% {
+        background-color: $animation-btn;
+        transform: scale(1.10);
+    }
+
+    100% {
+        background-color: $primary;
+        transform: scale(1);
+    }
+}
+
+;
+
+@keyframes animation-pulse-text {
+    50% {
+        color: $animation-text;
+        font-size: 15px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
+
+;
+
+@keyframes animation-pulse-icon {
+    50% {
+        color: $animation-text;
+        font-size: 25px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
+
+;
