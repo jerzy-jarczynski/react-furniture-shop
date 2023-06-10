@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import CompareBarForm from '../CompareBoxForm/CompareBarForm';
 import shortid from 'shortid';
+import CompareBar from '../../layout/CompareBar/CompareBar';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    activeCompare: [],
+    activeCompare: '',
   };
 
   handlePageChange(newPage) {
@@ -28,7 +27,13 @@ class NewFurniture extends React.Component {
     this.setState({ activeCompare: this.compare });
   }
 
-  compareRenderHelper = false;
+  deleteCompareProduct(newCompares) {
+    //this.compare.find(id => id === this.compare.id);
+    //this.compare.splice(id,1);
+
+    this.setState({ activeCompare: newCompares });
+  }
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
@@ -90,7 +95,10 @@ class NewFurniture extends React.Component {
           </div>
         </div>
         <div className={this.compare.length >= 1 ? '' : styles.invisible}>
-          <CompareBarForm compareState={this.state.activeCompare} />
+          <CompareBar
+            compareState={this.state.activeCompare}
+            action2={() => this.deleteCompareProduct()}
+          />
         </div>
       </div>
     );
