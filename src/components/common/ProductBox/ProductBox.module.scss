@@ -7,12 +7,14 @@
 
   .photo {
     position: relative;
+
     background: {
       color: $productbox-photo-bg;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -79,5 +81,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .outlines {
+      :nth-child(2) {
+        margin-left: 3px;
+      }
+
+      .favorite {
+        background-color: $primary;
+      }
+
+      .compare {
+        background-color: $primary;
+      }
+    }
   }
 }
