@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+import { getActive } from '../../../redux/modesRedux';
+import { connect } from 'react-redux';
+
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -19,11 +22,21 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, mode } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    let productsOnPage = 8;
+
+    if (mode) {
+      if (mode.name === 'mobile') {
+        productsOnPage = 1;
+      } else if (mode.name === 'tablet') {
+        productsOnPage = 2;
+      }
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productsOnPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -67,11 +80,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
+              .map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -79,8 +94,22 @@ class NewFurniture extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  const mode = getActive(state);
+  return {
+    mode: mode,
+  };
+};
+
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  mode: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    minWidth: PropTypes.number,
+    maxWidth: PropTypes.number,
+    active: PropTypes.bool,
+  }),
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -105,4 +134,4 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default NewFurniture;
+export default connect(mapStateToProps)(NewFurniture);

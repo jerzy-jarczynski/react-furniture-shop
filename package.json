@@ -62,6 +62,7 @@
     "react-scripts": "3.1.2",
     "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
+    "redux-mock-store": "^1.5.4",
     "sass": "^1.54.3"
   },
   "devDependencies": {
