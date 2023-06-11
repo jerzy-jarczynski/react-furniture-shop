@@ -63,27 +63,27 @@
       }
     }
   }
-}
 
-.searchField {
-  display: flex;
-  align-items: center;
-  position: relative;
+  .searchField {
+    display: flex;
+    align-items: center;
+    position: relative;
 
-  input {
-    border: 0;
-    padding-left: 10px;
-    font-size: 14px;
-    outline: none;
+    input {
+      border: 0;
+      padding-left: 10px;
+      font-size: 14px;
+      outline: none;
 
-    &::placeholder {
-      color: $productsearch-border-placeholder;
+      &::placeholder {
+        color: $productsearch-border-placeholder;
+      }
     }
-  }
 
-  button {
-    border: 0;
-    background-color: $productsearch-border-button-bg;
-    outline: none;
+    button {
+      border: 0;
+      background-color: $productsearch-border-button-bg;
+      outline: none;
+    }
   }
 }
