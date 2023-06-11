@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Button from '../../common/Button/Button';
 import styles from './CompareBar.module.scss';
 import React, { useEffect, useState } from 'react';
@@ -13,16 +12,14 @@ const CompareBar = ({ compareState, action2 }) => {
     for (const i of compareState) {
       if (i.id === id) {
         const filtered = compareState.filter(compare => compare.id !== i.id);
-        console.log(filtered);
         setCompare(filtered);
         action2(filtered);
       }
     }
   };
-  console.log('cs: ', compare);
 
-  console.log('state: ', compareState);
-  if (compareState !== undefined && compareState !== [] && compareState !== '')
+  if (compareState.length === 0) return <div className={styles.invisible}></div>;
+  else if (compareState !== undefined && compareState !== [] && compareState !== '')
     return (
       <div className={styles.compare}>
         <div className={styles.boxes}>
@@ -42,11 +39,9 @@ const CompareBar = ({ compareState, action2 }) => {
             </div>
           ))}
         </div>
-
         <Button className={styles.btn}>Compare</Button>
       </div>
     );
-  else return <div className={styles.invisible}></div>;
 };
 
 export default CompareBar;

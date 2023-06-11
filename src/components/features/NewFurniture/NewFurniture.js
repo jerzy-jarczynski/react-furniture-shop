@@ -28,11 +28,10 @@ class NewFurniture extends React.Component {
     this.setState({ activeCompare: this.compare });
   }
 
-  deleteCompareProduct(newCompares) {
-    //this.compare.find(id => id === this.compare.id);
-    //this.compare.splice(id,1);
-    //this.setState({ activeCompare: newCompares });
-  }
+  deleteCompareProduct = newCompares => {
+    this.setState({ activeCompare: newCompares });
+    this.compare = newCompares;
+  };
 
   render() {
     const { categories, products } = this.props;
@@ -97,7 +96,7 @@ class NewFurniture extends React.Component {
         <div className={this.compare.length >= 1 ? '' : styles.invisible}>
           <CompareBar
             compareState={this.state.activeCompare}
-            action2={() => this.deleteCompareProduct()}
+            action2={this.deleteCompareProduct}
           />
         </div>
       </div>
