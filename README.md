@@ -1,6 +1,4 @@
 
-
-
 # WDP Projekt Zespołowy
 
 ## Inicjacja projektu
@@ -27,4 +25,17 @@ Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na 
 
 Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy jednostkowe, formatowanie oraz lintowanie
 dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
+
+### Contributors
+
+- @Mikaaa366
+- @iiimoood
+- @jerzy-jarczynski
+- @ZukAd14 
+- @wilgakuba
+- @Blackbirdev
+
+## Podsumowanie
+
+Udało się zrealizować projekt.
 
