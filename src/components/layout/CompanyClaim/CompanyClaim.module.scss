@@ -3,7 +3,7 @@
 .root {
   background-color: $companyclaim-bg;
 
-  :global(.container) > :global(.row) {
+  :global(.container)> :global(.row) {
     height: 145px;
   }
 
@@ -67,6 +67,38 @@
           background-color: lighten($companyclaim-cart-icon-bg, 10%);
         }
       }
+    }
+  }
+}
+
+@media (max-width: 577px) {
+  .root {
+    position: relative;
+
+    .phoneNumber {
+      position: absolute;
+      bottom: 8%;
+      right: -60%;
+
+      p {
+        font-size: 14px;
+
+        .icon {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .logo {
+      position: absolute;
+      bottom: 25%;
+      left: 3%;
+    }
+
+    .cart {
+      display: flex;
+      top: -10%;
+      left: 80%;
     }
   }
 }
