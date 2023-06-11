@@ -83,4 +83,20 @@
     p {
     }
   }
+
+  &.active {
+    .iconWrapper {
+      color: $featurebox-text;
+      ;
+
+      &::after {
+        background-color: $featurebox-hover-bg;
+        border-color: $featurebox-hover-border;
+      }
+    }
+
+    .content {
+      color: $featurebox-content-text;
+    }
+  }
 }
