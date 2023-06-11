@@ -1,10 +1,111 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+// DO NOT USE THIS!
+$pure-black: #000000;
+$pure-white: #ffffff;
+$black-gray: #2a2a2a;
+$dark-gray: #363636;
+$gray: #434343;
+$light-gray: #a9a9a9;
+$mist-gray: #b6b6b6;
+$semi-gray: #e2e2e2;
+$smoke-gray: #d8d8d8;
+$semi-white: #e1e1e1;
+$solitude-white: #f4f5f7;
+$darker-solitude-white: #e0e3ed;
+$orange: #d58e32;          
+$transparent: transparent;
+$box-shadow: rgba(1, 2, 2, 0.2);
+
+// Button
+
+$button-bg: $black-gray;
+$button-text: $pure-white;
+$button-hover-bg: $orange;
+
+$button-outline-border: $black-gray;
+$button-outline-border-text: $black-gray;
+$button-hover-outline-border: $black-gray;
+$button-hover-outline-border-text: $pure-white;
+
+// FeatureBox
+
+$featurebox-border: $mist-gray;
+$featurebox-bg: $pure-white;
+$featurebox-text: $pure-white;
+
+$featurebox-content-text: $orange;
+$featurebox-hover-border: $orange;
+$featurebox-hover-bg: $orange;
+
+// ProductBox
+
+$productbox-bg: $pure-white;
+$productbox-border: $semi-white;
+$productbox-photo-bg: $solitude-white;
+$productbox-sale-bg: $pure-black;
+$productbox-sale-text: $pure-white;
+$productbox-stars-border: $black-gray;
+$productbox-line: $black-gray;
+$productbox-line-border-bottom: $orange;
+
+// NewFurniture
+
+
+$newfurniture-border-bottom: $semi-gray;
+$newfurniture-hover-border-bottom: $orange;
+$newfurniture-menu-dots-bg: $pure-white;
+$newfurniture-menu-dots: $semi-white;
+$newfurniture-menu-hover-dots: $orange;
+$newfurniture-menu-text: $black-gray;
+
+// ProductSearch
+
+$productsearch-border-color: $pure-black;
+$productsearch-border-icon: $orange;
+$productsearch-border-select-bg: $transparent;
+$productsearch-border-placeholder: $black-gray;
+$productsearch-border-button-bg: $transparent;
+
+// CompanyClaim
+
+$companyclaim-bg: $dark-gray;
+$companyclaim-phone-number-color: $smoke-gray;
+$companyclaim-phone-icon: $orange;
+$companyclaim-cart-box: $pure-white;
+$companyclaim-cart-icon-bg: $orange;
+$companyclaim-cart-counter-text: $darker-solitude-white;
+
+// Footer
+
+$footer-claim-bg: $black-gray;
+$footer-bg: $dark-gray;
+$footer-menu-text: $pure-white;
+$footer-menu-wrapper-text: $light-gray;
+$footer-menu-wrapper-hover-text: $pure-white;
+$footer-copyright-color: $light-gray;
+$footer-socialmedia-color: $light-gray;
+$footer-socialmedia-hover-color: $orange;
+
+// MenuBar
+
+$menubar-menu-box-shadow: $box-shadow;
+$menubar-bg: $pure-white;
+$menubar-menu-text: $black-gray;
+$menubar-menu-border: $pure-white;
+$menubar-menu-hover-bg: $orange;
+$menubar-menu-hover-text: $pure-white;
+$menubar-menu-hover-border: $orange;
+$menubar-menu-hover-border-active: $black-gray;
+
+// TopBar
+
+$header-topbar-bg: $gray;
+$header-link: $pure-white;
+$header-link-hover: $orange;
+
+
 
 $primary: #d58e32;
 
