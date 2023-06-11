@@ -1,8 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .compare {
-    
-    border: 1px solid $form-border-color;
+    border: 1px solid $comparebar-border;
     position: fixed;
     bottom: 0;
     left: 1%;
@@ -24,7 +23,7 @@
 }
 
 .box {
-    border: 1px solid $form-border-color;
+    border: 1px solid $comparebar-border;
     height: 76px;
     width: 80px;
     text-align: center;
@@ -47,7 +46,7 @@
             left: 25px;
             top: 10px;
             cursor: pointer;
-            color: $color-light;
+            color: $comparebar-bg;
             margin-bottom: 0;
         }
     }
@@ -59,13 +58,12 @@
     position: absolute;
     top: 30%;
     padding: 3.5px;
-    color: $color-light;
+    color: $comparebar-bg;
     background-color: $primary;
     
     &:hover {
         text-decoration: none;
-        color: $text-color;
-        
+        color: $comparebar-text;
     }
 }
 
