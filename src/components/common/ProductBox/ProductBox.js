@@ -23,7 +23,6 @@ const ProductBox = ({ name, price, promo, id, stars, isFavorite }) => {
     setFavoriteValue(!isFavorite);
     dispatch(toggleFavorite(productId));
   };
-
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -40,7 +39,6 @@ const ProductBox = ({ name, price, promo, id, stars, isFavorite }) => {
           </Button>
         </div>
       </div>
-
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
