@@ -79,5 +79,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    a.isFavorite {
+      background-color: $primary;
+      color: $pure-white;
+      font-size: 14px;
+    }
   }
+  
 }
