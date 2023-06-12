@@ -25,11 +25,13 @@
   }
 
   @media (max-width: 577px) {
-    .topOptions ul li {
-      margin-right: 10px;
+    .topOptions {
+      li {
+        margin-right: 10px;
 
-      .icon {
-        margin-left: 2px;
+        .icon {
+          margin-left: 2px;
+        }
       }
     }
 
@@ -41,7 +43,7 @@
         margin: 0 -36px 0 -36px;
       }
 
-      ul li {
+      li {
         margin-right: 8px;
 
         a {
@@ -57,11 +59,13 @@
   }
 
   @media (min-width: 578px) and (max-width: 767px) {
-    .topOptions ul li {
-      margin-right: 15px;
+    .topOptions {
+      li {
+        margin-right: 15px;
 
-      .icon {
-        margin-left: 3px;
+        .icon {
+          margin-left: 3px;
+        }
       }
     }
 
@@ -70,7 +74,7 @@
         margin: 0 -38px 0 -26px;
       }
 
-      ul li {
+      li {
         right: 7%;
 
         a {
@@ -86,19 +90,23 @@
   }
 
   @media (min-width: 768px) {
-    .topOptions ul li {
-      margin-right: 1.5rem;
+    .topOptions {
+      li {
+        margin-right: 1.5rem;
 
-      .icon {
-        margin-left: 5px;
+        .icon {
+          margin-left: 5px;
+        }
       }
     }
 
-    .topMenu ul li {
-      margin-left: 1.5rem;
+    .topMenu {
+      li {
+        margin-left: 1.5rem;
 
-      .icon {
-        margin-right: 5px;
+        .icon {
+          margin-right: 5px;
+        }
       }
     }
   }
