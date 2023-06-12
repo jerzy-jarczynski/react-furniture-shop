@@ -21,7 +21,6 @@ class NewFurniture extends React.Component {
   }
 
   compare = [];
-
   handleCompareClick(newCompare, activeCompare) {
     this.compare.push({ name: newCompare, id: shortid() });
     this.compare.splice(4, 1);

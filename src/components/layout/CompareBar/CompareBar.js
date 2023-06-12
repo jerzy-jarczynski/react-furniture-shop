@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Button from '../../common/Button/Button';
 import styles from './CompareBar.module.scss';
 import React, { useEffect, useState } from 'react';
