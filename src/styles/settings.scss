@@ -32,11 +32,13 @@ $button-hover-outline-border-text: $pure-white;
 
 $featurebox-border: $mist-gray;
 $featurebox-bg: $pure-white;
-$featurebox-text: $pure-white;
-
-$featurebox-content-text: $orange;
+$featurebox-text: $dark-gray;
+$featurebox-content-text: $black-gray;
 $featurebox-hover-border: $orange;
 $featurebox-hover-bg: $orange;
+$featurebox-content-color: $black-gray;
+$featurebox-hover-icon: $pure-white;
+$featurebox-hover-text: $orange;
 
 // ProductBox
 
@@ -65,6 +67,7 @@ $productsearch-border-icon: $orange;
 $productsearch-border-select-bg: $transparent;
 $productsearch-border-placeholder: $black-gray;
 $productsearch-border-button-bg: $transparent;
+$productsearch-text-color: $black-gray;
 $productsearch-border-select-menu-bg: $pure-white;
 
 // CompanyClaim
@@ -109,6 +112,3 @@ $primary: #d58e32;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
-
-$white: #ffffff;
-$gray: #666666;
