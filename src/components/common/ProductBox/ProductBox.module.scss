@@ -5,6 +5,12 @@
   border: 1px solid $productbox-border;
   margin-bottom: 2rem;
 
+  .buttons {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .photo {
     position: relative;
     background: {
@@ -31,11 +37,6 @@
       border-radius: 50%;
       color: $productbox-sale-text;
       padding: 30px 15px 5px 15px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
     }
   }
 
@@ -79,12 +80,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  a.isFavorite {
+    background-color: $primary;
+    color: $pure-white;
+    font-size: 16px;
+  }
 
-    a.isFavorite {
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+    .price a {
       background-color: $primary;
-      color: $pure-white;
-      font-size: 16px;
     }
   }
-  
 }
+
+@media (max-width: 577px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 991px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
+
