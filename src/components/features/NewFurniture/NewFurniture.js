@@ -20,7 +20,8 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  handleCompareClick(newCompare) {
+  handleCompareClick(newCompare, event) {
+    event.preventDefault();
     const { activeCompare } = this.state;
     if (activeCompare.length >= 4) {
       return;
@@ -85,7 +86,7 @@ class NewFurniture extends React.Component {
               <div key={item.id} className='col-3'>
                 <ProductBox
                   {...item}
-                  action={() => this.handleCompareClick(item.name)}
+                  action={event => this.handleCompareClick(item.name, event)}
                 />
               </div>
             ))}
