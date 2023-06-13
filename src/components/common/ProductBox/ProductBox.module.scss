@@ -4,10 +4,11 @@
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
-  max-height: 383px;
 
   .buttons {
     visibility: hidden;
+    display: flex;
+    justify-content: space-between;
   }
 
   .photo {
@@ -79,9 +80,6 @@
   &:hover {
     .buttons {
       visibility: visible;
-      display: flex;
-      justify-content: space-between;
-      max-height: 50px;
     }
     .price a {
       background-color: $primary;
