@@ -4,7 +4,7 @@
   box-shadow: 2px 3.464px 6px $menubar-menu-box-shadow;
   background-color: $menubar-bg;
 
-  :global(.container)> :global(.row) {
+  :global(.container) > :global(.row) {
     height: 84px;
   }
 
@@ -37,7 +37,7 @@
       letter-spacing: 1px;
 
       &:hover {
-        animation: animation-pulse-bg $animation-time-bg $animation-iteration-count;
+        animation: animation-pulse-bg $animation-bg-time;
       }
 
       &:hover,
