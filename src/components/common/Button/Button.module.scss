@@ -41,3 +41,11 @@
     animation: animation-pulse-btn $animation-btn-time;
   }
 }
+
+// Media
+
+@media (min-width: 992px) {
+  .small {
+    font-size: 10px;
+  }
+}
