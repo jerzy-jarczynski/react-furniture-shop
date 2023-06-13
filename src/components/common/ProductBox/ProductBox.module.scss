@@ -4,6 +4,7 @@
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
+  max-height: 383px;
 
   .buttons {
     visibility: hidden;
@@ -80,6 +81,7 @@
       visibility: visible;
       display: flex;
       justify-content: space-between;
+      max-height: 50px;
     }
     .price a {
       background-color: $primary;
