@@ -9,6 +9,7 @@ const CompareBar = ({ compareState, action2 }) => {
   useEffect(() => {
     setCompare(compareState);
   }, [compareState]);
+
   const deleteProduct = id => {
     for (const i of compareState) {
       if (i.id === id) {
@@ -19,8 +20,21 @@ const CompareBar = ({ compareState, action2 }) => {
     }
   };
 
-  if (compareState.length === 0) return <div className={styles.invisible}></div>;
-  else if (compareState !== undefined && compareState !== [] && compareState !== '')
+  const imageExtensions = ['.jpeg', '.jpg', '.png', '.bmp', '.svg', '.webp'];
+
+  const findImageExtension = name => {
+    const matching = imageExtensions.find(extension => {
+      const path = `${process.env.PUBLIC_URL}/images/products/${name}${extension}`;
+      return path;
+    });
+    if (matching) {
+      return `${process.env.PUBLIC_URL}/images/products/${name}${matching}`;
+    }
+  };
+
+  if (compareState.length === 0) {
+    return <div className={styles.invisible} />;
+  } else if (compareState !== undefined && compareState !== [] && compareState !== '') {
     return (
       <div className={styles.compare}>
         <div className={styles.boxes}>
@@ -31,9 +45,11 @@ const CompareBar = ({ compareState, action2 }) => {
               id={compares.id}
               onClick={() => deleteProduct(compares.id)}
             >
-              <h1 className={styles.delete}>X</h1>
+              <div className={styles.delete}>
+                <p>X</p>
+              </div>
               <img
-                src={`${process.env.PUBLIC_URL}/images/products/${compares.name}.jpeg`}
+                src={findImageExtension(compares.name)}
                 alt={compares.name}
                 className={styles.image}
               />
@@ -43,6 +59,7 @@ const CompareBar = ({ compareState, action2 }) => {
         <Button className={styles.btn}>Compare</Button>
       </div>
     );
+  } else return null;
 };
 
 export default CompareBar;

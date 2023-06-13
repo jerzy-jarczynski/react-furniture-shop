@@ -9,7 +9,7 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    activeCompare: '',
+    activeCompare: [],
   };
 
   handlePageChange(newPage) {
@@ -20,16 +20,17 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  compare = [];
-  handleCompareClick(newCompare, activeCompare) {
-    this.compare.push({ name: newCompare, id: shortid() });
-    this.compare.splice(4, 1);
-    this.setState({ activeCompare: this.compare });
+  handleCompareClick(newCompare) {
+    const { activeCompare } = this.state;
+    if (activeCompare.length >= 4) {
+      return;
+    }
+    const updateCompare = [...activeCompare, { name: newCompare, id: shortid() }];
+    this.setState({ activeCompare: updateCompare });
   }
 
   deleteCompareProduct = newCompares => {
     this.setState({ activeCompare: newCompares });
-    this.compare = newCompares;
   };
 
   render() {
@@ -90,7 +91,7 @@ class NewFurniture extends React.Component {
             ))}
           </div>
         </div>
-        <div className={this.compare.length >= 1 ? '' : styles.invisible}>
+        <div className={this.state.activeCompare.length >= 1 ? '' : styles.invisible}>
           <CompareBar
             compareState={this.state.activeCompare}
             action2={this.deleteCompareProduct}

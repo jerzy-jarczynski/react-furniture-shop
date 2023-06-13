@@ -16,6 +16,7 @@
 
 .boxes {
     display: inline-flex;
+
     .box:nth-child(even) {
         margin-left: 3px;
         margin-right: 3px;
@@ -28,26 +29,37 @@
     width: 80px;
     text-align: center;
     z-index: 8;
+    position: relative;
+
     &:hover {
-        background-color: black;
-            opacity: 0.4;
+        background-color: $transparent;
+        opacity: 0.7;
+        width: 82px;
+        height: 78px;
+
+        .delete {
             justify-content: center;
             align-items: center;
-            width: 82px;
-            height: 78px;
-        .delete {
-            text-align: center;
             display: flex;
             visibility: visible;
-            position: relative;
-            height: 100%;
-            width: 100%;
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
             z-index: 3;
-            left: 25px;
-            top: 10px;
+            right: 0;
             cursor: pointer;
             color: $comparebar-bg;
             margin-bottom: 0;
+            background-color: $comparebar-delete-bg;
+
+            p {
+                color: $comparebar-bg;
+                font-weight: bold;
+                text-align: center;
+                position: relative;
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -78,6 +90,7 @@
 .image {
     height: 76px;
     width: 80px;
+
     img {
         object-fit: contain;
         height: 100%;
