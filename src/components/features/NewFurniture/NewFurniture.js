@@ -72,10 +72,6 @@ class NewFurniture extends React.Component {
     }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const displayedProducts = categoryProducts.slice(
-      activePage * this.state.productsOnPage,
-      (activePage + 1) * this.state.productsOnPage
-    );
 
     return (
       <Swipeable leftAction={this.handleSwipeLeft} rightAction={this.handleSwipeRight}>
@@ -105,13 +101,13 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
-              {displayedProducts.map(item => (
-                <div key={item.id} className='col-3'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
-            </div>
+          </div>
+          <div className='row'>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                <ProductBox {...item} />
+              </div>
+            ))}
           </div>
         </div>
       </Swipeable>

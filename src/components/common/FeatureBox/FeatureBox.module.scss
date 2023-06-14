@@ -4,11 +4,34 @@
   border: 1px solid $featurebox-border;
   text-align: center;
   margin-top: 40px;
+  
+  a {
+    color: $featurebox-content-text;
+  }
+
+  &:hover {
+    .iconWrapper {
+      color: $featurebox-hover-icon;
+
+      &::after {
+        background-color: $featurebox-hover-bg;
+        border-color: $featurebox-hover-border;
+      }
+    }
+
+    .content {
+      color: $featurebox-content-text;
+    }
+
+    .link {
+      color: $featurebox-hover-text;
+    }
+  }
 
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
-    color: $text-color;
+    color: $featurebox-text;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +70,7 @@
 
   .content {
     text-transform: uppercase;
-    color: rgb(42, 42, 42);
+    color: $featurebox-content-color;
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
