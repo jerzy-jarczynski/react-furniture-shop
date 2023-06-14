@@ -1,0 +1,31 @@
+@import "../../../styles/settings.scss";
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-height: 280px;
+}
+
+.leftBox {
+    border: 1px solid red;
+    width: 49%;
+    height: 100%;
+}
+
+.rightBoxes {
+    border: 1px solid green;
+    width: 49%;
+    
+}
+
+.box {
+    border: 1px solid blue;
+    height: 40%;
+}
+.divide {
+    height: 20%;
+    border: 1px solid orange;
+}
