@@ -227,6 +227,28 @@ const initialState = {
   cart: {
     products: [],
   },
+  deals: [
+    {
+      id: 1,
+      source: '/images/deals/Left.jpg',
+      placeholder1: 'Guest Room',
+      placeholder2: 'Sofa',
+      placeholder3: '-20%',
+    },
+    {
+      id: 2,
+      source: '/images/deals/Right1.jpg',
+      placeholder1: 'Office Chair',
+      placeholder2: 'Collection',
+      placeholder3: '$200.00',
+    },
+    {
+      id: 3,
+      source: '/images/deals/Right2.jpg',
+      placeholder1: 'Special Collection',
+      placeholder2: 'Save up 45% of furniture',
+    },
+  ],
 };
 
 export default initialState;
