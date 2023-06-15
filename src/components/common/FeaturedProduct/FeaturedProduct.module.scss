@@ -1,0 +1,134 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $featuredproduct-bg;
+  border: 1px solid $featuredproduct-border;
+  margin-bottom: 2rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+
+  .button {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    z-index: 99;
+  }
+
+  .counter {
+    visibility: hidden;
+    position: absolute;
+    z-index: 99;
+    top: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    div {
+      background-color: $featuredproduct-counter-element-bg;
+      margin-right: 5px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      color: $featuredproduct-counter-element-text;
+      text-transform: uppercase;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .photo {
+    position: relative;
+    background: {
+      color: $featuredproduct-photo-bg;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+
+    .image {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+  }
+
+  .content {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+
+    h5 {
+      color: $featuredproduct-content-header;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $featuredproduct-stars-border;
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $featuredproduct-line;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $featuredproduct-line-border-bottom;
+      transform: translateX(-50%);
+    }
+  }
+
+  .actions {
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .outlines > * {
+      margin-right: 2px;
+    }
+
+    .prices {
+      display: flex;
+      flex-direction: row;
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: $featuredproduct-oldprice-text;
+        text-decoration-color: $featuredproduct-oldprice-text-decoration;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &:hover {
+    .button {
+      visibility: visible;
+    }
+    .counter {
+      visibility: visible;
+    }
+  }
+}
