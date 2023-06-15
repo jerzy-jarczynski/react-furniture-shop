@@ -81,11 +81,21 @@
     justify-content: space-between;
     align-items: center;
   }
+<<<<<<< HEAD
   a.isFavorite {
     background-color: $primary;
     color: $pure-white;
     font-size: 16px;
   }
+=======
+  
+  .oldPrice {
+    text-decoration: line-through;
+    color: $dark-gray;
+    text-decoration-color: $pure-black;
+  }
+  
+>>>>>>> main
 
   &:hover {
     .buttons {
