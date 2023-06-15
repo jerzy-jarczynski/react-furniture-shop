@@ -62,7 +62,7 @@
         top: 50%;
         right: 3%;
         transform: translate(50%, -50%);
-        
+
       }
 
       &:hover {
@@ -81,7 +81,7 @@
     .phoneNumber {
       position: absolute;
       bottom: 8%;
-      right: -60%;
+      right: -49%;
 
       p {
         font-size: 14px;
@@ -101,7 +101,19 @@
     .cart {
       display: flex;
       top: -10%;
-      left: 80%;
+      left: 68%;
+    }
+  }
+}
+
+@media (min-width: 578px) and (max-width: 768px) {
+  .root {
+    .phoneNumber {
+      p {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+      }
     }
   }
 }
