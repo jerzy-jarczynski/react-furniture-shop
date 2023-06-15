@@ -1,16 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import shortid from 'shortid';
 import CompareBar from '../../layout/CompareBar/CompareBar';
 
 class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
-    activeCompare: [],
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activePage: 0,
+      activeCategory: 'bed',
+      productsOnPage: 8,
+      activeCompare: [],
+    };
+
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleSwipeLeft = this.handleSwipeLeft.bind(this);
+    this.handleSwipeRight = this.handleSwipeRight.bind(this);
+  }
 
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
@@ -33,20 +44,40 @@ class NewFurniture extends React.Component {
   deleteCompareProduct = newCompares => {
     this.setState({ activeCompare: newCompares });
   };
+  // Swipeable action functions
+  handleSwipeLeft() {
+    const { activePage } = this.state;
+    if (activePage < this.calculatePagesCount() - 1) {
+      this.setState({ activePage: activePage + 1 });
+    }
+  }
+
+  handleSwipeRight() {
+    const { activePage } = this.state;
+    if (activePage > 0) {
+      this.setState({ activePage: activePage - 1 });
+    }
+  }
+
+  calculatePagesCount() {
+    const { products } = this.props;
+    const { activeCategory } = this.state;
+    const categoryProducts = products.filter(item => item.category === activeCategory);
+    return Math.ceil(categoryProducts.length / this.state.productsOnPage);
+  }
 
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
+    const pagesCount = this.calculatePagesCount();
 
-    const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            onClick={this.handlePageChange.bind(this, i)}
+            className={i === activePage ? styles.active : ''}
           >
             page {i}
           </a>
@@ -54,30 +85,34 @@ class NewFurniture extends React.Component {
       );
     }
 
+    const categoryProducts = products.filter(item => item.category === activeCategory);
+
     return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+      <Swipeable leftAction={this.handleSwipeLeft} rightAction={this.handleSwipeRight}>
+        <div className={styles.root}>
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end'>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>New furniture</h3>
+                </div>
+                <div className={'col ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeCategory ? styles.active : ''}
+                          onClick={this.handleCategoryChange.bind(this, item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
           </div>
@@ -98,13 +133,12 @@ class NewFurniture extends React.Component {
             action2={this.deleteCompareProduct}
           />
         </div>
-      </div>
+      </Swipeable>
     );
   }
 }
 
 NewFurniture.propTypes = {
-  children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
