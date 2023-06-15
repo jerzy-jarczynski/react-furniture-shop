@@ -97,6 +97,13 @@
       }
     }
   }
+  
+  .oldPrice {
+    text-decoration: line-through;
+    color: $dark-gray;
+    text-decoration-color: $pure-black;
+  }
+  
 
   &:hover {
     .buttons {
