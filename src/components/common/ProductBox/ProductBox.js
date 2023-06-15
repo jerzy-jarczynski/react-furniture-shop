@@ -13,7 +13,7 @@ import { toggleFavorite } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-const ProductBox = ({ name, price, promo, id, stars, isFavorite }) => {
+const ProductBox = ({ name, price, oldPrice, promo, id, stars, isFavorite }) => {
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
   const productId = id;
 
@@ -67,10 +67,9 @@ const ProductBox = ({ name, price, promo, id, stars, isFavorite }) => {
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
+        {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
         <div className={styles.price}>
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
+          <Button variant='small'>$ {price}</Button>
         </div>
       </div>
     </div>
@@ -81,6 +80,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
