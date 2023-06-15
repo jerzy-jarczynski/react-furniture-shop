@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import RatingStars from '../../features/RatingStars/RatingStars';
 
 const ProductBox = ({ name, price, oldPrice, promo, stars }) => (
   <div className={styles.root}>
