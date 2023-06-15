@@ -1,6 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .stars, .rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+
   a {
     text-decoration: none;
     color: $rating-stars-average;
@@ -23,14 +26,56 @@
   .starFull {
     opacity: 0;
   }
+
+  &:hover {
+    .starFull {
+      opacity: 1;
+    }
+  }
+
+  &:hover ~ .star {
+    .starFull {
+      opacity: 1;
+    }
+  }
 }
 
-@for $i from 1 through 5 {
-  .rating#{$i} {
-    a:nth-child(-n+#{$i}) {
-      .starFull {
-        opacity: 1;
-      }
+.rating1 {
+  a:nth-child(5) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating2 {
+  a:nth-child(5), a:nth-child(4) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating3 {
+  a:nth-child(5), a:nth-child(4), a:nth-child(3) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating4 {
+  a:nth-child(5), a:nth-child(4), a:nth-child(3), a:nth-child(2) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating5 {
+  a {
+    .starFull {
+      opacity: 1;
     }
   }
 }

@@ -8,8 +8,6 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './RatingStars.module.scss';
 
 const RatingStars = ({ rating }) => {
-  console.log(rating);
-
   return (
     <>
       <div className={styles.stars}>
