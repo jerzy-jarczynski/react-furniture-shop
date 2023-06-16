@@ -15,12 +15,13 @@ class NewFurniture extends React.Component {
       activeCategory: 'bed',
       productsOnPage: 8,
       activeCompare: [],
+      isButtonClicked: [],
     };
-
     this.handlePageChange = this.handlePageChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleSwipeLeft = this.handleSwipeLeft.bind(this);
     this.handleSwipeRight = this.handleSwipeRight.bind(this);
+    this.handleCompareClick = this.handleCompareClick.bind(this);
   }
 
   handlePageChange(newPage) {
@@ -31,19 +32,28 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  handleCompareClick(newCompare, event) {
+  handleCompareClick(newCompareName, newCompareId, event) {
     event.preventDefault();
-    const { activeCompare } = this.state;
+    const { activeCompare, isButtonClicked } = this.state;
     if (activeCompare.length >= 4) {
       return;
     }
-    const updateCompare = [...activeCompare, { name: newCompare, id: shortid() }];
-    this.setState({ activeCompare: updateCompare });
+    const updateCompare = [
+      ...activeCompare,
+      { name: newCompareName, id: shortid(), ItemId: newCompareId },
+    ];
+    const updateClicked = [...isButtonClicked, newCompareId];
+    this.setState({ activeCompare: updateCompare, isButtonClicked: updateClicked });
   }
 
   deleteCompareProduct = newCompares => {
-    this.setState({ activeCompare: newCompares });
+    const idArray = [];
+    for (const i of newCompares) {
+      idArray.push(i.ItemId);
+    }
+    this.setState({ activeCompare: newCompares, isButtonClicked: idArray });
   };
+
   // Swipeable action functions
   handleSwipeLeft() {
     const { activePage } = this.state;
@@ -84,7 +94,6 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
     return (
@@ -121,7 +130,8 @@ class NewFurniture extends React.Component {
               <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
                 <ProductBox
                   {...item}
-                  action={event => this.handleCompareClick(item.name, event)}
+                  action={event => this.handleCompareClick(item.name, item.id, event)}
+                  isButtonClicked={this.state.isButtonClicked}
                 />
               </div>
             ))}

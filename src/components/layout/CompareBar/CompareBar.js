@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
 import Button from '../../common/Button/Button';
 import styles from './CompareBar.module.scss';
 import React, { useEffect, useState } from 'react';
 
 const CompareBar = ({ compareState, action2 }) => {
+  // eslint-disable-next-line no-unused-vars
   const [compare, setCompare] = useState(compareState);
 
   useEffect(() => {
@@ -32,9 +32,7 @@ const CompareBar = ({ compareState, action2 }) => {
     }
   };
 
-  if (compareState.length === 0) {
-    return <div className={styles.invisible} />;
-  } else if (compareState !== undefined && compareState !== [] && compareState !== '') {
+  if (compareState !== undefined && compareState !== [] && compareState !== '') {
     return (
       <div className={styles.compare}>
         <div className={styles.boxes}>
@@ -59,7 +57,7 @@ const CompareBar = ({ compareState, action2 }) => {
         <Button className={styles.btn}>Compare</Button>
       </div>
     );
-  } else return null;
+  } else return <div className={styles.invisible} />;
 };
 
 export default CompareBar;

@@ -99,6 +99,18 @@
   }
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: $productbox-compare-active;
+  svg {
+    color: $productbox-compare-active-text;
+  }
+}
+
+.activeBorder {
+  border: 3px dotted $productbox-compare-active-border;
+}
+
 @media (max-width: 577px) {
   .root {
     margin: 15px auto;

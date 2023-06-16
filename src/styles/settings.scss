@@ -13,7 +13,7 @@ $smoke-gray: #d8d8d8;
 $semi-white: #e1e1e1;
 $solitude-white: #f4f5f7;
 $darker-solitude-white: #e0e3ed;
-$orange: #d58e32;          
+$primary: #d58e32;          
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
 $darker-gray: #292929;
@@ -22,7 +22,7 @@ $darker-gray: #292929;
 
 $button-bg: $black-gray;
 $button-text: $pure-white;
-$button-hover-bg: $orange;
+$button-hover-bg: $primary;
 
 $button-outline-border: $black-gray;
 $button-outline-border-text: $black-gray;
@@ -35,11 +35,11 @@ $featurebox-border: $mist-gray;
 $featurebox-bg: $pure-white;
 $featurebox-text: $dark-gray;
 $featurebox-content-text: $black-gray;
-$featurebox-hover-border: $orange;
-$featurebox-hover-bg: $orange;
+$featurebox-hover-border: $primary;
+$featurebox-hover-bg: $primary;
 $featurebox-content-color: $black-gray;
 $featurebox-hover-icon: $pure-white;
-$featurebox-hover-text: $orange;
+$featurebox-hover-text: $primary;
 
 // ProductBox
 
@@ -50,21 +50,24 @@ $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
 $productbox-stars-border: $black-gray;
 $productbox-line: $black-gray;
-$productbox-line-border-bottom: $orange;
+$productbox-line-border-bottom: $primary;
+$productbox-compare-active: $gray;
+$productbox-compare-active-text: $pure-white;
+$productbox-compare-active-border: $primary;
 
 // NewFurniture
 
 $newfurniture-border-bottom: $semi-gray;
-$newfurniture-hover-border-bottom: $orange;
+$newfurniture-hover-border-bottom: $primary;
 $newfurniture-menu-dots-bg: $pure-white;
 $newfurniture-menu-dots: $semi-white;
-$newfurniture-menu-hover-dots: $orange;
+$newfurniture-menu-hover-dots: $primary;
 $newfurniture-menu-text: $black-gray;
 
 // ProductSearch
 
 $productsearch-border-color: $pure-black;
-$productsearch-border-icon: $orange;
+$productsearch-border-icon: $primary;
 $productsearch-border-select-bg: $transparent;
 $productsearch-border-placeholder: $black-gray;
 $productsearch-border-button-bg: $transparent;
@@ -75,9 +78,9 @@ $productsearch-border-select-menu-bg: $pure-white;
 
 $companyclaim-bg: $dark-gray;
 $companyclaim-phone-number-color: $smoke-gray;
-$companyclaim-phone-icon: $orange;
+$companyclaim-phone-icon: $primary;
 $companyclaim-cart-box: $pure-white;
-$companyclaim-cart-icon-bg: $orange;
+$companyclaim-cart-icon-bg: $primary;
 $companyclaim-cart-counter-text: $darker-solitude-white;
 
 // Footer
@@ -89,7 +92,7 @@ $footer-menu-wrapper-text: $light-gray;
 $footer-menu-wrapper-hover-text: $pure-white;
 $footer-copyright-color: $light-gray;
 $footer-socialmedia-color: $light-gray;
-$footer-socialmedia-hover-color: $orange;
+$footer-socialmedia-hover-color: $primary;
 
 // MenuBar
 
@@ -97,16 +100,16 @@ $menubar-menu-box-shadow: $box-shadow;
 $menubar-bg: $pure-white;
 $menubar-menu-text: $black-gray;
 $menubar-menu-border: $pure-white;
-$menubar-menu-hover-bg: $orange;
+$menubar-menu-hover-bg: $primary;
 $menubar-menu-hover-text: $pure-white;
-$menubar-menu-hover-border: $orange;
+$menubar-menu-hover-border: $primary;
 $menubar-menu-hover-border-active: $black-gray;
 
 // TopBar
 
 $header-topbar-bg: $gray;
 $header-link: $pure-white;
-$header-link-hover: $orange;
+$header-link-hover: $primary;
 
 // CompareBar
 
