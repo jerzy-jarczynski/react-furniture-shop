@@ -12,6 +12,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 1',
       category: 'bed',
       price: 30,
+      oldPrice: 39,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -48,6 +49,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 5',
       category: 'bed',
       price: 30,
+      oldPrice: 33,
       stars: 2,
       promo: 'sale',
       newFurniture: true,
@@ -235,6 +237,29 @@ const initialState = {
     { id: 4, source: '/images/brands/brand 4.png', brandName: 'brand 4' },
     { id: 5, source: '/images/brands/brand 5.png', brandName: 'brand 5' },
     { id: 6, source: '/images/brands/brand 6.png', brandName: 'brand 6' },
+  ],
+
+  deals: [
+    {
+      id: 1,
+      source: `${process.env.PUBLIC_URL}/images/deals/Left.jpg`,
+      placeholder1: 'Guest Room',
+      placeholder2: 'Sofa',
+      placeholder3: '-20%',
+    },
+    {
+      id: 2,
+      source: `${process.env.PUBLIC_URL}/images/deals/Right1.jpg`,
+      placeholder1: 'Office Chair',
+      placeholder2: 'Collection',
+      placeholder3: '$200.00',
+    },
+    {
+      id: 3,
+      source: `${process.env.PUBLIC_URL}/images/deals/Right2.jpg`,
+      placeholder1: 'Special Collection',
+      placeholder2: 'Save up 45% of furniture',
+    },
   ],
 };
 
