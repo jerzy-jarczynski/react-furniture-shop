@@ -8,11 +8,11 @@ import {
   faExchangeAlt,
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import RatingStars from '../../features/RatingStars/RatingStars';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars }) => (
+const ProductBox = ({ name, price, oldPrice, promo, stars, userRating }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img
@@ -30,7 +30,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars }) => (
     </div>
     <div className={styles.content}>
       <h5>{name}</h5>
-      <RatingStars rating={stars} />
+      <RatingStars rating={stars} user={userRating} />
     </div>
     <div className={styles.line}></div>
     <div className={styles.actions}>
@@ -57,6 +57,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  userRating: PropTypes.number,
 };
 
 export default ProductBox;

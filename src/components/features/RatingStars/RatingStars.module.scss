@@ -28,14 +28,24 @@
   }
 
   &:hover {
+    .starEmpty {
+      opacity: 0;
+    }
+
     .starFull {
       opacity: 1;
+      color: $rating-stars-user-rating;
     }
   }
 
   &:hover ~ .star {
+    .starEmpty {
+      opacity: 0;
+    }
+
     .starFull {
       opacity: 1;
+      color: $rating-stars-user-rating;
     }
   }
 }
