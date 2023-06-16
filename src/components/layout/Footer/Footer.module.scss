@@ -43,6 +43,9 @@
 
   .bottomBar {
     background-color: $footer-claim-bg;
+    div:empty {
+      display: none;
+    }
 
     :global(.container) > :global(.row) {
       height: 95px;
@@ -54,6 +57,9 @@
         color: $footer-copyright-color;
         font-size: 14px;
         line-height: 26px;
+        @media (max-width: 577px) {
+          font-size: 12px;
+        }
       }
     }
 
