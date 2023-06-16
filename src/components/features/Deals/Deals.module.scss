@@ -96,3 +96,66 @@
 .divide {
     height: 10%;
 }
+
+@media (max-width: 577px) {
+    .boxes {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .leftBox,
+    .rightBoxes {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .box {
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .divide {
+      display: none;
+    }
+  }
+
+  .descriptionLeft p {
+    font-size: 30px;
+  }
+
+  .descriptionRightUp h2,
+  .descriptionRightBottom h2 {
+    font-size: 35px;
+  }
+
+
+  @media (min-width: 578px) and (max-width: 768px) {
+    .boxes {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .leftBox,
+    .rightBoxes {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .box {
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .divide {
+      display: none;
+    }
+
+    .descriptionLeft p {
+        font-size: 30px;
+      }
+    
+      .descriptionRightUp h2,
+      .descriptionRightBottom h2 {
+        font-size: 35px;
+      }
+  }
