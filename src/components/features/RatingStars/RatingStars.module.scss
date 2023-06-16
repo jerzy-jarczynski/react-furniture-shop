@@ -10,6 +10,12 @@
   }
 }
 
+.userRating {
+  a {
+    color: $rating-stars-user-rating;
+  }
+}
+
 .star {
   position: relative;
   display: inline-block;

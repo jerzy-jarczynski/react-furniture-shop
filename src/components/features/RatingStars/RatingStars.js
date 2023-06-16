@@ -21,32 +21,39 @@ const RatingStars = ({ rating, user }) => {
     }
   }, [user, rating]);
 
+  const clickHandler = (event, num) => {
+    event.preventDefault();
+
+    if (userRating) {
+      if (num === starsCount) {
+        setUserRating(false);
+        setStarsCount(rating);
+      } else {
+        setStarsCount(num);
+      }
+    } else {
+      setStarsCount(num);
+      setUserRating(true);
+    }
+  };
+
   return (
-    <>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= rating ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
-      </div>
-      <div className={`${styles.rating} ${styles[`rating${starsCount}`]}`}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#' className={styles.star}>
-            <span className={styles.starFull}>
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            </span>
-            <span className={styles.starEmpty}>
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            </span>
-          </a>
-        ))}
-      </div>
-    </>
+    <div
+      className={`${styles.rating} ${styles[`rating${starsCount}`]} ${
+        userRating ? styles.userRating : ''
+      }`}
+    >
+      {[5, 4, 3, 2, 1].map(i => (
+        <a key={i} href='#' className={styles.star} onClick={e => clickHandler(e, i)}>
+          <span className={styles.starFull}>
+            <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+          </span>
+          <span className={styles.starEmpty}>
+            <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+          </span>
+        </a>
+      ))}
+    </div>
   );
 };
 
