@@ -81,18 +81,17 @@
     justify-content: space-between;
     align-items: center;
   }
+  a.isFavorite {
+    background-color: $productbox-favorite-active;
+    color: $productbox-favorite;
+    font-size: 14px;
+  }
   .oldPrice {
     text-decoration: line-through;
     color: $dark-gray;
     text-decoration-color: $pure-black;
   }
 
-  a.isFavorite {
-    background-color: $primary;
-    color: $pure-white;
-    font-size: 16px;
-  }
-  
 
   &:hover {
     .buttons {

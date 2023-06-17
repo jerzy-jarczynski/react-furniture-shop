@@ -15,13 +15,12 @@ import { useDispatch } from 'react-redux';
 
 const ProductBox = ({ name, price, oldPrice, promo, id, stars, isFavorite }) => {
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
-  const productId = id;
-
   const dispatch = useDispatch();
+
   const toggleFavoriteValue = e => {
     e.preventDefault();
     setFavoriteValue(!isFavorite);
-    dispatch(toggleFavorite(productId));
+    dispatch(toggleFavorite(id));
   };
   return (
     <div className={styles.root}>
@@ -43,7 +42,7 @@ const ProductBox = ({ name, price, oldPrice, promo, id, stars, isFavorite }) => 
         <h5>{name}</h5>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
+            <a key={i}>
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
