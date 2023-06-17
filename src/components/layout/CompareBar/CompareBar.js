@@ -2,7 +2,7 @@ import Button from '../../common/Button/Button';
 import styles from './CompareBar.module.scss';
 import React, { useEffect, useState } from 'react';
 
-const CompareBar = ({ compareState, action2 }) => {
+const CompareBar = ({ compareState, action2, isButtonClicked }) => {
   // eslint-disable-next-line no-unused-vars
   const [compare, setCompare] = useState(compareState);
 
@@ -11,13 +11,11 @@ const CompareBar = ({ compareState, action2 }) => {
   }, [compareState]);
 
   const deleteProduct = id => {
-    for (const i of compareState) {
-      if (i.id === id) {
-        const filtered = compareState.filter(compare => compare.id !== i.id);
-        setCompare(filtered);
-        action2(filtered);
-      }
-    }
+    const filtered = compareState.filter(compare => compare.id !== id);
+    const updateClicked = { ...isButtonClicked };
+    delete updateClicked[id];
+    action2(filtered);
+    setCompare(filtered);
   };
 
   const imageExtensions = ['.jpeg', '.jpg', '.png', '.bmp', '.svg', '.webp'];

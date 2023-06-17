@@ -11,21 +11,17 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 
 const ProductBox = ({
-  id,
   name,
   price,
   oldPrice,
   promo,
   stars,
   action,
-  isButtonClicked,
+  isInCompare,
+  isMaxCompareReached,
 }) => {
   return (
-    <div
-      className={`${styles.root} ${
-        isButtonClicked ? (isButtonClicked.includes(id) ? styles.activeBorder : '') : ''
-      }`}
-    >
+    <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
       <div className={styles.photo}>
         <img
           className={styles.image}
@@ -63,13 +59,9 @@ const ProductBox = ({
           <Button
             variant='outline'
             onClick={action}
-            className={
-              isButtonClicked
-                ? isButtonClicked.includes(id)
-                  ? styles.disabled
-                  : ''
-                : ''
-            }
+            className={`${isInCompare ? styles.clicked : ''} ${
+              isMaxCompareReached && !isInCompare ? styles.disabled : ''
+            }`}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
@@ -92,7 +84,8 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   id: PropTypes.string,
   action: PropTypes.func,
-  isButtonClicked: PropTypes.array,
+  isInCompare: PropTypes.bool,
+  isMaxCompareReached: PropTypes.bool,
 };
 
 export default ProductBox;

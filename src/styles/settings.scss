@@ -51,9 +51,11 @@ $productbox-sale-text: $pure-white;
 $productbox-stars-border: $black-gray;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $primary;
-$productbox-compare-active: $gray;
+$productbox-compare-active: $primary;
 $productbox-compare-active-text: $pure-white;
 $productbox-compare-active-border: $primary;
+$productbox-compare-disabled-bg: $dark-gray;
+$productbox-compare-disabled-text: $pure-white;
 
 // NewFurniture
 
@@ -113,7 +115,7 @@ $header-link-hover: $primary;
 
 // CompareBar
 
-$comparebar-border: $darker-gray;
+$comparebar-border: $pure-black;
 $comparebar-bg: $pure-white;
 $comparebar-text: $black-gray;
 $comparebar-delete-bg: $pure-black;

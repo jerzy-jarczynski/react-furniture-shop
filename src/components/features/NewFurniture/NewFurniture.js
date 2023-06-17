@@ -15,8 +15,10 @@ class NewFurniture extends React.Component {
       activeCategory: 'bed',
       productsOnPage: 8,
       activeCompare: [],
-      isButtonClicked: [],
+      isButtonClicked: {},
+      isMaxCompareReached: false,
     };
+
     this.handlePageChange = this.handlePageChange.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleSwipeLeft = this.handleSwipeLeft.bind(this);
@@ -35,23 +37,46 @@ class NewFurniture extends React.Component {
   handleCompareClick(newCompareName, newCompareId, event) {
     event.preventDefault();
     const { activeCompare, isButtonClicked } = this.state;
-    if (activeCompare.length >= 4) {
-      return;
+
+    if (isButtonClicked[newCompareId]) {
+      const updateCompare = activeCompare.filter(
+        compare => compare.ItemId !== newCompareId
+      );
+      const updateClicked = { ...isButtonClicked };
+      delete updateClicked[newCompareId];
+      this.setState({
+        activeCompare: updateCompare,
+        isButtonClicked: updateClicked,
+        isMaxCompareReached: false,
+      });
+    } else {
+      if (activeCompare.length >= 4) {
+        return;
+      } else {
+        if (activeCompare.length >= 3) {
+          this.setState({ isMaxCompareReached: true });
+        }
+      }
+
+      const updateCompare = [
+        ...activeCompare,
+        { name: newCompareName, id: shortid(), ItemId: newCompareId },
+      ];
+      const updateClicked = { ...isButtonClicked, [newCompareId]: true };
+      this.setState({ activeCompare: updateCompare, isButtonClicked: updateClicked });
     }
-    const updateCompare = [
-      ...activeCompare,
-      { name: newCompareName, id: shortid(), ItemId: newCompareId },
-    ];
-    const updateClicked = [...isButtonClicked, newCompareId];
-    this.setState({ activeCompare: updateCompare, isButtonClicked: updateClicked });
   }
 
   deleteCompareProduct = newCompares => {
-    const idArray = [];
+    const idArray = {};
     for (const i of newCompares) {
-      idArray.push(i.ItemId);
+      idArray[i.ItemId] = true;
     }
-    this.setState({ activeCompare: newCompares, isButtonClicked: idArray });
+    this.setState({
+      activeCompare: newCompares,
+      isButtonClicked: idArray,
+      isMaxCompareReached: false,
+    });
   };
 
   // Swipeable action functions
@@ -80,7 +105,6 @@ class NewFurniture extends React.Component {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
     const pagesCount = this.calculatePagesCount();
-
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -131,7 +155,8 @@ class NewFurniture extends React.Component {
                 <ProductBox
                   {...item}
                   action={event => this.handleCompareClick(item.name, item.id, event)}
-                  isButtonClicked={this.state.isButtonClicked}
+                  isInCompare={this.state.isButtonClicked[item.id]}
+                  isMaxCompareReached={this.state.isMaxCompareReached}
                 />
               </div>
             ))}
@@ -141,6 +166,7 @@ class NewFurniture extends React.Component {
           <CompareBar
             compareState={this.state.activeCompare}
             action2={this.deleteCompareProduct}
+            isButtonClicked={this.state.isButtonClicked}
           />
         </div>
       </Swipeable>

@@ -88,27 +88,37 @@
     text-decoration-color: $pure-black;
   }
   
-
   &:hover {
+
     .buttons {
       visibility: visible;
     }
+
     .price a {
       background-color: $primary;
     }
   }
 }
 
-.disabled {
-  pointer-events: none;
+.clicked {
   background-color: $productbox-compare-active;
+
   svg {
     color: $productbox-compare-active-text;
   }
 }
 
-.activeBorder {
-  border: 3px dotted $productbox-compare-active-border;
+.disabled {
+  background-color: $productbox-compare-disabled-bg;
+  pointer-events: none;
+  
+  svg {
+    color: $productbox-compare-disabled-text;
+  }
+}
+
+.activeOutline {
+  outline: 3px dotted $productbox-compare-active-border;
 }
 
 @media (max-width: 577px) {
