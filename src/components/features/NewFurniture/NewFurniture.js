@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import shortid from 'shortid';
 import CompareBar from '../../layout/CompareBar/CompareBar';
+import { nanoid } from 'nanoid';
 
 class NewFurniture extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class NewFurniture extends React.Component {
 
       const updateCompare = [
         ...activeCompare,
-        { name: newCompareName, id: shortid(), ItemId: newCompareId },
+        { name: newCompareName, id: nanoid(), ItemId: newCompareId },
       ];
       const updateClicked = { ...isButtonClicked, [newCompareId]: true };
       this.setState({ activeCompare: updateCompare, isButtonClicked: updateClicked });
