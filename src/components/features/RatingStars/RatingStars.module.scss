@@ -1,0 +1,97 @@
+@import "../../../styles/settings.scss";
+
+.stars, .rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+
+  a {
+    text-decoration: none;
+    color: $rating-stars-average;
+  }
+}
+
+.userRating {
+  a {
+    color: $rating-stars-user-rating;
+  }
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 23px;
+
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .starFull {
+    opacity: 0;
+  }
+
+  &:hover {
+    .starEmpty {
+      opacity: 0;
+    }
+
+    .starFull {
+      opacity: 1;
+      color: $rating-stars-user-rating;
+    }
+  }
+
+  &:hover ~ .star {
+    .starEmpty {
+      opacity: 0;
+    }
+
+    .starFull {
+      opacity: 1;
+      color: $rating-stars-user-rating;
+    }
+  }
+}
+
+.rating1 {
+  a:nth-child(5) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating2 {
+  a:nth-child(5), a:nth-child(4) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating3 {
+  a:nth-child(5), a:nth-child(4), a:nth-child(3) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating4 {
+  a:nth-child(5), a:nth-child(4), a:nth-child(3), a:nth-child(2) {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
+
+.rating5 {
+  a {
+    .starFull {
+      opacity: 1;
+    }
+  }
+}
