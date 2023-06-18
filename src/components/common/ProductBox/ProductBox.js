@@ -50,18 +50,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i}>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-          <RatingStars rating={stars} user={userRating} />
-        </div>
+        <RatingStars rating={stars} user={userRating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
