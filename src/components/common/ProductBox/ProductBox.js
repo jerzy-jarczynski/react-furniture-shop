@@ -8,10 +8,11 @@ import {
   faExchangeAlt,
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import RatingStars from '../../features/RatingStars/RatingStars';
 
-const ProductBox = ({ name, price, promo, stars }) => (
+const ProductBox = ({ name, price, oldPrice, promo, stars, userRating }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img
@@ -29,17 +30,7 @@ const ProductBox = ({ name, price, promo, stars }) => (
     </div>
     <div className={styles.content}>
       <h5>{name}</h5>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
-      </div>
+      <RatingStars rating={stars} user={userRating} />
     </div>
     <div className={styles.line}></div>
     <div className={styles.actions}>
@@ -51,6 +42,7 @@ const ProductBox = ({ name, price, promo, stars }) => (
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
+      {oldPrice && <div className={styles.oldPrice}>$ {oldPrice}</div>}
       <div className={styles.price}>
         <Button variant='small'>$ {price}</Button>
       </div>
@@ -62,8 +54,10 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  userRating: PropTypes.number,
 };
 
 export default ProductBox;

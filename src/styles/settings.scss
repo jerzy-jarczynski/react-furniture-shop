@@ -13,7 +13,7 @@ $smoke-gray: #d8d8d8;
 $semi-white: #e1e1e1;
 $solitude-white: #f4f5f7;
 $darker-solitude-white: #e0e3ed;
-$orange: #d58e32;          
+$orange: #d58e32;
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
 
@@ -47,9 +47,13 @@ $productbox-border: $semi-white;
 $productbox-photo-bg: $solitude-white;
 $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
-$productbox-stars-border: $black-gray;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $orange;
+
+// RatingStars
+
+$rating-stars-average: $black-gray;
+$rating-stars-user-rating: $orange;
 
 // NewFurniture
 
@@ -108,3 +112,9 @@ $header-link: $pure-white;
 $header-link-hover: $orange;
 
 $primary: #d58e32;
+
+$text-color: #2a2a2a;
+
+$form-border-color: #292929;
+
+$basic-transition: all 0.25s ease;
