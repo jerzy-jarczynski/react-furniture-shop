@@ -97,65 +97,127 @@
     height: 10%;
 }
 
-@media (max-width: 577px) {
-    .boxes {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .leftBox,
-    .rightBoxes {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .box {
-      height: auto;
-      margin-bottom: 20px;
-    }
-  
-    .divide {
-      display: none;
-    }
+@media (max-width: 400px) {
+  .boxes {
+    flex-direction: column;
+    height: auto;
   }
 
+  .leftBox,
+  .rightBoxes {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .box {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .descriptionLeft p {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .descriptionRightUp {
+    h3 {
+      font-size: 20px;
+      top: 3%;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+ 
+  .descriptionRightBottom {
+    top: 60%;
+
+    h2, h4 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (min-width: 401px) and (max-width: 577px) {
+  .boxes {
+    flex-direction: column;
+    height: auto;
+    }
+  
+  .leftBox,
+  .rightBoxes {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .box {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .divide {
+    display: none;
+  }
+  
   .descriptionLeft p {
     font-size: 30px;
   }
 
   .descriptionRightUp h2,
-  .descriptionRightBottom h2 {
-    font-size: 35px;
+  .descriptionRightBottom {
+    top: 60%;
+
+    h2 {
+      font-size: 35px;
+    }
+  }
+}
+
+@media (min-width: 578px) and (max-width: 768px) {
+  .boxes {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .leftBox,
+  .rightBoxes {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .box {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .divide {
+    display: none;
   }
 
-
-  @media (min-width: 578px) and (max-width: 768px) {
-    .boxes {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .leftBox,
-    .rightBoxes {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .box {
-      height: auto;
-      margin-bottom: 20px;
-    }
-  
-    .divide {
-      display: none;
-    }
-
-    .descriptionLeft p {
-        font-size: 30px;
-      }
+  .descriptionLeft p {
+    font-size: 30px;
+  }
     
-      .descriptionRightUp h2,
-      .descriptionRightBottom h2 {
-        font-size: 35px;
-      }
+  .descriptionRightUp h2,
+  .descriptionRightBottom {
+    top: 70%;
+
+    h2 {
+      font-size: 35px;
+    }
   }
+}
+
+@media (min-width: 769px) and (max-width: 1058px) {
+  .descriptionRightBottom {
+    top: 65%;
+
+    h4 {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+  }
+}
