@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     position: relative;
 
-    :global(.row) > * {
+    :global(.row)>* {
       border-bottom: 4px solid $newfurniture-border-bottom;
     }
 
@@ -33,10 +33,12 @@
 
     .menu {
       text-align: center;
+
       ul {
         margin: 0;
         padding: 0;
         list-style: none;
+
         li {
           display: inline-block;
           margin: 0 0.5rem;
@@ -97,5 +99,13 @@
         }
       }
     }
+  }
+
+  .productsWrapper {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
   }
 }

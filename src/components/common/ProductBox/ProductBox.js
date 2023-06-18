@@ -7,13 +7,23 @@ import {
   faExchangeAlt,
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { toggleFavorite } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import RatingStars from '../../features/RatingStars/RatingStars';
 
-const ProductBox = ({ name, price, oldPrice, promo, id, stars, isFavorite }) => {
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  id,
+  stars,
+  isFavorite,
+  userRating,
+}) => {
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
   const dispatch = useDispatch();
 
@@ -46,10 +56,11 @@ const ProductBox = ({ name, price, oldPrice, promo, id, stars, isFavorite }) => 
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               )}
             </a>
           ))}
+          <RatingStars rating={stars} user={userRating} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -84,6 +95,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
   id: PropTypes.string,
+  userRating: PropTypes.number,
 };
 
 export default ProductBox;
