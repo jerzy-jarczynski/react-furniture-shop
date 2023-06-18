@@ -6,6 +6,8 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+const time = 250;
+
 class NewFurniture extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ class NewFurniture extends React.Component {
       activePage: 0,
       activeCategory: 'bed',
       productsOnPage: 8,
+      visible: true,
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -23,11 +26,15 @@ class NewFurniture extends React.Component {
   }
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activePage: newPage }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activeCategory: newCategory }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   // Swipeable action functions
@@ -54,7 +61,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, visible } = this.state;
     const pagesCount = this.calculatePagesCount();
 
     const dots = [];
@@ -102,7 +109,11 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div
+            className={
+              'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
+            }
+          >
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
                 <ProductBox {...item} />
