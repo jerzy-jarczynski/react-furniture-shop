@@ -47,9 +47,13 @@ $productbox-border: $semi-white;
 $productbox-photo-bg: $solitude-white;
 $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
-$productbox-stars-border: $black-gray;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $primary;
+
+// RatingStars
+
+$rating-stars-average: $black-gray;
+$rating-stars-user-rating: $primary;
 
 // NewFurniture
 
@@ -117,3 +121,5 @@ $deals-overlay: $pure-black;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+$basic-transition: all 0.25s ease;
