@@ -10,6 +10,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import SearchPage from './components/features/SearchPage/SearchPage';
 
 const App = () => (
   <Provider store={store}>
@@ -19,6 +20,7 @@ const App = () => (
           <Route exact path={'/'} component={Homepage} />
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
+          <Route exact path={'/search/:searchResult'} component={SearchPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
