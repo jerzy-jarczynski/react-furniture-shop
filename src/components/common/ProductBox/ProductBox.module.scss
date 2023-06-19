@@ -90,6 +90,11 @@
       }
     }
   }
+  a.isFavorite {
+    background-color: $productbox-favorite-active;
+    color: $productbox-favorite;
+    font-size: 14px;
+  }
 
   .oldPrice {
     text-decoration: line-through;

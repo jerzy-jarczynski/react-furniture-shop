@@ -1,4 +1,5 @@
 $base-padding: 24px;
+$basic-transition: all 0.25s ease;
 
 // DO NOT USE THIS!
 $pure-black: #000000;
@@ -51,6 +52,8 @@ $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $primary;
+$productbox-favorite: $pure-white;
+$productbox-favorite-active: $primary;
 
 // RatingStars
 
