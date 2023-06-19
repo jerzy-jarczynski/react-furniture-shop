@@ -126,6 +126,12 @@ $comparebar-bg: $pure-white;
 $comparebar-text: $black-gray;
 $comparebar-delete-bg: $pure-black;
 
+// Deals
+
+$deals-left-desc-text: $pure-white;
+$deals-left-desc-border: $pure-white;
+$deals-right-desc-special-text: $primary;
+$deals-overlay: $pure-black;
 // Featured
 
 $featured-content-bg: $transparent-black;
@@ -157,4 +163,61 @@ $text-color: #2a2a2a;
 
 $form-border-color: #292929;
 
+// Animation settings
+$animation-bg-color: rgb(194, 55, 0);
+$animation-btn-color: rgb(160, 33, 1);
+$animation-text-color: rgb(247, 142, 5);
+$animation-icon-color: rgb(255, 208, 0);
+
+// Animation time
+$animation-bg-time: 0.25s;
+$animation-btn-time: 0.25s;
+$animation-text-time: 0.25s;
+$animation-icon-time: 0.25s;
+
+// Animation keyframes
+@keyframes animation-pulse-bg {
+    50% {
+        background-color: $animation-bg-color;
+        border-color: $animation-bg-color;
+    }
+
+    100% {
+        background-color: $primary;
+    }
+}
+
+@keyframes animation-pulse-btn {
+    50% {
+        background-color: $animation-btn-color;
+        transform: scale(1.10);
+    }
+
+    100% {
+        background-color: $primary;
+        transform: scale(1);
+    }
+}
+
+@keyframes animation-pulse-text {
+    50% {
+        color: $animation-text-color;
+        font-size: 15px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
+
+@keyframes animation-pulse-icon {
+    50% {
+        color: $animation-text-color;
+        font-size: 25px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
 $basic-transition: all 0.25s ease;
