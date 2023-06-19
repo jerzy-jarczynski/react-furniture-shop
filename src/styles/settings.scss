@@ -1,4 +1,5 @@
 $base-padding: 24px;
+$basic-transition: all 0.25s ease;
 
 // DO NOT USE THIS!
 $pure-black: #000000;
@@ -13,15 +14,17 @@ $smoke-gray: #d8d8d8;
 $semi-white: #e1e1e1;
 $solitude-white: #f4f5f7;
 $darker-solitude-white: #e0e3ed;
-$orange: #d58e32;
+$primary: #d58e32;       
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
+$transparent-black: rgba(0, 0, 0, 0.4);
+$darker-transparent-black: rgba(0, 0, 0, 0.7);
 
 // Button
 
 $button-bg: $black-gray;
 $button-text: $pure-white;
-$button-hover-bg: $orange;
+$button-hover-bg: $primary;
 
 $button-outline-border: $black-gray;
 $button-outline-border-text: $black-gray;
@@ -34,11 +37,11 @@ $featurebox-border: $mist-gray;
 $featurebox-bg: $pure-white;
 $featurebox-text: $dark-gray;
 $featurebox-content-text: $black-gray;
-$featurebox-hover-border: $orange;
-$featurebox-hover-bg: $orange;
+$featurebox-hover-border: $primary;
+$featurebox-hover-bg: $primary;
 $featurebox-content-color: $black-gray;
 $featurebox-hover-icon: $pure-white;
-$featurebox-hover-text: $orange;
+$featurebox-hover-text: $primary;
 
 // ProductBox
 
@@ -48,26 +51,28 @@ $productbox-photo-bg: $solitude-white;
 $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
 $productbox-line: $black-gray;
-$productbox-line-border-bottom: $orange;
+$productbox-line-border-bottom: $primary;
+$productbox-favorite: $pure-white;
+$productbox-favorite-active: $primary;
 
 // RatingStars
 
 $rating-stars-average: $black-gray;
-$rating-stars-user-rating: $orange;
+$rating-stars-user-rating: $primary;
 
 // NewFurniture
 
 $newfurniture-border-bottom: $semi-gray;
-$newfurniture-hover-border-bottom: $orange;
+$newfurniture-hover-border-bottom: $primary;
 $newfurniture-menu-dots-bg: $pure-white;
 $newfurniture-menu-dots: $semi-white;
-$newfurniture-menu-hover-dots: $orange;
+$newfurniture-menu-hover-dots: $primary;
 $newfurniture-menu-text: $black-gray;
 
 // ProductSearch
 
 $productsearch-border-color: $pure-black;
-$productsearch-border-icon: $orange;
+$productsearch-border-icon: $primary;
 $productsearch-border-select-bg: $transparent;
 $productsearch-border-placeholder: $black-gray;
 $productsearch-border-button-bg: $transparent;
@@ -78,9 +83,9 @@ $productsearch-border-select-menu-bg: $pure-white;
 
 $companyclaim-bg: $dark-gray;
 $companyclaim-phone-number-color: $smoke-gray;
-$companyclaim-phone-icon: $orange;
+$companyclaim-phone-icon: $primary;
 $companyclaim-cart-box: $pure-white;
-$companyclaim-cart-icon-bg: $orange;
+$companyclaim-cart-icon-bg: $primary;
 $companyclaim-cart-counter-text: $darker-solitude-white;
 
 // Footer
@@ -92,7 +97,7 @@ $footer-menu-wrapper-text: $light-gray;
 $footer-menu-wrapper-hover-text: $pure-white;
 $footer-copyright-color: $light-gray;
 $footer-socialmedia-color: $light-gray;
-$footer-socialmedia-hover-color: $orange;
+$footer-socialmedia-hover-color: $primary;
 
 // MenuBar
 
@@ -100,21 +105,112 @@ $menubar-menu-box-shadow: $box-shadow;
 $menubar-bg: $pure-white;
 $menubar-menu-text: $black-gray;
 $menubar-menu-border: $pure-white;
-$menubar-menu-hover-bg: $orange;
+$menubar-menu-hover-bg: $primary;
 $menubar-menu-hover-text: $pure-white;
-$menubar-menu-hover-border: $orange;
+$menubar-menu-hover-border: $primary;
 $menubar-menu-hover-border-active: $black-gray;
 
 // TopBar
 
 $header-topbar-bg: $gray;
 $header-link: $pure-white;
-$header-link-hover: $orange;
+$header-link-hover: $primary;
 
-$primary: #d58e32;
+// Deals
+
+$deals-left-desc-text: $pure-white;
+$deals-left-desc-border: $pure-white;
+$deals-right-desc-special-text: $primary;
+$deals-overlay: $pure-black;
+// Featured
+
+$featured-content-bg: $transparent-black;
+$featured-content-text: $pure-white;
+$featured-shop-button-border: $light-gray;
+$featured-panelbar-bg: $pure-black;
+$featured-panelbar-header-text: $pure-white;
+$featured-dots-bg: $pure-black;
+$featured-menu-dots: $semi-white;
+$featured-menu-hover-dots: $primary;
+
+//FeaturedProduct
+
+$featuredproduct-bg: $pure-white;
+$featuredproduct-border: $semi-white;
+$featuredproduct-counter-element-bg: $darker-transparent-black;
+$featuredproduct-counter-element-text: $pure-white;
+$featuredproduct-photo-bg: $solitude-white;
+$featuredproduct-content-header: $black-gray;
+$featuredproduct-stars-border: $black-gray;
+$featuredproduct-line: $black-gray;
+$featuredproduct-line-border-bottom: $primary;
+$featuredproduct-oldprice-text: $dark-gray;
+$featuredproduct-oldprice-text-decoration: $pure-black;
+
+//Brands
+
+$brands-line-border: $light-gray;
+
 
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
 
+// Animation settings
+$animation-bg-color: rgb(194, 55, 0);
+$animation-btn-color: rgb(160, 33, 1);
+$animation-text-color: rgb(247, 142, 5);
+$animation-icon-color: rgb(255, 208, 0);
+
+// Animation time
+$animation-bg-time: 0.25s;
+$animation-btn-time: 0.25s;
+$animation-text-time: 0.25s;
+$animation-icon-time: 0.25s;
+
+// Animation keyframes
+@keyframes animation-pulse-bg {
+    50% {
+        background-color: $animation-bg-color;
+        border-color: $animation-bg-color;
+    }
+
+    100% {
+        background-color: $primary;
+    }
+}
+
+@keyframes animation-pulse-btn {
+    50% {
+        background-color: $animation-btn-color;
+        transform: scale(1.10);
+    }
+
+    100% {
+        background-color: $primary;
+        transform: scale(1);
+    }
+}
+
+@keyframes animation-pulse-text {
+    50% {
+        color: $animation-text-color;
+        font-size: 15px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
+
+@keyframes animation-pulse-icon {
+    50% {
+        color: $animation-text-color;
+        font-size: 25px;
+    }
+
+    100% {
+        color: $primary;
+    }
+}
 $basic-transition: all 0.25s ease;
