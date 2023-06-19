@@ -1,0 +1,121 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 2rem 0;
+
+  .promo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: -1;
+    }
+
+    .content {
+      width: 100%;
+      height: 40%;
+      margin: auto;
+      position: absolute;
+      top: 25%;
+      left: 0;
+      text-align: center;
+      color: $featured-content-text;
+      background-color: $featured-content-bg;
+      font-weight: 300;
+      padding-top: 35px;
+      letter-spacing: 1;
+      :first-child {
+        font-size: 45px;
+        margin-bottom: 0;
+      }
+
+      span {
+        font-weight: 600;
+      }
+
+      a {
+        position: absolute;
+        bottom: -20px;
+        left: 40%;
+        text-decoration: none;
+        z-index: 0;
+        border-color: $featured-shop-button-border;
+        border-radius: 7%;
+        width: 120px;
+        font-weight: 500;
+        z-index: 99;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      a {
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+      }
+    }
+  }
+
+  .panelBar {
+    position: relative;
+    z-index: 100;
+    background-color: $featured-panelbar-bg;
+    width: 365px;
+
+    .heading {
+      position: relative;
+      padding-left: 10px;
+
+      h3 {
+        color: $featured-panelbar-header-text;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+    }
+    .dots {
+      position: absolute;
+      right: 10px;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $featured-dots-bg;
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $featured-menu-dots;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $featured-menu-hover-dots;
+            }
+          }
+        }
+      }
+    }
+  }
+}
