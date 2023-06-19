@@ -15,6 +15,7 @@
     color: $button-text !important;
     background-color: $button-hover-bg;
     text-decoration: none;
+    animation: animation-pulse-btn $animation-btn-time;
   }
 }
 
@@ -37,6 +38,7 @@
   &:not(.noHover):hover {
     background-color: $button-hover-outline-border;
     color: $button-hover-outline-border-text;
+    animation: animation-pulse-btn $animation-btn-time;
   }
 }
 
