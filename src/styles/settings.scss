@@ -17,6 +17,8 @@ $darker-solitude-white: #e0e3ed;
 $orange: #d58e32;
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
+$transparent-black: rgba(0, 0, 0, 0.4);
+$darker-transparent-black: rgba(0, 0, 0, 0.7);
 
 // Button
 
@@ -48,9 +50,13 @@ $productbox-border: $semi-white;
 $productbox-photo-bg: $solitude-white;
 $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
-$productbox-stars-border: $black-gray;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $orange;
+
+// RatingStars
+
+$rating-stars-average: $black-gray;
+$rating-stars-user-rating: $orange;
 
 // NewFurniture
 
@@ -108,8 +114,35 @@ $header-topbar-bg: $gray;
 $header-link: $pure-white;
 $header-link-hover: $orange;
 
+// Featured
+
+$featured-content-bg: $transparent-black;
+$featured-content-text: $pure-white;
+$featured-shop-button-border: $light-gray;
+$featured-panelbar-bg: $pure-black;
+$featured-panelbar-header-text: $pure-white;
+$featured-dots-bg: $pure-black;
+$featured-menu-dots: $semi-white;
+$featured-menu-hover-dots: $orange;
+
+//FeaturedProduct
+
+$featuredproduct-bg: $pure-white;
+$featuredproduct-border: $semi-white;
+$featuredproduct-counter-element-bg: $darker-transparent-black;
+$featuredproduct-counter-element-text: $pure-white;
+$featuredproduct-photo-bg: $solitude-white;
+$featuredproduct-content-header: $black-gray;
+$featuredproduct-stars-border: $black-gray;
+$featuredproduct-line: $black-gray;
+$featuredproduct-line-border-bottom: $orange;
+$featuredproduct-oldprice-text: $dark-gray;
+$featuredproduct-oldprice-text-decoration: $pure-black;
+
 $primary: #d58e32;
 
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+$basic-transition: all 0.25s ease;

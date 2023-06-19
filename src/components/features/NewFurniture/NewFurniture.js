@@ -9,6 +9,8 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { getActive } from '../../../redux/modesRedux';
 import { connect } from 'react-redux';
 
+const time = 250;
+
 class NewFurniture extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,7 @@ class NewFurniture extends React.Component {
       activePage: 0,
       activeCategory: 'bed',
       productsOnPage: 8,
+      visible: true,
     };
 
     this.handlePageChange = this.handlePageChange.bind(this);
@@ -26,11 +29,15 @@ class NewFurniture extends React.Component {
   }
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activePage: newPage }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ visible: false });
+    setTimeout(() => this.setState({ activeCategory: newCategory }), time);
+    setTimeout(() => this.setState({ visible: true }), time * 2);
   }
 
   // Swipeable action functions
@@ -56,8 +63,8 @@ class NewFurniture extends React.Component {
   }
 
   render() {
+    const { activeCategory, activePage, visible } = this.state;
     const { categories, products, mode } = this.props;
-    const { activeCategory, activePage } = this.state;
 
     let productsOnPage = 8;
 
@@ -115,14 +122,25 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
-              .map(item => (
-                <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
+          <div
+            className={
+              'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
+            }
+          >
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                <ProductBox {...item} />
+              </div>
+            ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
+                .map(item => (
+                  <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </Swipeable>
