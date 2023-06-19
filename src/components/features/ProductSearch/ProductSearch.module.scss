@@ -7,6 +7,7 @@
   color: $productsearch-text-color;
 
   .category {
+    border-right: 1px solid $productsearch-border-color;
     display: flex;
     align-items: center;
     position: relative;
@@ -45,7 +46,7 @@
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
-      border: 0 solid black;
+      border: 0px solid black;
       width: calc(100% + 2px);
       overflow: hidden;
       max-height: 0;
@@ -66,26 +67,7 @@
     &:hover {
       .dropdown {
         max-height: 172px;
-
-        ul {
-          display: none;
-          list-style-type: none;
-          top: 100%;
-          left: 50%;
-          padding: 5px 30px 5px 40px;
-          width: calc(100% + 2px);
-          overflow: hidden;
-          margin: 0;
-          position: absolute;
-          border: 1px solid black;
-          background-color: $productsearch-border-select-menu-bg;
-          z-index: 99;
-          transform: translateX(-50%);
-
-          &:hover {
-            display: block;
-          }
-        }
+        border: 1px solid black;
       }
 
       .icon:last-child {
@@ -98,15 +80,12 @@
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid $productsearch-border-color;
-    width: 100%;
 
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
-      width: 100%;
 
       &::placeholder {
         color: $productsearch-border-placeholder;

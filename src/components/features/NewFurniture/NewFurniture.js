@@ -127,20 +127,13 @@ class NewFurniture extends React.Component {
               'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
             }
           >
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
-            <div className='row'>
-              {categoryProducts
-                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
-                .map(item => (
-                  <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+            {categoryProducts
+              .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
+              .map(item => (
+                <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </Swipeable>
