@@ -676,6 +676,29 @@ const initialState = {
       placeholder2: 'Save up 45% of furniture',
     },
   ],
+  modes: [
+    {
+      id: '1',
+      name: 'mobile',
+      minWidth: 0,
+      maxWidth: 575,
+      active: false,
+    },
+    {
+      id: '2',
+      name: 'tablet',
+      minWidth: 576,
+      maxWidth: 991,
+      active: false,
+    },
+    {
+      id: '3',
+      name: 'desktop',
+      minWidth: 992,
+      maxWidth: 9999,
+      active: false,
+    },
+  ],
 };
 
 export default initialState;
