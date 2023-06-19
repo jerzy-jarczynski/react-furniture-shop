@@ -21,6 +21,8 @@ const ProductBox = ({
   isInCompare,
   isMaxCompareReached,
   userRating,
+  favorite,
+  compare,
 }) => {
   return (
     <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
@@ -45,13 +47,13 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button variant='outline' className={favorite && styles.favorite}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
             onClick={action}
-            className={`${isInCompare ? styles.clicked : ''} ${
+            className={`${compare} ${isInCompare ? styles.clicked : ''} ${
               isMaxCompareReached && !isInCompare ? styles.disabled : ''
             }`}
           >
@@ -78,6 +80,8 @@ ProductBox.propTypes = {
   action: PropTypes.func,
   isInCompare: PropTypes.bool,
   isMaxCompareReached: PropTypes.bool,
+  favorite: PropTypes.bool,
+  compare: PropTypes.bool,
   userRating: PropTypes.number,
 };
 
