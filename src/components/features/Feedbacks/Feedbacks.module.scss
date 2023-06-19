@@ -37,7 +37,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: $newfurniture-menu-dots-bg;
+        background-color: $feedback-menu-dots-bg;
         transform: translateY(15px);
 
         li {
@@ -49,12 +49,12 @@
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: $newfurniture-menu-dots;
+            background-color: $feedback-menu-dots;
             font-size: 0;
 
             &.active,
             &:hover {
-              background-color: $newfurniture-menu-hover-dots;
+              background-color: $feedback-menu-hover-dots;
             }
           }
         }

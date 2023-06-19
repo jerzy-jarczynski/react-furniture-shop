@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { getAll } from '../../../redux/feedbacksRedux.js';
 import { useSelector } from 'react-redux';
 import styles from './Feedbacks.module.scss';
-// import Feedback from '../../common/Feedback/Feedback.js';
+import Feedback from '../../common/Feedback/Feedback.js';
 
 const Feedbacks = () => {
   const feedbacks = useSelector(getAll);
@@ -40,6 +40,9 @@ const Feedbacks = () => {
               <ul>{dots}</ul>
             </div>
           </div>
+        </div>
+        <div className='row justify-content-center'>
+          {<Feedback {...feedbacks[activeFeedback]} />}
         </div>
       </div>
     </div>
