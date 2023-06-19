@@ -606,6 +606,29 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedbacks: [
+    {
+      id: '1',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue velit, feugiat id lacus eget, elementum viverra eros. Nullam justo magna, sollicitudin nec nibh sit amet, imperdiet sagittis ante.',
+      author: 'Dane Joe',
+      description: 'Furniture client',
+    },
+    {
+      id: '2',
+      text:
+        'Quisque a feugiat elit. Vivamus id tellus pharetra, blandit sapien vel, sagittis turpis. Vestibulum id magna vel eros iaculis dapibus at eget tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+      author: 'Prad Bitt',
+      description: 'Furniture client',
+    },
+    {
+      id: '3',
+      text:
+        'Nulla at felis non leo placerat fermentum. Fusce euismod porttitor justo imperdiet pharetra. Cras dignissim vulputate risus interdum ullamcorper.',
+      author: 'Bandra Sullock',
+      description: 'Furniture client',
+    },
+  ],
 };
 
 export default initialState;
