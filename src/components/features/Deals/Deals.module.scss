@@ -1,0 +1,98 @@
+@import "../../../styles/settings.scss";
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-bottom: 2%;
+    height: 380px;
+}
+
+.leftBox {
+    width: 49%;
+    height: 100%;
+    position: relative;
+
+    .overlay {
+        background-color: $deals-overlay;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        z-index: 99;
+        height: 90%;
+        width: 90%;
+        opacity: 0.5;
+    }
+}
+
+.Img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.descriptionLeft {
+    color: $deals-left-desc-text;
+    position: absolute;
+    bottom: 9%;
+    left: 8%;
+    z-index: 100;
+
+    h3, h1, p {
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    p {
+        border: 3px solid $deals-left-desc-border;
+        padding: 5px;
+        width: 50%;
+        font-size: 26px;
+    }
+}
+
+.rightBoxes {
+    width: 49%;
+    position: relative;
+    
+}
+
+.descriptionRightUp {
+    position: absolute;
+    top: 8%;
+    left: 57%;
+    transform: translate(-50%);
+    text-transform: uppercase;
+
+    h2, h3, h5 {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: $deals-right-desc-special-text;
+        margin-top: 3%;
+    }
+}
+
+.descriptionRightBottom {
+    position: absolute;
+    top: 70%;
+    left: 36%;
+    text-transform: uppercase;
+
+    h2, h4 {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: $deals-right-desc-special-text;
+    }
+}
+.box {
+    height: 45%;
+}
+.divide {
+    height: 10%;
+}
