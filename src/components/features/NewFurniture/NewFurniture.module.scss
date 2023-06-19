@@ -60,6 +60,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $newfurniture-hover-border-bottom;
+                animation: animation-pulse-bg $animation-bg-time;
               }
             }
           }

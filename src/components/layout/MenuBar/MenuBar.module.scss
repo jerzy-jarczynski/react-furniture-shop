@@ -78,6 +78,10 @@
       font-weight: 500;
       letter-spacing: 1px;
 
+      &:hover {
+        animation: animation-pulse-bg $animation-bg-time;
+      }
+
       &:hover,
       &.active {
         background-color: $menubar-menu-hover-bg;
