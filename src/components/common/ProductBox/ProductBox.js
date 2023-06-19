@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { toggleFavorite } from '../../../redux/productsRedux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import RatingStars from '../../features/RatingStars/RatingStars';
 
 const ProductBox = ({
@@ -16,16 +15,26 @@ const ProductBox = ({
   price,
   oldPrice,
   promo,
+  id,
   stars,
   action,
   isInCompare,
   isMaxCompareReached,
   userRating,
-  favorite,
+  isFavorite,
   compare,
 }) => {
+  const [favoriteValue, setFavoriteValue] = useState(isFavorite);
+  const dispatch = useDispatch();
+
+  const toggleFavoriteValue = e => {
+    e.preventDefault();
+    setFavoriteValue(!isFavorite);
+    dispatch(toggleFavorite(id));
+  };
   return (
     <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
+      <div className={styles.root}></div>
       <div className={styles.photo}>
         <img
           className={styles.image}
@@ -47,7 +56,11 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={favorite && styles.favorite}>
+          <Button
+            variant='outline'
+            onClick={e => toggleFavoriteValue(e)}
+            className={favoriteValue ? styles.isFavorite : undefined}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -82,6 +95,7 @@ ProductBox.propTypes = {
   isMaxCompareReached: PropTypes.bool,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  isFavorite: PropTypes.bool,
   userRating: PropTypes.number,
 };
 
