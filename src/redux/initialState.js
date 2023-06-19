@@ -18,6 +18,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: true,
+      featured: true,
     },
     {
       id: 'aenean-ru-bristique-2',

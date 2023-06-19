@@ -4,6 +4,8 @@ export const getCount = ({ products }) => products.length;
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getFeatured = ({ products }) =>
+  products.filter(item => item.featured === true);
 
 /* actions */
 const createActionName = actionName => `app/lists/${actionName}`;
