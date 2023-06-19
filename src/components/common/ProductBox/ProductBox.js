@@ -12,7 +12,16 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import RatingStars from '../../features/RatingStars/RatingStars';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, userRating }) => (
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  stars,
+  favorite,
+  compare,
+  userRating,
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img
@@ -35,10 +44,10 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, userRating }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button variant='outline' className={favorite && styles.favorite}>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button variant='outline' className={compare && styles.compare}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -57,6 +66,8 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  favorite: PropTypes.bool,
+  compare: PropTypes.bool,
   userRating: PropTypes.number,
 };
 
