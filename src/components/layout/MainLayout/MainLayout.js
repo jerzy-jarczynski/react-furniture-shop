@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const MainLayout = ({ children }) => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleResize = () => {
