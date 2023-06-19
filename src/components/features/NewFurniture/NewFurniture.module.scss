@@ -101,4 +101,12 @@
       }
     }
   }
+
+  .productsWrapper {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
+  }
 }
