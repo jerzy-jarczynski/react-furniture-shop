@@ -63,8 +63,8 @@
     "react-scripts": "3.1.2",
     "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
-    "sass": "^1.54.3",
-    "shortid": "^2.2.16"
+    "redux-mock-store": "^1.5.4",
+    "sass": "^1.54.3"
   },
   "devDependencies": {
     "husky": "^3.1.0",
