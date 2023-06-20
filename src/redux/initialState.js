@@ -1,10 +1,30 @@
 const initialState = {
   categories: [
-    { id: 'bed', name: 'Bed' },
-    { id: 'chair', name: 'Chair' },
-    { id: 'sofa', name: 'Sofa' },
-    { id: 'table', name: 'Table' },
-    { id: 'dining', name: 'Dining' },
+    {
+      id: 'bed',
+      name: 'Bed',
+      translationKey: 'menubar.categories.bed',
+    },
+    {
+      id: 'chair',
+      name: 'Chair',
+      translationKey: 'menubar.categories.chair',
+    },
+    {
+      id: 'sofa',
+      name: 'Sofa',
+      translationKey: 'menubar.categories.sofa',
+    },
+    {
+      id: 'table',
+      name: 'Table',
+      translationKey: 'menubar.categories.table',
+    },
+    {
+      id: 'dining',
+      name: 'Dining',
+      translationKey: 'menubar.categories.dining',
+    },
   ],
   products: [
     {
@@ -680,16 +700,39 @@ const initialState = {
   },
 
   brands: [
-    { id: 1, source: `${process.env.PUBLIC_URL}/images/brands/brand 1.png`, brandName: 'brand 1' },
-    { id: 2, source: `${process.env.PUBLIC_URL}/images/brands/brand 2.png`, brandName: 'brand 2' },
-    { id: 3, source: `${process.env.PUBLIC_URL}/images/brands/brand 3.png`, brandName: 'brand 3' },
-    { id: 4, source: `${process.env.PUBLIC_URL}/images/brands/brand 4.png`, brandName: 'brand 4' },
-    { id: 5, source: `${process.env.PUBLIC_URL}/images/brands/brand 5.png`, brandName: 'brand 5' },
-    { id: 6, source: `${process.env.PUBLIC_URL}/images/brands/brand 6.png`, brandName: 'brand 6' },
+    {
+      id: 1,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 1.png`,
+      brandName: 'brand 1',
+    },
+    {
+      id: 2,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 2.png`,
+      brandName: 'brand 2',
+    },
+    {
+      id: 3,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 3.png`,
+      brandName: 'brand 3',
+    },
+    {
+      id: 4,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 4.png`,
+      brandName: 'brand 4',
+    },
+    {
+      id: 5,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 5.png`,
+      brandName: 'brand 5',
+    },
+    {
+      id: 6,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 6.png`,
+      brandName: 'brand 6',
+    },
   ],
 
   deals: [
-
     {
       id: 1,
       source: `${process.env.PUBLIC_URL}/images/deals/Left.jpg`,
