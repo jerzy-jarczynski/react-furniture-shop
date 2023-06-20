@@ -20,10 +20,6 @@ const CategoryPage = () => {
       filteredCategory.push(category);
     }
   }
-  console.log('cate: ', categories);
-  console.log('prod: ', products);
-  console.log('filCat: ', filteredCategory);
-  console.log('filProd: ', filteredProducts);
 
   if (filteredCategory.length === 0 && filteredProducts.length === 0) {
     return (
