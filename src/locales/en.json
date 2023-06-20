@@ -32,8 +32,10 @@
   "featured": {
     "label": "HOT DEALS",
     "promo": {
-      "title": "INDOOR FURNITURE",
-      "subtitle": "SAVE UP TO 50% OF ALL FURNITURE"
+      "title": "INDOOR",
+      "titleBold": "FURNITURE",
+      "subtitle": "SAVE UP TO 50% OF ALL FURNITURE",
+      "button": "SHOP NOW"
     }
   },
   "features": {

@@ -32,8 +32,10 @@
   "featured": {
     "label": "OKAZJE",
     "promo": {
-      "title": "MEBLE DO WNĘTRZA",
-      "subtitle": "OSZCZĘDZAJ DO 50% NA WSZYSTKICH MEBLACH"
+      "title": "MEBLE",
+      "titleBold": "DO WNĘTRZA",
+      "subtitle": "OSZCZĘDZAJ DO 50% NA WSZYSTKICH MEBLACH",
+      "button": "KUP TERAZ"
     }
   },
   "features": {
