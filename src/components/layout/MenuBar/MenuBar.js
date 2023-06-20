@@ -31,24 +31,24 @@ const MenuBar = ({ children }) => {
                 <FontAwesomeIcon icon={faTimes} />
               </span>
               <li>
-                <a href='#' className={styles.active}>
+                <a href='/' className={styles.active}>
                   Home
                 </a>
               </li>
               <li>
-                <a href='#'>Furniture</a>
+                <a href='/category/furniture'>Furniture</a>
               </li>
               <li>
-                <a href='#'>Chair</a>
+                <a href='/category/chair'>Chair</a>
               </li>
               <li>
-                <a href='#'>Table</a>
+                <a href='/category/table'>Table</a>
               </li>
               <li>
-                <a href='#'>Sofa</a>
+                <a href='/category/sofa'>Sofa</a>
               </li>
               <li>
-                <a href='#'>Bedroom</a>
+                <a href='/category/bedroom'>Bedroom</a>
               </li>
               <li>
                 <a href='#'>Blog</a>

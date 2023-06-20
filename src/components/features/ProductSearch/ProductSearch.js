@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
-import { getAll } from '../../../redux/categoriesRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ import styles from './ProductSearch.module.scss';
 const ProductSearch = () => {
   const [selectedCategory, setSelectedCategory] = useState('Select a category');
 
-  const allCategories = useSelector(getAll);
+  const allCategories = useSelector(getAllCategories);
 
   const clickHandler = categoryName => {
     setSelectedCategory(categoryName);
@@ -27,7 +27,7 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              {category.name}
+              <a href={`/category/${category.name}`}>{category.name}</a>
             </li>
           ))}
         </ul>
