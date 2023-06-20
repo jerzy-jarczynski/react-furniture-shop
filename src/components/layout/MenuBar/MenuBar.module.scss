@@ -4,7 +4,7 @@
   box-shadow: 2px 3.464px 6px $menubar-menu-box-shadow;
   background-color: $menubar-bg;
 
-  :global(.container)> :global(.row) {
+  :global(.container) > :global(.row) {
     min-height: 84px;
     padding: 20px 0;
   }
@@ -37,7 +37,7 @@
         width: 100%;
       }
 
-      li>* {
+      li > * {
         width: 100%;
       }
     }
@@ -47,8 +47,8 @@
     }
 
     .navLinks.open {
-      width: 80vw;
-      border-left: 1px solid $pure-black;
+      width: 200px;
+      border-left: 1px solid $menubar-menu-border-dark;
 
       .xmark {
         display: block;
@@ -64,6 +64,10 @@
     .hamburger svg {
       width: 20px;
       height: 20px;
+    }
+
+    .xmark, .hamburger {
+      cursor: pointer;
     }
 
     a {
@@ -117,7 +121,7 @@
         height: 50px;
         align-items: center;
         transition: $basic-transition;
-        border-left: 0px solid $pure-black ;
+        border-left: 0 solid $menubar-menu-border-dark ;
       }
     }
 
@@ -145,7 +149,7 @@
         height: 50px;
         align-items: center;
         transition: $basic-transition;
-        border-left: 0px solid $pure-black ;
+        border-left: 0 solid $menubar-menu-border-dark ;
       }
     }
 
@@ -163,7 +167,7 @@
 
 @media (min-width: 1200px) {
   .root {
-    :global(.container)> :global(.row) {
+    :global(.container) > :global(.row) {
       min-height: unset;
       padding: 0;
     }
