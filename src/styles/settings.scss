@@ -17,6 +17,7 @@ $darker-solitude-white: #e0e3ed;
 $primary: #d58e32;
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
+$darker-gray: #292929;
 $transparent-black: rgba(0, 0, 0, 0.4);
 $darker-transparent-black: rgba(0, 0, 0, 0.7);
 
@@ -52,6 +53,11 @@ $productbox-sale-bg: $pure-black;
 $productbox-sale-text: $pure-white;
 $productbox-line: $black-gray;
 $productbox-line-border-bottom: $primary;
+$productbox-compare-active: $primary;
+$productbox-compare-active-text: $pure-white;
+$productbox-compare-active-border: $primary;
+$productbox-compare-disabled-bg: $dark-gray;
+$productbox-compare-disabled-text: $pure-white;
 $productbox-favorite: $pure-white;
 $productbox-favorite-active: $primary;
 
@@ -117,6 +123,13 @@ $header-topbar-bg: $gray;
 $header-link: $pure-white;
 $header-link-hover: $primary;
 
+// CompareBar
+
+$comparebar-border: $pure-black;
+$comparebar-bg: $pure-white;
+$comparebar-text: $black-gray;
+$comparebar-delete-bg: $pure-black;
+
 // Deals
 
 $deals-left-desc-text: $pure-white;
@@ -151,6 +164,7 @@ $featuredproduct-oldprice-text-decoration: $pure-black;
 //Brands
 
 $brands-line-border: $light-gray;
+
 
 
 $text-color: #2a2a2a;
