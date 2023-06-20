@@ -13,18 +13,13 @@ const SearchPage = () => {
   const filtered = [];
   for (const product of products) {
     if (product.name.toLowerCase().includes(searchResult)) {
-      console.log('find: ', product);
       filtered.push(product);
     }
   }
 
-  console.log('prod: ', products);
-  console.log('serch: ', searchResult);
-  console.log('filter: ', filtered);
   return (
     <div>
       <FeatureBoxes />
-
       <div className={styles.root}>
         <div className='container'>
           <h1 className={styles.heading}>
