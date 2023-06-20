@@ -9,7 +9,7 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 
 const SearchPage = () => {
   const products = useSelector(state => getAll(state));
-  const searchResult = useParams().searchResult;
+  const searchResult = useParams().searchResult.toLowerCase();
   const filtered = [];
 
   for (const product of products) {
