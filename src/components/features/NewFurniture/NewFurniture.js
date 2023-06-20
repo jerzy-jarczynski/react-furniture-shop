@@ -6,6 +6,9 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
+import { getActive } from '../../../redux/modesRedux';
+import { connect } from 'react-redux';
+
 const time = 250;
 
 class NewFurniture extends React.Component {
@@ -60,9 +63,21 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
     const { activeCategory, activePage, visible } = this.state;
-    const pagesCount = this.calculatePagesCount();
+    const { categories, products, mode } = this.props;
+
+    let productsOnPage = 8;
+
+    if (mode) {
+      if (mode.name === 'mobile') {
+        productsOnPage = 1;
+      } else if (mode.name === 'tablet') {
+        productsOnPage = 2;
+      }
+    }
+
+    const categoryProducts = products.filter(item => item.category === activeCategory);
+    const pagesCount = Math.ceil(categoryProducts.length / productsOnPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -77,8 +92,6 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
-    const categoryProducts = products.filter(item => item.category === activeCategory);
 
     return (
       <Swipeable leftAction={this.handleSwipeLeft} rightAction={this.handleSwipeRight}>
@@ -108,9 +121,13 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div
+              className={
+                'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
+              }
+            >
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
                 .map(item => (
                   <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
                     <ProductBox {...item} />
@@ -124,7 +141,22 @@ class NewFurniture extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  const mode = getActive(state);
+  return {
+    mode: mode,
+  };
+};
+
 NewFurniture.propTypes = {
+  children: PropTypes.node,
+  mode: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    minWidth: PropTypes.number,
+    maxWidth: PropTypes.number,
+    active: PropTypes.bool,
+  }),
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -149,4 +181,4 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default NewFurniture;
+export default connect(mapStateToProps)(NewFurniture);
