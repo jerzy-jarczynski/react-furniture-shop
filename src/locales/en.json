@@ -72,13 +72,6 @@
   },
   "newFurniture": {
     "title": "NEW FURNITURE",
-    "categories": {
-      "bed": "Bed",
-      "chair": "Chair",
-      "sofa": "Sofa",
-      "table": "Table",
-      "dining": "Dining"
-    },
     "sale": "sale",
     "quickView": "Quick View",
     "cart": "ADD TO CART"

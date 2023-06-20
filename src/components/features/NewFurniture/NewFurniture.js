@@ -9,6 +9,8 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import { getActive } from '../../../redux/modesRedux';
 import { connect } from 'react-redux';
 
+import { withTranslation } from 'react-i18next';
+
 const time = 250;
 
 class NewFurniture extends React.Component {
@@ -64,7 +66,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { activeCategory, activePage, visible } = this.state;
-    const { categories, products, mode } = this.props;
+    const { categories, products, mode, t } = this.props;
 
     let productsOnPage = 8;
 
@@ -100,7 +102,7 @@ class NewFurniture extends React.Component {
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
                 <div className={'col-auto ' + styles.heading}>
-                  <h3>New furniture</h3>
+                  <h3>{t('newFurniture.title')}</h3>
                 </div>
                 <div className={'col ' + styles.menu}>
                   <ul>
@@ -110,7 +112,7 @@ class NewFurniture extends React.Component {
                           className={item.id === activeCategory ? styles.active : ''}
                           onClick={this.handleCategoryChange.bind(this, item.id)}
                         >
-                          {item.name}
+                          {t(item.translationKey)}
                         </a>
                       </li>
                     ))}
@@ -174,6 +176,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  t: PropTypes.func.isRequired,
 };
 
 NewFurniture.defaultProps = {
@@ -181,4 +184,4 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default connect(mapStateToProps)(NewFurniture);
+export default connect(mapStateToProps)(withTranslation()(NewFurniture));
