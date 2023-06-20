@@ -17,28 +17,44 @@ const SearchPage = () => {
       filtered.push(product);
     }
   }
-
-  return (
-    <div>
-      <FeatureBoxes />
-      <div className={styles.root}>
-        <div className='container'>
-          <h1 className={styles.heading}>
-            Wyszukiwana fraza to: &quot;{searchResult}&quot;
-          </h1>
-          <div className='row'>
-            {filtered.map(item => (
-              <div key={item.id} className='col-12 col-sm-6 col-lg-4'>
-                <ProductBox {...item} photoClassName={styles.photo} />
-              </div>
-            ))}
+  if (filtered.length === 0) {
+    return (
+      <div>
+        <FeatureBoxes />
+        <div className={styles.root}>
+          <div className='container'>
+            <h1 className={styles.heading}>
+              Wyszukiwana fraza to: &quot;{searchResult}&quot;
+            </h1>
+            <h1 className={styles.heading}>Nie znaleziono wyników</h1>
           </div>
         </div>
+        <Brands />
+        {/* Place for Feedback section*/}
       </div>
-      <Brands />
-      {/* Place for Feedback section*/}
-    </div>
-  );
+    );
+  } else
+    return (
+      <div>
+        <FeatureBoxes />
+        <div className={styles.root}>
+          <div className='container'>
+            <h1 className={styles.heading}>
+              Wyszukiwana fraza to: &quot;{searchResult}&quot;
+            </h1>
+            <div className='row'>
+              {filtered.map(item => (
+                <div key={item.id} className='col-12 col-sm-6 col-lg-4'>
+                  <ProductBox {...item} photoClassName={styles.photo} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <Brands />
+        {/* Place for Feedback section*/}
+      </div>
+    );
 };
 
 export default SearchPage;

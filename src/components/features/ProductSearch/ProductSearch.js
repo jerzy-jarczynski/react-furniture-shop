@@ -20,10 +20,6 @@ const ProductSearch = () => {
     setSelectedCategory(categoryName);
   };
   const handleSubmit = () => {
-    if (activeSearch === '') {
-      alert('Wyszukiwanie nie może być puste');
-      return;
-    }
     const searchQuery = encodeURIComponent(activeSearch);
     history.push(`/search/${searchQuery}`);
     setActiveSearch('');
