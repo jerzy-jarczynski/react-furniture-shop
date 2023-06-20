@@ -108,6 +108,12 @@
       outline: none;
     }
   }
+  .invalidSearch {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    color: red;
+  }
 }
 
 @media (min-width: 768px) {

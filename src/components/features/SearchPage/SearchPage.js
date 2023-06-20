@@ -11,6 +11,7 @@ const SearchPage = () => {
   const products = useSelector(state => getAll(state));
   const searchResult = useParams().searchResult;
   const filtered = [];
+
   for (const product of products) {
     if (product.name.toLowerCase().includes(searchResult)) {
       filtered.push(product);
