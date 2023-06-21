@@ -73,7 +73,7 @@
     position: relative;
     z-index: 100;
     background-color: $featured-panelbar-bg;
-    width: 365px;
+    width: 100%;
 
     .heading {
       position: relative;
@@ -130,7 +130,8 @@
 
   .carousel-control-prev,
   .carousel-control-next {
-    top: 100%;
+    top: 100% !important;
     width: 50%;
+    border-color: red !important;
   }
 }
