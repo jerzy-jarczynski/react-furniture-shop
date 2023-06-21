@@ -60,6 +60,7 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+
       a {
         display: inline-block;
         text-align: center;
@@ -97,6 +98,7 @@
         padding: 0 0 0 1rem;
         list-style: none;
         background-color: $featured-dots-bg;
+
         li {
           display: inline-block;
           margin-left: 0.5rem;
@@ -117,5 +119,18 @@
         }
       }
     }
+  }
+  .productsWrapper {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 100%;
+    width: 50%;
   }
 }

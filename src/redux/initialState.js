@@ -34,10 +34,12 @@ const initialState = {
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
       price: 30,
+      oldPrice: 33,
       stars: 2,
       userRating: 0,
       promo: 'sale',
       newFurniture: true,
+      featured: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -59,6 +61,7 @@ const initialState = {
       userRating: 0,
       promo: 'sale',
       newFurniture: true,
+      featured: true,
     },
     {
       id: 'aenean-ru-bristique-6',
