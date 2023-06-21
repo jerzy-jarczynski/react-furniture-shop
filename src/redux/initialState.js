@@ -701,6 +701,40 @@ const initialState = {
       description: 'Furniture client',
     },
   ],
+
+  brands: [
+    {
+      id: 1,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 1.png`,
+      brandName: 'brand 1',
+    },
+    {
+      id: 2,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 2.png`,
+      brandName: 'brand 2',
+    },
+    {
+      id: 3,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 3.png`,
+      brandName: 'brand 3',
+    },
+    {
+      id: 4,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 4.png`,
+      brandName: 'brand 4',
+    },
+    {
+      id: 5,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 5.png`,
+      brandName: 'brand 5',
+    },
+    {
+      id: 6,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 6.png`,
+      brandName: 'brand 6',
+    },
+  ],
+
   deals: [
     {
       id: 1,

@@ -1,0 +1,23 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  :global(.container)> :global(.row) {
+    height: auto;
+    padding: 10px 0;
+  }
+   
+  .brandContainer {
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: 1px solid $brands-line-border;
+    border-top: 1px solid $brands-line-border;
+  }
+
+  .brandImage {
+    max-width: 180px;
+    border: solid 1px;
+    margin: 0 5px;
+  }
+
+
+}

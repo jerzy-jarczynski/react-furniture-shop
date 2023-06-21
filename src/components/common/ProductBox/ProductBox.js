@@ -17,9 +17,12 @@ const ProductBox = ({
   promo,
   id,
   stars,
-  compare,
-  isFavorite,
+  action,
+  isInCompare,
+  isMaxCompareReached,
   userRating,
+  isFavorite,
+  compare,
 }) => {
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
   const dispatch = useDispatch();
@@ -30,7 +33,8 @@ const ProductBox = ({
     dispatch(toggleFavorite(id));
   };
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
+      <div className={styles.root}></div>
       <div className={styles.photo}>
         <img
           className={styles.image}
@@ -59,7 +63,13 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={compare && styles.compare}>
+          <Button
+            variant='outline'
+            onClick={action}
+            className={`${compare} ${isInCompare ? styles.clicked : ''} ${
+              isMaxCompareReached && !isInCompare ? styles.disabled : ''
+            }`}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -79,10 +89,13 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  id: PropTypes.string,
+  action: PropTypes.func,
+  isInCompare: PropTypes.bool,
+  isMaxCompareReached: PropTypes.bool,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
   isFavorite: PropTypes.bool,
-  id: PropTypes.string,
   userRating: PropTypes.number,
 };
 
