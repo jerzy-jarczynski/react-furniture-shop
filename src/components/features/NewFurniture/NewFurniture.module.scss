@@ -60,6 +60,7 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 4px solid $newfurniture-hover-border-bottom;
+                animation: animation-pulse-bg $animation-bg-time;
               }
             }
           }
@@ -100,6 +101,9 @@
       }
     }
   }
+}
+.invisible {
+  display: none;
 
   .productsWrapper {
     transition: all 0.25s;

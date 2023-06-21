@@ -13,12 +13,14 @@
 
   .photo {
     position: relative;
+
     background: {
       color: $productbox-photo-bg;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -73,6 +75,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .outlines {
+      :nth-child(2) {
+        margin-left: 3px;
+      }
+
+      .favorite {
+        background-color: $primary;
+      }
+
+      .compare {
+        background-color: $primary;
+      }
+    }
+  }
+  a.isFavorite {
+    background-color: $productbox-favorite-active;
+    color: $productbox-favorite;
+    font-size: 14px;
   }
 
   .oldPrice {
@@ -80,16 +101,38 @@
     color: $dark-gray;
     text-decoration-color: $pure-black;
   }
-
-
+  
   &:hover {
+
     .buttons {
       visibility: visible;
     }
+
     .price a {
       background-color: $primary;
     }
   }
+}
+
+.clicked {
+  background-color: $productbox-compare-active;
+
+  svg {
+    color: $productbox-compare-active-text;
+  }
+}
+
+.disabled {
+  background-color: $productbox-compare-disabled-bg;
+  pointer-events: none;
+  
+  svg {
+    color: $productbox-compare-disabled-text;
+  }
+}
+
+.activeOutline {
+  outline: 3px dotted $productbox-compare-active-border;
 }
 
 @media (max-width: 577px) {
