@@ -6,16 +6,22 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductSearch.module.scss';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { useForm } from 'react-hook-form';
+import { getAllSearch } from '../../../redux/searchRedux';
 
 const ProductSearch = () => {
   const [selectedCategory, setSelectedCategory] = useState('Select a category');
   const [activeSearch, setActiveSearch] = useState('');
+  const [isInputFocus, setIsInputFocus] = useState(false);
+  const [shouldHideSearch, setShouldHideSearch] = useState(false);
 
   const allCategories = useSelector(getAll);
+  const allSearch = useSelector(getAllSearch);
   const history = useHistory();
 
+  console.log('allSearch: ', allSearch);
+  console.log('allCat: ', allCategories);
   const clickHandler = categoryName => {
     setSelectedCategory(categoryName);
   };
@@ -24,7 +30,20 @@ const ProductSearch = () => {
     history.push(`/search/${searchQuery}`);
     setActiveSearch('');
   };
-
+  const handleInputFocus = () => {
+    setIsInputFocus(true);
+  };
+  const handleInputBlur = () => {
+    if (!shouldHideSearch) {
+      setTimeout(() => {
+        setIsInputFocus(false);
+      }, 100);
+    }
+  };
+  const handleClick = () => {
+    setIsInputFocus(false);
+    setShouldHideSearch(true);
+  };
   const {
     register,
     handleSubmit: validate,
@@ -53,7 +72,22 @@ const ProductSearch = () => {
           type='text'
           value={activeSearch}
           onChange={event => setActiveSearch(event.target.value)}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
         />
+        {isInputFocus && (
+          <div className={styles.dropdownSearch}>
+            {allSearch.map(search => (
+              <Link
+                key={search.id}
+                to={`/search/${search.searchContent}`}
+                onClick={handleClick}
+              >
+                {search.searchContent}
+              </Link>
+            ))}
+          </div>
+        )}
         {errors.search?.type === 'required' && (
           <small className={styles.invalidSearch}>
             The search phrase cannot be empty

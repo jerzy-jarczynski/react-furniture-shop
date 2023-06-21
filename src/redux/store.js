@@ -7,6 +7,7 @@ import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import dealsReducer from './dealsRedux';
 import modesReducer from './modesRedux';
+import searchReducer from './searchRedux';
 
 // define reducers
 const reducers = {
@@ -16,6 +17,7 @@ const reducers = {
   brands: brandsReducer,
   deals: dealsReducer,
   modes: modesReducer,
+  search: searchReducer,
 };
 
 // add blank reducers for initial state properties without reducers

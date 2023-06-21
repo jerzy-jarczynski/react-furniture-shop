@@ -762,6 +762,20 @@ const initialState = {
       active: false,
     },
   ],
+  search: [
+    {
+      id: '1',
+      searchContent: 'table',
+    },
+    {
+      id: '2',
+      searchContent: 'TestValue',
+    },
+    {
+      id: '3',
+      searchContent: 'Chair',
+    },
+  ],
 };
 
 export default initialState;
