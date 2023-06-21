@@ -3,15 +3,23 @@
 .root {
   border: 1px solid $productsearch-border-color;
   display: inline-flex;
-  height: 45px;
-  color: $text-color;
+  min-height: 45px;
+  color: $productsearch-text-color;
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    height: 35px;
+  }
 
   .category {
-    border-right: 1px solid $productsearch-border-color;
     display: flex;
     align-items: center;
     position: relative;
     min-width: 211px;
+    box-sizing: border-box;
+    cursor: pointer;
+    order: 2;
 
     .icon:first-child {
       color: $productsearch-border-icon;
@@ -25,41 +33,52 @@
       position: absolute;
       right: 10px;
       z-index: 0;
+      transition: $basic-transition;
     }
 
-    .categoryList {
-      border: 0;
+    .selected {
       background-color: $productsearch-border-select-bg;
-      z-index: 1;
-      font-size: 14px;
-      outline: none;
-      list-style-type: none;
+      padding: 5px 25px 5px 45px;
+    }
+
+    .dropdown {
       margin: 0;
-      padding: 5px 30px 5px 40px;
-      width: 100%;
+      padding: 0;
+      background-color: $productsearch-border-select-menu-bg;
       position: relative;
-      ul {
-        display: none;
-        list-style-type: none;
-        top: 100%;
-        left: 50%;
-        padding: 5px 30px 5px 40px;
-        width: calc(100% + 2px);
-        overflow: hidden;
-        margin: 0;
-        position: absolute;
-        border: 1px solid black;
-        background-color: $productsearch-border-select-menu-bg;
-        z-index: 99;
-        transform: translateX(-50%);
-        &:hover {
-          display: block;
-        }
+      z-index: 999;
+      list-style-type: none;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      border: 0px solid black;
+      width: calc(100% + 1.99px);
+      overflow: hidden;
+      max-height: 0;
+      transition: $basic-transition;
+
+      li {
+        // padding: 5px 30px 5px 35px;
+        padding: 5px 25px 5px 45px;
+        cursor: pointer;
+        transition: $basic-transition;
       }
-      &:hover {
-        ul {
-          display: block;
-        }
+
+      li:hover {
+        background-color: $primary;
+        color: $pure-white;
+      }
+    }
+
+    &:hover {
+      .dropdown {
+        max-height: 172px;
+        border: 1px solid black;
+      }
+
+      .icon:last-child {
+        transform: rotate(180deg);
       }
     }
   }
@@ -68,12 +87,15 @@
     display: flex;
     align-items: center;
     position: relative;
+    border-bottom: 1px solid $productsearch-border-color;
+    width: 100%;
 
     input {
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
+      width: 100%;
 
       &::placeholder {
         color: $productsearch-border-placeholder;
@@ -87,3 +109,40 @@
     }
   }
 }
+
+@media (min-width: 768px) {
+  .root {
+    min-height: 35px;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+
+    .category {
+      border-right: 1px solid $productsearch-border-color;
+      order: 0;
+
+      .selected {
+        background-color: $productsearch-border-select-bg;
+        padding: 5px 25px 5px 40px;
+      }
+
+      .dropdown {
+        li {
+          padding: 5px 25px 5px 40px;
+        }
+      }
+    }
+
+    .searchField {
+      border-bottom: 0 solid $productsearch-border-color;
+
+      button {
+        border: 0;
+        background-color: $productsearch-border-button-bg;
+        outline: none;
+      }
+    }
+  }
+}
+
+

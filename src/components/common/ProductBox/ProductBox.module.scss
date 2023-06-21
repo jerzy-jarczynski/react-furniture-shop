@@ -5,14 +5,22 @@
   border: 1px solid $productbox-border;
   margin-bottom: 2rem;
 
+  .buttons {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .photo {
     position: relative;
+
     background: {
       color: $productbox-photo-bg;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -32,11 +40,6 @@
       color: $productbox-sale-text;
       padding: 30px 15px 5px 15px;
     }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 
   .content {
@@ -48,13 +51,6 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
-    }
-
-    .stars {
-      a {
-        text-decoration: none;
-        color: $productbox-stars-border;
-      }
     }
   }
 
@@ -79,5 +75,76 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .outlines {
+      :nth-child(2) {
+        margin-left: 3px;
+      }
+
+      .favorite {
+        background-color: $primary;
+      }
+
+      .compare {
+        background-color: $primary;
+      }
+    }
+  }
+  a.isFavorite {
+    background-color: $productbox-favorite-active;
+    color: $productbox-favorite;
+    font-size: 14px;
+  }
+
+  .oldPrice {
+    text-decoration: line-through;
+    color: $dark-gray;
+    text-decoration-color: $pure-black;
+  }
+  
+  &:hover {
+
+    .buttons {
+      visibility: visible;
+    }
+
+    .price a {
+      background-color: $primary;
+    }
+  }
+}
+
+.clicked {
+  background-color: $productbox-compare-active;
+
+  svg {
+    color: $productbox-compare-active-text;
+  }
+}
+
+.disabled {
+  background-color: $productbox-compare-disabled-bg;
+  pointer-events: none;
+  
+  svg {
+    color: $productbox-compare-disabled-text;
+  }
+}
+
+.activeOutline {
+  outline: 3px dotted $productbox-compare-active-border;
+}
+
+@media (max-width: 577px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 578px) and (max-width: 991px) {
+  .root {
+    margin: 15px auto;
+    max-width: 400px;
   }
 }

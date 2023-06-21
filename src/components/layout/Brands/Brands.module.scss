@@ -1,0 +1,38 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  :global(.container)> :global(.row) {
+    height: auto;
+  }
+
+  .carouselContainer {
+    border-bottom: 1px solid $brands-line-border;
+    border-top: 1px solid $brands-line-border;
+    padding: 15px 0;
+    margin: 10px 0;
+
+    .brandContainer {
+      display: flex;
+      justify-content: center;
+
+      .brandImage {
+        max-width: 180px;
+        border: solid 1px;
+      }
+    }
+
+    button {
+      background-color: $brands-color-button;
+      border-radius: 0;
+      padding: 41px 0;
+      transform: translateX(-110%);
+    }
+
+    button:last-child {
+      border-radius: 0;
+      padding: 41px 0;
+      transform: translateX(110%);
+
+    }
+  }
+}

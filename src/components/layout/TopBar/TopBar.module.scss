@@ -19,24 +19,97 @@
         &:hover {
           color: $header-link-hover;
           text-decoration: none;
+          animation: animation-pulse-text $animation-text-time;
         }
       }
     }
   }
 
-  .topOptions ul li {
-    margin-right: 1.5rem;
+  @media (max-width: 577px) {
+    .topOptions {
+      li {
+        padding-right: 5px;
 
-    .icon {
-      margin-left: 5px;
+
+        .icon {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .topMenu {
+      display: flex;
+      right: -19%;
+
+      :nth-child(2) {
+        margin: 0 -36px 0 -36px;
+      }
+
+      li {
+        margin-right: 8px;
+
+        a {
+          visibility: hidden;
+        }
+
+        .icon {
+          visibility: visible;
+          font-size: 18px;
+        }
+      }
     }
   }
 
-  .topMenu ul li {
-    margin-left: 1.5rem;
+  @media (min-width: 578px) and (max-width: 767px) {
+    .topOptions {
+      li {
+        margin-right: 15px;
 
-    .icon {
-      margin-right: 5px;
+        .icon {
+          margin-left: 3px;
+        }
+      }
+    }
+
+    .topMenu {
+      :nth-child(2) {
+        margin: 0 -38px 0 -26px;
+      }
+
+      li {
+        right: 7%;
+
+        a {
+          visibility: hidden;
+        }
+
+        .icon {
+          visibility: visible;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .topOptions {
+      li {
+        margin-right: 1.5rem;
+
+        .icon {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .topMenu {
+      li {
+        margin-left: 1.5rem;
+
+        .icon {
+          margin-right: 5px;
+        }
+      }
     }
   }
 }
