@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,16 @@ import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg
 import styles from './TopBar.module.scss';
 
 const TopBar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    t('topbar.language.english')
+  );
+
+  const clickHandler = (language, prefix) => {
+    i18n.changeLanguage(prefix);
+    setSelectedLanguage(t(language));
+  };
 
   return (
     <div className={styles.root}>
@@ -22,11 +32,19 @@ const TopBar = () => {
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
               </li>
-              <li>
-                <a href='#'>
-                  {t('topbar.language.english')}
+              <li className={styles.language}>
+                <a href='#' className={styles.selected}>
+                  {selectedLanguage}
                   <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
                 </a>
+                <ul className={styles.dropdown}>
+                  <li onClick={() => clickHandler('topbar.language.english', 'en')}>
+                    {t('topbar.language.english')}
+                  </li>
+                  <li onClick={() => clickHandler('topbar.language.polish', 'pl')}>
+                    {t('topbar.language.polish')}
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href='#'>

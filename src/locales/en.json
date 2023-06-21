@@ -27,7 +27,8 @@
       "table": "Table",
       "dining": "Dining"
     },
-    "search": "Search products..."
+    "search": "Search products...",
+    "select": "Select a category"
   },
   "featured": {
     "label": "HOT DEALS",

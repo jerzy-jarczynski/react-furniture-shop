@@ -14,7 +14,7 @@ import styles from './ProductSearch.module.scss';
 const ProductSearch = () => {
   const { t } = useTranslation();
 
-  const [selectedCategory, setSelectedCategory] = useState('Select a category');
+  const [selectedCategory, setSelectedCategory] = useState(t('menubar.select'));
 
   const allCategories = useSelector(getAll);
 

@@ -27,7 +27,8 @@
       "table": "Stoły",
       "dining": "Jadalnia"
     },
-    "search": "Wyszukaj produkt..."
+    "search": "Wyszukaj produkt...",
+    "select": "Wybierz kategorię"
   },
   "featured": {
     "label": "OKAZJE",
