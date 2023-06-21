@@ -730,6 +730,11 @@ const initialState = {
       source: `${process.env.PUBLIC_URL}/images/brands/brand 6.png`,
       brandName: 'brand 6',
     },
+    {
+      id: 7,
+      source: `${process.env.PUBLIC_URL}/images/brands/brand 7.png`,
+      brandName: 'brand 7',
+    },
   ],
 
   deals: [
