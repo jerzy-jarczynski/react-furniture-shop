@@ -30,15 +30,15 @@
       .dropdown {
         position: absolute;
         left: -10px;
-        background-color: #434343;
-        color: #fff;
+        background-color: $header-topbar-bg;
+        color: $header-link;
         padding: 0 10px;
         margin: 0;
         z-index: 99;
         line-height: 20px;
         max-height: 0;
         overflow: hidden;
-        transition: all .25s ease;
+        transition: $basic-transition;
 
         li {
           padding: 10px 0;
