@@ -56,12 +56,12 @@ const ProductSearch = () => {
         />
         {errors.search?.type === 'required' && (
           <small className={styles.invalidSearch}>
-            Wyszukiwana fraza nie może być pusta
+            The search phrase cannot be empty
           </small>
         )}
         {errors.search?.type === 'pattern' && (
           <small className={styles.invalidSearch}>
-            Wyszukiwana fraza zawiera niepoprawne znaki
+            The search phrase contains invalid characters
           </small>
         )}
         <button type='submit'>
