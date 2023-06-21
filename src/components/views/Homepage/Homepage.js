@@ -1,5 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import Gallery from '../../layout/Gallery/Gallery';
 
 import styles from './Homepage.module.scss';
 
@@ -10,6 +11,7 @@ const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
     <NewFurniture />
+    <Gallery />
   </div>
 );
 
