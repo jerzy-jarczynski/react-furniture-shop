@@ -1,0 +1,110 @@
+{
+  "topbar": {
+    "currency": "USD",
+    "language": {
+      "english": "English",
+      "polish": "Polish"
+    },
+    "help": "Help",
+    "login": "Login",
+    "register": "Register"
+  },
+  "menubar": {
+    "navLinks": {
+      "home": "HOME",
+      "furniture": "FURNITURE",
+      "chair": "CHAIR",
+      "table": "TABLE",
+      "sofa": "SOFA",
+      "bedroom": "BEDROOM",
+      "blog": "BLOG"
+    },
+    "categories": {
+      "unset": "Select a category",
+      "bed": "Bed",
+      "chair": "Chair",
+      "sofa": "Sofa",
+      "table": "Table",
+      "dining": "Dining"
+    },
+    "search": "Search products...",
+    "select": "Select a category"
+  },
+  "featured": {
+    "label": "HOT DEALS",
+    "promo": {
+      "title": "INDOOR",
+      "titleBold": "FURNITURE",
+      "subtitle": "SAVE UP TO 50% OF ALL FURNITURE",
+      "button": "SHOP NOW"
+    }
+  },
+  "features": {
+    "shipping": {
+      "title": "FREE SHIPPING",
+      "subtitle": "ALL ORDERS"
+    },
+    "customer": {
+      "title": "24/7 CUSTOMER",
+      "subtitle": "SUPPORT"
+    },
+    "guarantee": {
+      "title": "MONEY BACK",
+      "subtitle": "GUARANTEE"
+    },
+    "member": {
+      "title": "MEMBER DISCOUNT",
+      "subtitle": "FIRST ORDER"
+    }
+  },
+  "deals": {
+    "big": {
+      "title": "GUEST ROOM",
+      "subtitle": "SOFA"
+    },
+    "upper": {
+      "title": "OFFICE CHAIR",
+      "subtitle": "COLLECTION"
+    },
+    "lower": {
+      "title": "SPECIAL COLLECTION",
+      "subtitle": "SAVE UP TO 45% OF FURNITURE"
+    }
+  },
+  "newFurniture": {
+    "title": "NEW FURNITURE",
+    "sale": "sale",
+    "quickView": "Quick View",
+    "cart": "ADD TO CART"
+  },
+  "footer": {
+    "informationFirst": {
+      "title": "INFORMATION",
+      "about": "About us",
+      "policy": "Policy",
+      "conditions": "Conditions",
+      "support": "Online support"
+    },
+    "account": {
+      "title": "MY ACCOUNT",
+      "login": "Login",
+      "cart": "My cart",
+      "wishlist": "Wishlist",
+      "checkout": "Checkout"
+    },
+    "informationSecond": {
+      "title": "INFORMATION",
+      "specials": "Specials",
+      "new": "New products",
+      "best": "Best Sellers",
+      "out": "Out Stores"
+    },
+    "orders": {
+      "title": "ORDERS",
+      "payment": "Payment options",
+      "shippingDelivery": "Shipping and delivery",
+      "returns": "Returns",
+      "shipping": "shipping"
+    }
+  }
+}

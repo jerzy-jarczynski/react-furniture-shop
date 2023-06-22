@@ -1,0 +1,117 @@
+{
+  "topbar": {
+    "currency": "USD",
+    "language": {
+      "english": "Angielski",
+      "polish": "Polski"
+    },
+    "help": "Pomoc",
+    "login": "Login",
+    "register": "Rejestracja"
+  },
+  "menubar": {
+    "navLinks": {
+      "home": "HOME",
+      "furniture": "MEBLE",
+      "chair": "FOTELE",
+      "table": "STOŁY",
+      "sofa": "SOFY",
+      "bedroom": "SYPIALNIA",
+      "blog": "BLOG"
+    },
+    "categories": {
+      "unset": "Wybierz kategorię",
+      "bed": "Łożka",
+      "chair": "Fotele",
+      "sofa": "Sofy",
+      "table": "Stoły",
+      "dining": "Jadalnia"
+    },
+    "search": "Wyszukaj produkt...",
+    "select": "Wybierz kategorię"
+  },
+  "featured": {
+    "label": "OKAZJE",
+    "promo": {
+      "title": "MEBLE",
+      "titleBold": "DO WNĘTRZA",
+      "subtitle": "OSZCZĘDZAJ DO 50% NA WSZYSTKICH MEBLACH",
+      "button": "KUP TERAZ"
+    }
+  },
+  "features": {
+    "shipping": {
+      "title": "DARMOWA DOSTAWA",
+      "subtitle": "WSZYSTKIE ZAMÓWIENIA"
+    },
+    "customer": {
+      "title": "24/7 OBSŁUGA",
+      "subtitle": "KLIENTA"
+    },
+    "guarantee": {
+      "title": "GWARANCJA",
+      "subtitle": "ZWROTU PIENIĘDZY"
+    },
+    "member": {
+      "title": "ZNIŻKA CZŁONKOWSKA",
+      "subtitle": "NA PIERWSZE ZAMÓWIENIE"
+    }
+  },
+  "deals": {
+    "big": {
+      "title": "POKÓJ GOŚCINNY",
+      "subtitle": "SOFA"
+    },
+    "upper": {
+      "title": "FOTEL BIUROWY",
+      "subtitle": "KOLEKCJA"
+    },
+    "lower": {
+      "title": "SPECJALNA KOLEKCJA",
+      "subtitle": "OSZCZĘDZAJ 45% CENY MEBLA"
+    }
+  },
+  "newFurniture": {
+    "title": "NOWE MEBLE",
+    "categories": {
+      "bed": "Łóżko",
+      "chair": "Fotel",
+      "sofa": "Sofa",
+      "table": "Stół",
+      "dining": "Jadalnia"
+    },
+    "sale": "wyprzedaż",
+    "quickView": "Szybki Podgląd",
+    "cart": "DODAJ DO KOSZYKA"
+  },
+  "footer": {
+    "informationFirst": {
+      "title": "INFORMACJE",
+      "about": "O nas",
+      "policy": "Polityka prywatności",
+      "conditions": "Warunki",
+      "support": "Wsparcie online"
+    },
+    "account": {
+      "title": "MOJE KONTO",
+      "login": "Login",
+      "cart": "Mój koszyk",
+      "wishlist": "Lista życzeń",
+      "checkout": "Podsumowanie"
+    },
+    "informationSecond": {
+      "title": "INFORMACJE",
+      "specials": "Specjalne",
+      "new": "Nowe produkty",
+      "best": "Bestsellery",
+      "out": "Nasze sklepy"
+    },
+    "orders": {
+      "title": "ZAMÓWIENIA",
+      "payment": "Opcje płatności",
+      "shippingDelivery": "Wysyłka i dostawa",
+      "returns": "Zwroty",
+      "shipping": "Wysyłka"
+    }
+  }
+}
