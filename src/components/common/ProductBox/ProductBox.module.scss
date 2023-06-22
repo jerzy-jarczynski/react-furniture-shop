@@ -6,9 +6,9 @@
   margin-bottom: 2rem;
 
   .buttons {
-    visibility: hidden;
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    position: relative;
+    width: 100%;
   }
 
   .photo {
@@ -101,16 +101,41 @@
     color: $dark-gray;
     text-decoration-color: $pure-black;
   }
-
-
+  
   &:hover {
+
     .buttons {
-      visibility: visible;
+      display: flex;
+      bottom: 0;
+      justify-content: space-between;
+      position: absolute;
     }
+    
     .price a {
       background-color: $primary;
     }
   }
+}
+
+.clicked {
+  background-color: $productbox-compare-active;
+
+  svg {
+    color: $productbox-compare-active-text;
+  }
+}
+
+.disabled {
+  background-color: $productbox-compare-disabled-bg;
+  pointer-events: none;
+  
+  svg {
+    color: $productbox-compare-disabled-text;
+  }
+}
+
+.activeOutline {
+  outline: 3px dotted $productbox-compare-active-border;
 }
 
 @media (max-width: 577px) {
