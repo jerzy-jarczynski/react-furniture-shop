@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductSearch.module.scss';
@@ -10,7 +11,9 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { addSearch, getAllSearch, removeSearch } from '../../../redux/searchRedux';
 
 const ProductSearch = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Select a category');
+  const { t } = useTranslation();
+
+  const [selectedCategory, setSelectedCategory] = useState(t('menubar.select'));
   const [activeSearch, setActiveSearch] = useState('');
   const [isInputFocus, setIsInputFocus] = useState(false);
   const [shouldHideSearch, setShouldHideSearch] = useState(false);
@@ -72,7 +75,8 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              {category.name}
+              {/* {category.name} */}
+              {t(category.translationKey)}
             </li>
           ))}
         </ul>
@@ -80,7 +84,7 @@ const ProductSearch = () => {
       </div>
       <div className={styles.searchField}>
         <input
-          placeholder='Search products...'
+          placeholder={t('menubar.search')}
           type='text'
           value={activeSearch}
           onChange={event => setActiveSearch(event.target.value)}
