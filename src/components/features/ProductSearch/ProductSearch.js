@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +12,9 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 
 const ProductSearch = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Select a category');
+  const { t } = useTranslation();
+
+  const [selectedCategory, setSelectedCategory] = useState(t('menubar.select'));
 
   const allCategories = useSelector(getAll);
 
@@ -27,14 +30,15 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              {category.name}
+              {/* {category.name} */}
+              {t(category.translationKey)}
             </li>
           ))}
         </ul>
         <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
       </div>
       <div className={styles.searchField}>
-        <input placeholder='Search products...' type='text' />
+        <input placeholder={t('menubar.search')} type='text' />
         <button>
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
         </button>
