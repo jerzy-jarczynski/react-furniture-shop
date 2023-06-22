@@ -17,6 +17,13 @@ const Featured = () => {
   const [visible, setVisible] = useState(true);
   const time = 250;
 
+  const intervalFunc = newPage =>
+    setInterval(() => {
+      setVisible(false);
+      setTimeout(() => setActivePage(newPage, time));
+      setTimeout(() => setVisible(true, time * 2));
+    }, 3000);
+
   const handlePageChange = newPage => {
     setVisible(false);
     setTimeout(() => setActivePage(newPage, time));
@@ -24,13 +31,6 @@ const Featured = () => {
     clearInterval(intervalFunc);
     setTimeout(() => intervalFunc, 10000);
   };
-
-  const intervalFunc = newPage =>
-    setInterval(() => {
-      setVisible(false);
-      setTimeout(() => setActivePage(newPage, time));
-      setTimeout(() => setVisible(true, time * 2));
-    }, 3000);
 
   const dots = [];
   for (let i = 0; i < 3; i++) {
