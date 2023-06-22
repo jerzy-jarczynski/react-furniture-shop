@@ -15,9 +15,9 @@ export const addSearch = payload => ({ type: ADD_SEARCH, payload });
 const searchReducer = (statePart = [], action) => {
   switch (action.type) {
     case REMOVE_SEARCH:
-      return statePart.filter(search => search.id !== action.payload);
+      return statePart.filter(search => search.id !== action.payload.id);
     case ADD_SEARCH:
-      return [{ ...action.payload, id: nanoid() }, ...statePart];
+      return [{ id: nanoid(), ...action.payload }, ...statePart];
     default:
       return statePart;
   }

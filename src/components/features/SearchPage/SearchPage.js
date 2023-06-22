@@ -24,13 +24,12 @@ const SearchPage = () => {
         <div className={styles.root}>
           <div className='container'>
             <h1 className={styles.heading}>
-              Wyszukiwana fraza to: &quot;{searchResult}&quot;
+              The search phrase is: &quot;{searchResult}&quot;
             </h1>
-            <h1 className={styles.heading}>Nie znaleziono wyników</h1>
+            <h1 className={styles.heading}>Match didn&apos;t found</h1>
           </div>
         </div>
         <Brands />
-        {/* Place for Feedback section*/}
       </div>
     );
   } else
@@ -40,7 +39,7 @@ const SearchPage = () => {
         <div className={styles.root}>
           <div className='container'>
             <h1 className={styles.heading}>
-              Wyszukiwana fraza to: &quot;{searchResult}&quot;
+              The search phrase is: &quot;{searchResult}&quot;
             </h1>
             <div className='row'>
               {filtered.map(item => (
@@ -52,7 +51,6 @@ const SearchPage = () => {
           </div>
         </div>
         <Brands />
-        {/* Place for Feedback section*/}
       </div>
     );
 };

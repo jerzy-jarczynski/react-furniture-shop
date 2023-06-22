@@ -1,34 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductSearch.module.scss';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
-import { useForm } from 'react-hook-form';
-import { getAllSearch } from '../../../redux/searchRedux';
+import { addSearch, getAllSearch, removeSearch } from '../../../redux/searchRedux';
 
 const ProductSearch = () => {
   const [selectedCategory, setSelectedCategory] = useState('Select a category');
   const [activeSearch, setActiveSearch] = useState('');
   const [isInputFocus, setIsInputFocus] = useState(false);
   const [shouldHideSearch, setShouldHideSearch] = useState(false);
+  const [searchError, setSearchError] = useState('');
 
   const allCategories = useSelector(getAll);
   const allSearch = useSelector(getAllSearch);
   const history = useHistory();
+  const dispatch = useDispatch();
 
-  console.log('allSearch: ', allSearch);
-  console.log('allCat: ', allCategories);
   const clickHandler = categoryName => {
     setSelectedCategory(categoryName);
   };
-  const handleSubmit = () => {
+  const handleFormSubmit = event => {
+    event.preventDefault();
+
+    if (activeSearch.trim() === '') {
+      setSearchError('The search phrase cannot be empty');
+      return;
+    }
+
+    const allowedCharacters = /^[a-zA-Z0-9\s]+$/;
+    if (!allowedCharacters.test(activeSearch)) {
+      setSearchError('The search phrase contains invalid characters');
+      return;
+    }
+
+    if (allSearch.length === 5) {
+      dispatch(removeSearch(allSearch[4]));
+      setIsInputFocus(false);
+    }
+
     const searchQuery = encodeURIComponent(activeSearch);
     history.push(`/search/${searchQuery}`);
+    dispatch(addSearch({ searchContent: activeSearch }));
     setActiveSearch('');
+    setSearchError('');
   };
   const handleInputFocus = () => {
     setIsInputFocus(true);
@@ -42,17 +61,11 @@ const ProductSearch = () => {
   };
   const handleClick = () => {
     setIsInputFocus(false);
-    setShouldHideSearch(true);
+    setShouldHideSearch(false);
   };
-  const {
-    register,
-    handleSubmit: validate,
-    formState: { errors },
-  } = useForm();
-  const allowedCharacters = /^[a-zA-Z0-9\s]+$/;
 
   return (
-    <form action='' className={styles.root} onSubmit={validate(handleSubmit)}>
+    <form action='' className={styles.root} onSubmit={handleFormSubmit}>
       <div className={styles.category}>
         <FontAwesomeIcon className={styles.icon} icon={faListUl} />
         <span className={styles.selected}>{selectedCategory}</span>
@@ -67,7 +80,6 @@ const ProductSearch = () => {
       </div>
       <div className={styles.searchField}>
         <input
-          {...register('search', { required: true, pattern: allowedCharacters })}
           placeholder='Search products...'
           type='text'
           value={activeSearch}
@@ -88,16 +100,7 @@ const ProductSearch = () => {
             ))}
           </div>
         )}
-        {errors.search?.type === 'required' && (
-          <small className={styles.invalidSearch}>
-            The search phrase cannot be empty
-          </small>
-        )}
-        {errors.search?.type === 'pattern' && (
-          <small className={styles.invalidSearch}>
-            The search phrase contains invalid characters
-          </small>
-        )}
+        {searchError && <small className={styles.invalidSearch}>{searchError}</small>}
         <button type='submit'>
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
         </button>
