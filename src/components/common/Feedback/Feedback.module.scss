@@ -1,0 +1,36 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  text-align: center;
+
+  div {
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .author {
+    justify-content: center;
+    align-items: center;
+
+    .authorName {
+      margin-top: 13px;
+      :nth-of-type(1) {
+        margin-bottom: 3px;
+      }
+    }
+
+    p {
+      margin-left: 1rem;
+      text-align: left;
+    }
+
+    .image {
+      width: 4rem;
+      height: 4rem;
+      object-fit: cover;
+    }
+  }
+}
