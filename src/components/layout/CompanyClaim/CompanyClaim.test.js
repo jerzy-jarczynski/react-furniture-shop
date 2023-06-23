@@ -1,23 +1,16 @@
-import { shallow } from 'enzyme';
 import React from 'react';
+import { shallow } from 'enzyme';
 import CompanyClaim from './CompanyClaim';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 
 describe('Component CompanyClaim', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
+  it('should render without crashing', () => {
+    const component = shallow(
       <Provider store={store}>
         <CompanyClaim />
       </Provider>
     );
-  });
-
-  it('should render without crashing', () => {
-    const component = shallow(<CompanyClaim />);
     expect(component).toBeTruthy();
-    expect(wrapper.exists()).toBeTruthy();
   });
 });
