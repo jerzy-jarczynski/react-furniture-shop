@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductSearch.module.scss';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const ProductSearch = () => {
@@ -43,7 +43,9 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              <a href={`/category/${category.name}`}>{t(category.translationKey)}</a>
+              <Link to={`/category/${category.name}`}>
+                {t(category.translationKey)}
+              </Link>
             </li>
           ))}
         </ul>
