@@ -49,6 +49,7 @@ const initialState = {
       isFavorite: false,
       favorite: false,
       compare: true,
+      source: '/images/products/Aenean Ru Bristique 3.jpeg',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -62,6 +63,7 @@ const initialState = {
       isFavorite: true,
       favorite: true,
       compare: true,
+      source: '/images/products/Aenean Ru Bristique 4.jpeg',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -76,6 +78,7 @@ const initialState = {
       isFavorite: false,
       favorite: false,
       compare: false,
+      source: '/images/products/Aenean Ru Bristique 5.jpeg',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -89,6 +92,7 @@ const initialState = {
       isFavorite: false,
       favorite: false,
       compare: false,
+      source: '/images/products/Aenean Ru Bristique 6.jpeg',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -102,6 +106,7 @@ const initialState = {
       isFavorite: false,
       favorite: false,
       compare: false,
+      source: '/images/products/Aenean Ru Bristique 7.jpeg',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -115,6 +120,7 @@ const initialState = {
       isFavorite: false,
       favorite: false,
       compare: false,
+      source: '/images/products/Aenean Ru Bristique 8.jpeg',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -334,6 +340,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 1.jpeg',
     },
     {
       id: 'chair-2',
@@ -345,6 +352,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 2.jpeg',
     },
     {
       id: 'chair-3',
@@ -356,6 +364,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 3.jpeg',
     },
     {
       id: 'chair-4',
@@ -367,6 +376,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 4.jpeg',
     },
     {
       id: 'chair-5',
@@ -378,6 +388,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 5.jpeg',
     },
     {
       id: 'chair-6',
@@ -389,6 +400,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 6.jpeg',
     },
     {
       id: 'chair-7',
@@ -400,6 +412,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 7.jpeg',
     },
     {
       id: 'chair-8',
@@ -411,6 +424,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Chair 8.jpeg',
     },
     {
       id: 'sofa-1',
@@ -422,6 +436,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 1.jpeg',
     },
     {
       id: 'sofa-2',
@@ -433,6 +448,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 2.jpeg',
     },
     {
       id: 'sofa-3',
@@ -444,6 +460,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 3.jpeg',
     },
     {
       id: 'sofa-4',
@@ -455,6 +472,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 4.jpeg',
     },
     {
       id: 'sofa-5',
@@ -466,6 +484,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 5.jpeg',
     },
     {
       id: 'sofa-6',
@@ -477,6 +496,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 6.jpeg',
     },
     {
       id: 'sofa-7',
@@ -488,6 +508,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 7.jpeg',
     },
     {
       id: 'sofa-8',
@@ -499,6 +520,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Sofa 8.jpeg',
     },
     {
       id: 'table-1',
@@ -510,6 +532,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 1.jpeg',
     },
     {
       id: 'table-2',
@@ -521,6 +544,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 2.jpeg',
     },
     {
       id: 'table-3',
@@ -532,6 +556,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 3.jpeg',
     },
     {
       id: 'table-4',
@@ -543,6 +568,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 4.jpeg',
     },
     {
       id: 'table-5',
@@ -554,6 +580,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 5.jpeg',
     },
     {
       id: 'table-6',
@@ -565,6 +592,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 6.jpeg',
     },
     {
       id: 'table-7',
@@ -576,6 +604,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 7.jpeg',
     },
     {
       id: 'table-8',
@@ -587,6 +616,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Table 8.jpeg',
     },
     {
       id: 'dining-1',
@@ -598,6 +628,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 1.jpeg',
     },
     {
       id: 'dining-2',
@@ -609,6 +640,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 2.jpeg',
     },
     {
       id: 'dining-3',
@@ -620,6 +652,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 3.jpeg',
     },
     {
       id: 'dining-4',
@@ -631,6 +664,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 4.jpeg',
     },
     {
       id: 'dining-5',
@@ -642,6 +676,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 5.jpeg',
     },
     {
       id: 'dining-6',
@@ -653,6 +688,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 6.jpeg',
     },
     {
       id: 'dining-7',
@@ -664,6 +700,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 7.jpeg',
     },
     {
       id: 'dining-8',
@@ -675,6 +712,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      source: '/images/products/Dining 8.jpeg',
     },
   ],
   cart: {
