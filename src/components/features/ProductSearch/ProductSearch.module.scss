@@ -114,6 +114,12 @@
       outline: none;
     }
   }
+  .invalidSearch {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    color: $danger;
+  }
 }
 
 @media (min-width: 768px) {
