@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -14,7 +14,7 @@ import SearchPage from './components/features/SearchPage/SearchPage';
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <MainLayout>
         <Switch>
           <Route exact path={'/'} component={Homepage} />
@@ -23,7 +23,7 @@ const App = () => (
           <Route exact path={'/search/:searchResult'} component={SearchPage} />
         </Switch>
       </MainLayout>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
 
