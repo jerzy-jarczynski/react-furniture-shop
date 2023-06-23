@@ -21,6 +21,7 @@ const initialState = {
       favorite: false,
       compare: false,
       featured: true,
+      source: '/images/products/Aenean Ru Bristique 1.jpeg',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -34,6 +35,7 @@ const initialState = {
       isFavorite: false,
       favorite: true,
       compare: false,
+      source: '/images/products/Aenean Ru Bristique 2.jpeg',
     },
     {
       id: 'aenean-ru-bristique-3',
