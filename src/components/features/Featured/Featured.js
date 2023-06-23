@@ -8,28 +8,39 @@ import FeaturedProduct from '../../common/FeaturedProduct/FeaturedProduct';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import './carousel.scss';
 
 const Featured = () => {
   const featuredProducts = useSelector(getFeatured);
   const [activePage, setActivePage] = useState(0);
   const [visible, setVisible] = useState(true);
   const time = 250;
+  const intervalRef = useRef(null); // Store the interval reference
 
   const intervalFunc = newPage =>
     setInterval(() => {
       setVisible(false);
-      setTimeout(() => setActivePage(newPage, time));
+      if (newPage === 3) newPage = 0;
+      setTimeout(() => setActivePage(newPage++, time));
       setTimeout(() => setVisible(true, time * 2));
-    }, 3000);
+    }, 1000);
+
+  useEffect(() => {
+    intervalRef.current = intervalFunc(activePage); // Start intervalFunc on component mount
+    return () => clearInterval(intervalRef.current); // Clear interval on component unmount
+  }, [activePage]);
 
   const handlePageChange = newPage => {
     setVisible(false);
-    setTimeout(() => setActivePage(newPage, time));
-    setTimeout(() => setVisible(true, time * 2));
-    clearInterval(intervalFunc);
-    setTimeout(() => intervalFunc, 10000);
+    //setTimeout(() => setActivePage(newPage, time));
+    //setTimeout(() => setVisible(true, time * 2));
+    clearInterval(intervalRef.current); // Stop the interval
+
+    setTimeout(() => {
+      intervalFunc(newPage); // Restart intervalFunc after 10 seconds
+    }, 3000);
   };
 
   const dots = [];
@@ -61,7 +72,10 @@ const Featured = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.productsWrapper + ' ' + (!visible && styles.fade)}>
+            <div
+              id='hotDeals'
+              className={styles.productsWrapper + ' ' + (!visible && styles.fade)}
+            >
               {featuredProducts
                 .slice(activePage * 1, (activePage + 1) * 1)
                 .map(product => (
@@ -76,90 +90,68 @@ const Featured = () => {
             </div>
           </div>
           <div className='col-8'>
-            <Carousel
-              fade
-              interval={null}
-              indicators={false}
-              prevLabel={false}
-              nextLabel={false}
-              prevIcon={
-                <Button variant='small'>
-                  <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                </Button>
-              }
-              nextIcon={
-                <Button variant='small'>
-                  <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                </Button>
-              }
-            >
-              <Carousel.Item>
-                <div className={styles.promo}>
-                  <img src='images/featured-promo.jpg' alt='Discounted product' />
-                  <div className={styles.content}>
-                    <p>
-                      INDOOR <span>FURNITURE</span>
-                    </p>
-                    <p>SAVE UP TO 50% OF ALL FURNITURE</p>
-                    <Button variant='outline' className='btn-light'>
-                      SHOP NOW
-                    </Button>
+            <div className='carouselContainer'>
+              <Carousel
+                fade
+                interval={null}
+                indicators={false}
+                prevLabel={false}
+                nextLabel={false}
+                prevIcon={
+                  <Button variant='small'>
+                    <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+                  </Button>
+                }
+                nextIcon={
+                  <Button variant='small'>
+                    <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+                  </Button>
+                }
+              >
+                <Carousel.Item>
+                  <div className={styles.promo}>
+                    <img src='images/featured-promo.jpg' alt='Discounted product' />
+                    <div className={styles.content}>
+                      <p>
+                        INDOOR <span>FURNITURE</span>
+                      </p>
+                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <Button variant='outline' className='btn-light'>
+                        SHOP NOW
+                      </Button>
+                    </div>
                   </div>
-                  <div className={styles.buttons}>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                    </Button>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                    </Button>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div className={styles.promo}>
+                    <img src='images/featured-promo.jpg' alt='Discounted product' />
+                    <div className={styles.content}>
+                      <p>
+                        INDOOR <span>FURNITURE</span>
+                      </p>
+                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <Button variant='outline' className='btn-light'>
+                        SHOP NOW
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className={styles.promo}>
-                  <img src='images/featured-promo.jpg' alt='Discounted product' />
-                  <div className={styles.content}>
-                    <p>
-                      INDOOR <span>FURNITURE</span>
-                    </p>
-                    <p>SAVE UP TO 50% OF ALL FURNITURE</p>
-                    <Button variant='outline' className='btn-light'>
-                      SHOP NOW
-                    </Button>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div className={styles.promo}>
+                    <img src='images/featured-promo.jpg' alt='Discounted product' />
+                    <div className={styles.content}>
+                      <p>
+                        INDOOR <span>FURNITURE</span>
+                      </p>
+                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <Button variant='outline' className='btn-light'>
+                        SHOP NOW
+                      </Button>
+                    </div>
                   </div>
-                  <div className={styles.buttons}>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                    </Button>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                    </Button>
-                  </div>
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className={styles.promo}>
-                  <img src='images/featured-promo.jpg' alt='Discounted product' />
-                  <div className={styles.content}>
-                    <p>
-                      INDOOR <span>FURNITURE</span>
-                    </p>
-                    <p>SAVE UP TO 50% OF ALL FURNITURE</p>
-                    <Button variant='outline' className='btn-light'>
-                      SHOP NOW
-                    </Button>
-                  </div>
-                  <div className={styles.buttons}>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                    </Button>
-                    <Button variant='small'>
-                      <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                    </Button>
-                  </div>
-                </div>
-              </Carousel.Item>
-            </Carousel>
+                </Carousel.Item>
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>

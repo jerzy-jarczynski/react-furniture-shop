@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+
+.carouselContainer {
+  div {
+    a {
+      width: 50%;
+      top: unset;
+      a {
+        width: 100%;
+      }
+    }
+  }
+  .carousel-fade .carousel-item {
+    transition-duration: 0.25s; /* Adjust the duration as per your requirement */
+  }
+}
