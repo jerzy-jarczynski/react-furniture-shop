@@ -36,3 +36,68 @@
     }
   }
 }
+
+@media screen and (max-width: 1199px) {
+
+  .root {
+    .carouselContainer {
+      .brandContainer {
+        .brandImage {
+          max-width: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .root {
+    .carouselContainer {
+      .brandContainer {
+        .brandImage {
+          max-width: 120px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .root {
+    .carouselContainer {
+      .brandContainer {
+        .brandImage {
+          max-width: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .root {
+    .carouselContainer {
+      .brandContainer {
+        .brandImage {
+          max-width: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .root {
+    .carouselContainer {
+      .brandContainer {
+        .brandImage {
+          max-width: 70px;
+        }
+      }
+    }
+  }
+}
