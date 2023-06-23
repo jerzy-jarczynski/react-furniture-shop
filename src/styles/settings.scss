@@ -23,6 +23,7 @@ $creamy-pink: #ffc2cd;
 $darker-gray: #292929;
 $transparent-black: rgba(0, 0, 0, 0.4);
 $darker-transparent-black: rgba(0, 0, 0, 0.7);
+$danger: #ff0000;
 
 
 // Button
@@ -208,6 +209,9 @@ $animation-bg-time: 0.25s;
 $animation-btn-time: 0.25s;
 $animation-text-time: 0.25s;
 $animation-icon-time: 0.25s;
+
+// SearchPage
+$searchPage-text-danger: $danger;
 
 // Animation keyframes
 @keyframes animation-pulse-bg {
