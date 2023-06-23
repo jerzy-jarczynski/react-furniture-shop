@@ -1,0 +1,125 @@
+@import "../../../styles/settings.scss";
+
+.root {
+    .panelBar {
+        margin: 20px 0 30px 0;
+        position: relative;
+        border-bottom: 4px solid lightgray;
+
+        .heading {
+            position: relative;
+
+            h3 {
+                color: $primary;
+                text-transform: uppercase;
+                font-size: 20px;
+                line-height: 38px;
+                margin: 0;
+                letter-spacing: 1px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 45px;
+                border-bottom: 4px solid $primary;
+            }
+        }
+    }
+
+    .cartIcon {
+        border-radius: 3px;
+        font-size: 12px;
+
+        .icon {
+            margin-right: 5px;
+            padding-bottom: 2px;
+            ;
+        }
+    }
+
+    .cart {
+        margin: 50px auto;
+        width: 98%;
+
+        .firstBar {
+            height: 40px;
+            background-color: $header-topbar-bg;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            align-items: center;
+            border-radius: 10px;
+            color: white;
+
+            .left {
+                text-align: left;
+            }
+        }
+    }
+
+    .cartTotalsTop {
+        display: flex;
+        height: 40px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: $header-topbar-bg;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .cartTotalsRows {
+        display: flex;
+        height: 40px;
+        font-size: 11px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid lightgray;
+    }
+
+    .borderLeft {
+        border-left: 1px solid $primary;
+    }
+
+    .price {
+        color: rgb(79, 183, 79);
+    }
+
+    .cartTotalsBottom {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cartButton {
+        height: 30px;
+        width: 105px;
+        font-size: 10px;
+        justify-content: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+        background-color: $primary;
+    }
+
+    .checkoutButton {
+        height: 30px;
+        width: 95%;
+        font-size: 14px;
+        margin: auto auto;
+        justify-content: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+        background-color: $primary;
+
+    }
+}
