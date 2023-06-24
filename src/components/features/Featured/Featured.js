@@ -19,28 +19,30 @@ const Featured = () => {
   const time = 250;
   const intervalRef = useRef(null); // Store the interval reference
 
-  const intervalFunc = newPage =>
-    setInterval(() => {
-      setVisible(false);
-      if (newPage === 3) newPage = 0;
-      setTimeout(() => setActivePage(newPage++, time));
-      setTimeout(() => setVisible(true, time * 2));
-    }, 1000);
+  const intervalFunc = newPage => {
+    setVisible(false);
+    setTimeout(() => setActivePage(newPage => (newPage + 1) % 3, time));
+    setTimeout(() => setVisible(true, time * 2));
+  };
 
   useEffect(() => {
-    intervalRef.current = intervalFunc(activePage); // Start intervalFunc on component mount
-    return () => clearInterval(intervalRef.current); // Clear interval on component unmount
-  }, [activePage]);
+    intervalRef.current = setInterval(intervalFunc, 3000);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const pauseAutoPlay = () => {
+    clearInterval(intervalRef.current);
+    setTimeout(() => {
+      intervalRef.current = setInterval(intervalFunc, 3000);
+    }, 7000);
+  };
 
   const handlePageChange = newPage => {
+    clearInterval(intervalRef.current);
     setVisible(false);
-    //setTimeout(() => setActivePage(newPage, time));
-    //setTimeout(() => setVisible(true, time * 2));
-    clearInterval(intervalRef.current); // Stop the interval
-
-    setTimeout(() => {
-      intervalFunc(newPage); // Restart intervalFunc after 10 seconds
-    }, 3000);
+    setTimeout(() => setActivePage(newPage, time));
+    setTimeout(() => setVisible(true, time * 2));
+    pauseAutoPlay();
   };
 
   const dots = [];
@@ -72,10 +74,7 @@ const Featured = () => {
                 </div>
               </div>
             </div>
-            <div
-              id='hotDeals'
-              className={styles.productsWrapper + ' ' + (!visible && styles.fade)}
-            >
+            <div className={styles.productsWrapper + ' ' + (!visible && styles.fade)}>
               {featuredProducts
                 .slice(activePage * 1, (activePage + 1) * 1)
                 .map(product => (

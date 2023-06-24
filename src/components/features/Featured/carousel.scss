@@ -5,8 +5,10 @@
     a {
       width: 50%;
       top: unset;
+      opacity: 1;
       a {
         width: 100%;
+        background-color: $featured-carousel-button-bg;
       }
     }
   }
