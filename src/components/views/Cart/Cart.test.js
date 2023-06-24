@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CompanyClaim from './CompanyClaim';
+import Cart from './Cart';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 
-describe('Component CompanyClaim', () => {
+describe('Component Cart', () => {
   it('should render without crashing', () => {
     const component = shallow(
       <Provider store={store}>
-        <CompanyClaim />
+        <Cart />
       </Provider>
     );
     expect(component).toBeTruthy();

@@ -23,6 +23,7 @@ $creamy-pink: #ffc2cd;
 $darker-gray: #292929;
 $transparent-black: rgba(0, 0, 0, 0.4);
 $darker-transparent-black: rgba(0, 0, 0, 0.7);
+$light-green: rgb(30, 196, 30);
 $danger: #ff0000;
 
 
@@ -173,14 +174,28 @@ $feedback-menu-dots-bg: $pure-white;
 $feedback-menu-dots: $semi-white;
 $feedback-menu-hover-dots: $primary;
 
+//Cart
 
-$primary: #d58e32;
+$cart-panelbar-bg: $light-gray;
+$cart-topbar-bg: $gray;
+$cart-productbar-bg: $gray;
+$cart-totalsbar-bg: $gray;
+$cart-totalprice-color: $light-green;
+$cart-remove-button-color: $primary;
+$cart-button-bg: $primary;
+$cart-subtotal-deliveryfee-price-color: $pure-black;
+$cart-productprice-color: $pure-black;
+$cart-product-totalprice-color: $pure-black;
+$cart-totals-border-left-color: $primary;
+$cart-product-card-border-color: $light-gray;
+$cart-topbar-productbar-color: $pure-white;
+
 //Brands
 
 $brands-line-border: $light-gray;
-$brands-color-button:$gray;
+$brands-color-button: $gray;
 
-
+$primary: #d58e32;
 //Gallery
 
 $gallery-background: $pure-white;
@@ -259,4 +274,5 @@ $searchPage-text-danger: $danger;
         color: $primary;
     }
 }
+
 $basic-transition: all 0.25s ease;
