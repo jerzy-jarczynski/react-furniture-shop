@@ -11,8 +11,11 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './carousel.scss';
+import { useTranslation } from 'react-i18next';
 
 const Featured = () => {
+  const { t } = useTranslation();
+
   const featuredProducts = useSelector(getFeatured);
   const [activePage, setActivePage] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -67,7 +70,7 @@ const Featured = () => {
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
                 <div className={'col-auto ' + styles.heading}>
-                  <h3>Hot deals</h3>
+                  <h3>{t('featured.label')}</h3>
                 </div>
                 <div className={'col-auto ' + styles.dots}>
                   <ul>{dots}</ul>
@@ -112,11 +115,12 @@ const Featured = () => {
                     <img src='images/featured-promo.jpg' alt='Discounted product' />
                     <div className={styles.content}>
                       <p>
-                        INDOOR <span>FURNITURE</span>
+                        {t('featured.promo.title')}{' '}
+                        <span>{t('featured.promo.titleBold')}</span>
                       </p>
-                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <p>{t('featured.promo.subtitle')}</p>
                       <Button variant='outline' className='btn-light'>
-                        SHOP NOW
+                        {t('featured.promo.button')}
                       </Button>
                     </div>
                   </div>
@@ -126,11 +130,12 @@ const Featured = () => {
                     <img src='images/featured-promo.jpg' alt='Discounted product' />
                     <div className={styles.content}>
                       <p>
-                        INDOOR <span>FURNITURE</span>
+                        {t('featured.promo.title')}{' '}
+                        <span>{t('featured.promo.titleBold')}</span>
                       </p>
-                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <p>{t('featured.promo.subtitle')}</p>
                       <Button variant='outline' className='btn-light'>
-                        SHOP NOW
+                        {t('featured.promo.button')}
                       </Button>
                     </div>
                   </div>
@@ -140,11 +145,12 @@ const Featured = () => {
                     <img src='images/featured-promo.jpg' alt='Discounted product' />
                     <div className={styles.content}>
                       <p>
-                        INDOOR <span>FURNITURE</span>
+                        {t('featured.promo.title')}{' '}
+                        <span>{t('featured.promo.titleBold')}</span>
                       </p>
-                      <p>SAVE UP TO 50% OF ALL FURNITURE</p>
+                      <p>{t('featured.promo.subtitle')}</p>
                       <Button variant='outline' className='btn-light'>
-                        SHOP NOW
+                        {t('featured.promo.button')}
                       </Button>
                     </div>
                   </div>
