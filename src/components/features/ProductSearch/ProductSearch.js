@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAll } from '../../../redux/categoriesRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +19,7 @@ const ProductSearch = () => {
   const [shouldHideSearch, setShouldHideSearch] = useState(false);
   const [searchError, setSearchError] = useState('');
 
-  const allCategories = useSelector(getAll);
+  const allCategories = useSelector(getAllCategories);
   const allSearch = useSelector(getAllSearch);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -75,8 +75,9 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              {/* {category.name} */}
-              {t(category.translationKey)}
+              <Link to={`/category/${category.name}`}>
+                {t(category.translationKey)}
+              </Link>
             </li>
           ))}
         </ul>

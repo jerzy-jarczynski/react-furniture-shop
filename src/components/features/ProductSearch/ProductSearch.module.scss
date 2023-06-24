@@ -52,7 +52,7 @@
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
-      border: 0px solid black;
+      border: 0px solid $productsearch-border-color;
       width: calc(100% + 1.99px);
       overflow: hidden;
       max-height: 0;
@@ -62,18 +62,25 @@
         padding: 5px 25px 5px 45px;
         cursor: pointer;
         transition: $basic-transition;
+        a {
+          text-decoration: none;
+          color: $productsearch-text-color;
+      
+        }
       }
 
       li:hover {
         background-color: $primary;
-        color: $pure-white;
+        a {
+          color: $productsearch-hover-text;
+        }
       }
     }
 
     &:hover {
       .dropdown {
         max-height: 172px;
-        border: 1px solid black;
+        border: 1px solid $productsearch-border-color;
       }
 
       .icon:last-child {
