@@ -1,0 +1,67 @@
+@import "../../../../styles/settings.scss";
+
+
+.nextRows {
+    font-size: 11px;
+    align-items: center;
+    border: 1px solid $cart-product-card-border-color;
+    padding: 8px;
+}
+
+.productImage {
+    height: 80px;
+    width: 80px;
+    min-width: 80px;
+    cursor: pointer;
+    margin-left: 50px;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.removeIcon {
+    width: 100%;
+    font-size: 28px;
+    padding-bottom: 2px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.vertCenter {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.productLabel {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.amount {
+    font-size: 15px;
+
+    .decrement {
+        margin-right: 6px;
+    }
+
+    .increment {
+        margin-left: 6px;
+    }
+}
+
+.price {
+    color: $cart-product-totalprice-color;
+    font-size: 13px;
+}
+
+.priceTotal {
+    color: $cart-totalprice-color;
+    font-size: 13px;
+}

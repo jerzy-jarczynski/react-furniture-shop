@@ -7,6 +7,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Brands from '../../layout/Brands/Brands';
 import Deals from '../../features/Deals/Deals';
 import Featured from '../../features/Featured/Featured';
+import Feedbacks from '../../features/Feedbacks/Feedbacks';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -16,6 +17,7 @@ const Homepage = () => (
     <NewFurniture />
     <Gallery />
     <Brands />
+    <Feedbacks />
   </div>
 );
 
