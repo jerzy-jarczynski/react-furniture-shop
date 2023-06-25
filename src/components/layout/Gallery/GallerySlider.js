@@ -11,12 +11,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { useSelector } from 'react-redux';
-import { getAll } from '../../../redux/productsRedux';
+import { getAllProducts } from '../../../redux/productsRedux';
 import Button from '../../common/Button/Button';
 import clsx from 'clsx';
 
 const GallerySlider = () => {
-  const topSellers = useSelector(getAll);
+  const topSellers = useSelector(getAllProducts);
 
   return (
     <div className={styles.root}>

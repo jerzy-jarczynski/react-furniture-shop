@@ -10,7 +10,9 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
+import CategoryPage from './components/views/CategoryPage/CategoryPage';
 import SearchPage from './components/features/SearchPage/SearchPage';
+import Cart from './components/views/Cart/Cart';
 
 const App = () => (
   <Provider store={store}>
@@ -20,6 +22,8 @@ const App = () => (
         <Route exact path='/shop/:categoryId' component={ProductList} />
         <Route exact path='/product/:productId' component={ProductPage} />
         <Route exact path='/search?s=:searchResult' component={SearchPage} />
+        <Route exact path='/category/:categoryName' component={CategoryPage} />
+        <Route exact path='/cart' component={Cart} />
       </MainLayout>
     </HashRouter>
   </Provider>

@@ -34,24 +34,24 @@ const MenuBar = ({ children }) => {
                 <FontAwesomeIcon icon={faTimes} />
               </span>
               <li>
-                <a href='#' className={styles.active}>
+                <a href='/' className={styles.active}>
                   {t('menubar.navLinks.home')}
                 </a>
               </li>
               <li>
-                <a href='#'>{t('menubar.navLinks.furniture')}</a>
+                <a href='/category/furniture'>{t('menubar.navLinks.furniture')}</a>
               </li>
               <li>
-                <a href='#'>{t('menubar.navLinks.chair')}</a>
+                <a href='/category/chair'>{t('menubar.navLinks.chair')}</a>
               </li>
               <li>
-                <a href='#'>{t('menubar.navLinks.table')}</a>
+                <a href='/category/table'>{t('menubar.navLinks.table')}</a>
               </li>
               <li>
-                <a href='#'>{t('menubar.navLinks.sofa')}</a>
+                <a href='/category/sofa'>{t('menubar.navLinks.sofa')}</a>
               </li>
               <li>
-                <a href='#'>{t('menubar.navLinks.bedroom')}</a>
+                <a href='/category/bedroom'>{t('menubar.navLinks.bedroom')}</a>
               </li>
               <li>
                 <a href='#'>{t('menubar.navLinks.blog')}</a>

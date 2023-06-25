@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { getAll } from '../../../redux/categoriesRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './ProductSearch.module.scss';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const ProductSearch = () => {
@@ -16,7 +16,7 @@ const ProductSearch = () => {
   const [selectedCategory, setSelectedCategory] = useState(t('menubar.select'));
   const [activeSearch, setActiveSearch] = useState('');
 
-  const allCategories = useSelector(getAll);
+  const allCategories = useSelector(getAllCategories);
   const history = useHistory();
 
   const clickHandler = categoryName => {
@@ -24,9 +24,7 @@ const ProductSearch = () => {
   };
   const handleSubmit = () => {
     const searchQuery = encodeURIComponent(activeSearch);
-    console.log(searchQuery);
     history.push(`/search?s=${searchQuery}`);
-    console.log(history);
     setActiveSearch('');
   };
 
@@ -45,8 +43,9 @@ const ProductSearch = () => {
         <ul className={styles.dropdown}>
           {allCategories.map(category => (
             <li key={category.id} onClick={() => clickHandler(category.name)}>
-              {/* {category.name} */}
-              {t(category.translationKey)}
+              <Link to={`/category/${category.name}`}>
+                {t(category.translationKey)}
+              </Link>
             </li>
           ))}
         </ul>

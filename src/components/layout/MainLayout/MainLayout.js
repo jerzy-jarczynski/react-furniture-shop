@@ -6,7 +6,6 @@ import { updateModes } from '../../../redux/modesRedux';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Feedbacks from '../../features/Feedbacks/Feedbacks';
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -43,7 +42,6 @@ const MainLayout = ({ children }) => {
     <div>
       <Header />
       {children}
-      <Feedbacks />
       <Footer />
     </div>
   );
