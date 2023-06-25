@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
@@ -18,12 +18,14 @@ const App = () => (
   <Provider store={store}>
     <HashRouter>
       <MainLayout>
-        <Route exact path='/' component={Homepage} />
-        <Route exact path='/shop/:categoryId' component={ProductList} />
-        <Route exact path='/product/:productId' component={ProductPage} />
-        <Route exact path='/search?s=:searchResult' component={SearchPage} />
-        <Route exact path='/category/:categoryName' component={CategoryPage} />
-        <Route exact path='/cart' component={Cart} />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/shop/:categoryId" component={ProductList} />
+          <Route exact path="/product/:productId" component={ProductPage} />
+          <Route exact path="/search" component={SearchPage} />
+          <Route exact path="/category/:categoryName" component={CategoryPage} />
+          <Route exact path="/cart" component={Cart} />
+        </Switch>
       </MainLayout>
     </HashRouter>
   </Provider>
