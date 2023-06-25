@@ -24,7 +24,9 @@ const ProductSearch = () => {
   };
   const handleSubmit = () => {
     const searchQuery = encodeURIComponent(activeSearch);
-    history.push(`/search/${searchQuery}`);
+    console.log(searchQuery);
+    history.push(`/search?s=${searchQuery}`);
+    console.log(history);
     setActiveSearch('');
   };
 

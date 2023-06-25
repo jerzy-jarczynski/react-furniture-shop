@@ -16,12 +16,10 @@ const App = () => (
   <Provider store={store}>
     <HashRouter>
       <MainLayout>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/shop/:categoryId" component={ProductList} />
-          <Route exact path="/product/:productId" component={ProductPage} />
-          <Route exact path="/search/:searchResult" component={SearchPage} />
-        </Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/shop/:categoryId' component={ProductList} />
+        <Route exact path='/product/:productId' component={ProductPage} />
+        <Route exact path='/search?s=:searchResult' component={SearchPage} />
       </MainLayout>
     </HashRouter>
   </Provider>
