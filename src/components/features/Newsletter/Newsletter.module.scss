@@ -1,0 +1,98 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  width: 100%; //width: 1920px;
+  height: 119px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    width: 143px;
+    height: 15px;
+    color: #d58e32;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 15px;
+    font-weight: 600;
+  }
+
+  .mailBox {
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 18px;
+        background-color: #bfbfbf;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .icon {
+      width: 19px;
+      height: 15px;
+      color: #d58e32;
+      font-size: 18px;
+      line-height: 28px;
+      text-align: left;
+    }
+
+    .formWrapper {
+      width: 550px;
+      color: #b4b4b4;
+      font-size: 14px;
+      line-height: 28px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      > div {
+        width: 486px;
+        height: 46px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        > input {
+          outline: none;
+          border-radius: 0%;
+          border: 0;
+        }
+      }
+    }
+
+    .sendButton {
+      width: 46px;
+      height: 46px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      border: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #d58e32;
+      a {
+        width: 14px;
+        height: 15px;
+        font-size: 16px;
+      }
+    }
+  }
+}
