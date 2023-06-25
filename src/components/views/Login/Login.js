@@ -5,7 +5,7 @@ import styles from '../../layout/TopBar/TopBar.module.scss';
 
 import LoginModal from '../../common/LoginModal/LoginModal';
 import Button from '../../common/Button/Button';
-const Login = () => {
+const Login = props => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   return (
@@ -16,6 +16,7 @@ const Login = () => {
         </Button>
       </div>
       <LoginModal
+        {...props}
         modalOpen={loginModalOpen}
         closeModal={() => setLoginModalOpen(false)}
       />
