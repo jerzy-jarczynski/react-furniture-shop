@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+
+.carouselContainer {
+  height: 100%;
+  div {
+    a {
+      width: 50%;
+      top: unset;
+      opacity: 1;
+      height: 50px;
+      a {
+        width: 100%;
+        background-color: $featured-carousel-button-bg;
+        line-height: 40px;
+      }
+    }
+  }
+  > div {
+    height: 100%;
+  }
+  .carousel-fade .carousel-item {
+    transition-duration: 0.25s; /* Adjust the duration as per your requirement */
+  }
+  .btn-light:hover {
+    animation: animation-pulse-btn-carousel $animation-btn-time;
+  }
+}
