@@ -17,6 +17,14 @@ export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
 export const removeProduct = payload => ({ payload, type: REMOVE_PRODUCT });
 export const updateProduct = payload => ({ payload, type: UPDATE_PRODUCT });
 export const checkout = payload => ({ payload, type: CHECKOUT });
+export const getLocalCartData = () => {
+  let localCartData = localStorage.getItem('myCart');
+  if (localCartData === []) {
+    return [];
+  } else {
+    return JSON.parse(localCartData);
+  }
+};
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -48,12 +56,7 @@ export default function reducer(statePart = [], action = {}) {
       return {
         ...statePart,
         products: statePart.products.map(product =>
-          product.id === action.payload.id
-            ? {
-                ...product,
-                ...action.payload,
-              }
-            : product
+          product.id === action.payload.id ? { ...product, ...action.payload } : product
         ),
       };
     }

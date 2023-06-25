@@ -1,3 +1,5 @@
+import { getLocalCartData } from './cartRedux';
+
 const initialState = {
   categories: [
     {
@@ -736,7 +738,7 @@ const initialState = {
     },
   ],
   cart: {
-    products: [],
+    products: getLocalCartData(),
   },
   feedbacks: [
     {
