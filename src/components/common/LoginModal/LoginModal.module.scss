@@ -4,6 +4,8 @@
     margin-bottom: 2rem;
     width: 500px;
     height: 550px;
+    position: fixed;
+    z-index: 3;
     .LoginModalContainer {
       padding: 1rem 1rem 1rem 1rem;
       width: 100%;
