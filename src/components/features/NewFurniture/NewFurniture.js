@@ -172,32 +172,36 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
+            <div
+              className={
+                'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
+              }
+            >
+              {categoryProducts
+                .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
+                .map(item => (
+                  <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
+                    <ProductBox
+                      {...item}
+                      action={event =>
+                        this.handleCompareClick(item.name, item.id, event)
+                      }
+                      isInCompare={this.state.isButtonClicked[item.id]}
+                      isMaxCompareReached={this.state.isMaxCompareReached}
+                    />
+                  </div>
+                ))}
+            </div>
+            <div
+              className={this.state.activeCompare.length >= 1 ? '' : styles.invisible}
+            >
+              <CompareBar
+                compareState={this.state.activeCompare}
+                action2={this.deleteCompareProduct}
+                isButtonClicked={this.state.isButtonClicked}
+              />
+            </div>
           </div>
-          <div
-            className={
-              'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
-            }
-          >
-            {categoryProducts
-              .slice(activePage * productsOnPage, (activePage + 1) * productsOnPage)
-              .map(item => (
-                <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                  <ProductBox
-                    {...item}
-                    action={event => this.handleCompareClick(item.name, item.id, event)}
-                    isInCompare={this.state.isButtonClicked[item.id]}
-                    isMaxCompareReached={this.state.isMaxCompareReached}
-                  />
-                </div>
-              ))}
-          </div>
-        </div>
-        <div className={this.state.activeCompare.length >= 1 ? '' : styles.invisible}>
-          <CompareBar
-            compareState={this.state.activeCompare}
-            action2={this.deleteCompareProduct}
-            isButtonClicked={this.state.isButtonClicked}
-          />
         </div>
       </Swipeable>
     );
