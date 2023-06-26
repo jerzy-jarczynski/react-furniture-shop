@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import ReactDom from 'react-dom'; //Importing ReactDom
 import styles from './LoginModal.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,14 +7,29 @@ import Button from '../../common/Button/Button';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-const LoginModal = ({ modalOpen, closeModal }) => {
+const LoginModal = ({ modalOpen, toggleModal }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
 
-  const onClick = () => {
-    console.log('onClick', onClick);
-    console.log('email:', formData.email);
-    console.log('password:', formData.password);
-  };
+  const ref = useRef(null);
+
+  const closeModal = useCallback(
+    ({ target }) => {
+      if (ref && ref.current && !ref.current.contains(target)) {
+        toggleModal();
+      }
+    },
+    [toggleModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener('click', closeModal, { capture: true });
+
+    return () => {
+      document.removeEventListener('click', closeModal, { capture: true });
+    };
+  }, [closeModal]);
+
+  const onClick = () => {};
   const {
     register,
     handleSubmit: validate,
@@ -39,7 +54,7 @@ const LoginModal = ({ modalOpen, closeModal }) => {
 
   return ReactDom.createPortal(
     //Implementing portal
-    <div className={styles.modal}>
+    <div className={styles.modal} ref={ref}>
       <div className={styles.LoginModalContainer}>
         <form className='col-15 col-md-10 col-lg-12'>
           <div className={styles.quitButton}>
