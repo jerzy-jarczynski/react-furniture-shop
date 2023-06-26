@@ -52,29 +52,35 @@
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
-      border: 0px solid black;
+      border: 0px solid $productsearch-border-color;
       width: calc(100% + 1.99px);
       overflow: hidden;
       max-height: 0;
       transition: $basic-transition;
 
       li {
-        // padding: 5px 30px 5px 35px;
         padding: 5px 25px 5px 45px;
         cursor: pointer;
         transition: $basic-transition;
+        a {
+          text-decoration: none;
+          color: $productsearch-text-color;
+      
+        }
       }
 
       li:hover {
         background-color: $primary;
-        color: $pure-white;
+        a {
+          color: $productsearch-hover-text;
+        }
       }
     }
 
     &:hover {
       .dropdown {
         max-height: 172px;
-        border: 1px solid black;
+        border: 1px solid $productsearch-border-color;
       }
 
       .icon:last-child {
@@ -108,6 +114,38 @@
       outline: none;
     }
   }
+  .invalidSearch {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    color: $danger;
+  }
+
+  .dropdownSearch {
+    background-color: $productsearch-input-list-bg;
+    border: 1px solid $productsearch-border-color;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 120;
+  }
+  .dropdownSearch a {
+    display: block;
+    padding: 5px;
+    color: $productsearch-text-color;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .dropdownSearch a:hover {
+    background-color: $productsearch-input-hover-bg;
+    color: $productsearch-input-hover-text;
+    transition: $basic-transition;
+  }
+  
 }
 
 @media (min-width: 768px) {

@@ -9,6 +9,8 @@ import { toggleFavorite } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import RatingStars from '../../features/RatingStars/RatingStars';
+import { addProduct } from '../../../redux/cartRedux';
+import { useTranslation } from 'react-i18next';
 
 const ProductBox = ({
   name,
@@ -23,7 +25,9 @@ const ProductBox = ({
   userRating,
   isFavorite,
   compare,
+  source,
 }) => {
+  const { t } = useTranslation();
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
   const dispatch = useDispatch();
 
@@ -31,6 +35,11 @@ const ProductBox = ({
     e.preventDefault();
     setFavoriteValue(!isFavorite);
     dispatch(toggleFavorite(id));
+  };
+
+  const handleAddToCartClick = e => {
+    e.preventDefault();
+    dispatch(addProduct({ id, name, price, source }));
   };
   return (
     <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
@@ -41,11 +50,12 @@ const ProductBox = ({
           alt={name}
           src={`${process.env.PUBLIC_URL}/images/products/${name}.jpeg`}
         />
-        {promo && <div className={styles.sale}>{promo}</div>}
+        {promo && <div className={styles.sale}>{t(promo)}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
-          <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          <Button variant='small'>{t('newFurniture.quickView')}</Button>
+          <Button variant='small' onClick={handleAddToCartClick}>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon>{' '}
+            {t('newFurniture.cart')}
           </Button>
         </div>
       </div>
@@ -97,6 +107,7 @@ ProductBox.propTypes = {
   compare: PropTypes.bool,
   isFavorite: PropTypes.bool,
   userRating: PropTypes.number,
+  source: PropTypes.string,
 };
 
 export default ProductBox;

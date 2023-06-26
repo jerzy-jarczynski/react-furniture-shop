@@ -1,5 +1,5 @@
 /* selectors */
-export const getAll = ({ categories }) => categories;
+export const getAllCategories = ({ categories }) => categories;
 export const getCount = ({ categories }) => categories.length;
 
 /* reducer */

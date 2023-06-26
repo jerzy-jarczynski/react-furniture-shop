@@ -17,9 +17,15 @@ $darker-solitude-white: #e0e3ed;
 $primary: #d58e32;
 $transparent: transparent;
 $box-shadow: rgba(1, 2, 2, 0.2);
+$primary: #d58e32;
+$green: #87c037;
+$creamy-pink: #ffc2cd;
 $darker-gray: #292929;
 $transparent-black: rgba(0, 0, 0, 0.4);
 $darker-transparent-black: rgba(0, 0, 0, 0.7);
+$light-green: rgb(30, 196, 30);
+$danger: #ff0000;
+
 
 // Button
 
@@ -84,6 +90,10 @@ $productsearch-border-placeholder: $black-gray;
 $productsearch-border-button-bg: $transparent;
 $productsearch-text-color: $black-gray;
 $productsearch-border-select-menu-bg: $pure-white;
+$productsearch-input-list-bg: $pure-white;
+$productsearch-input-hover-text: $pure-white;
+$productsearch-input-hover-bg: $primary;
+$productsearch-hover-text: $pure-white;
 
 // CompanyClaim
 
@@ -146,6 +156,7 @@ $featured-panelbar-header-text: $pure-white;
 $featured-dots-bg: $pure-black;
 $featured-menu-dots: $semi-white;
 $featured-menu-hover-dots: $primary;
+$featured-carousel-button-bg: $black-gray;
 
 //FeaturedProduct
 
@@ -167,17 +178,46 @@ $feedback-menu-dots-bg: $pure-white;
 $feedback-menu-dots: $semi-white;
 $feedback-menu-hover-dots: $primary;
 
+//Cart
 
-$primary: #d58e32;
+$cart-panelbar-bg: $light-gray;
+$cart-topbar-bg: $gray;
+$cart-productbar-bg: $gray;
+$cart-totalsbar-bg: $gray;
+$cart-totalprice-color: $light-green;
+$cart-remove-button-color: $primary;
+$cart-button-bg: $primary;
+$cart-subtotal-deliveryfee-price-color: $pure-black;
+$cart-productprice-color: $pure-black;
+$cart-product-totalprice-color: $pure-black;
+$cart-totals-border-left-color: $primary;
+$cart-product-card-border-color: $light-gray;
+$cart-topbar-productbar-color: $pure-white;
+
 //Brands
 
 $brands-line-border: $light-gray;
-$brands-color-button:$gray;
+$brands-color-button: $gray;
+
+$primary: #d58e32;
+//Gallery
+
+$gallery-background: $pure-white;
+$gallery-border: $semi-gray;
+$gallery-text-main: $dark-gray;
+$gallery-button: $green;
+$gallery-button-hover: $primary;
+$gallery-border-top-color: $primary;
+$gallery-product-price-background:$mist-gray;
+$gallery-product-background: $mist-gray;
+$gallery-text-color: $black-gray;
+$gallery-tooltip-text: $pure-white;
 
 //Login
 
 $login-background: $pure-white;
 $login-color: $black-gray;
+
 
 $text-color: #2a2a2a;
 
@@ -194,6 +234,9 @@ $animation-bg-time: 0.25s;
 $animation-btn-time: 0.25s;
 $animation-text-time: 0.25s;
 $animation-icon-time: 0.25s;
+
+// SearchPage
+$searchPage-text-danger: $danger;
 
 // Animation keyframes
 @keyframes animation-pulse-bg {
@@ -240,4 +283,5 @@ $animation-icon-time: 0.25s;
         color: $primary;
     }
 }
+
 $basic-transition: all 0.25s ease;

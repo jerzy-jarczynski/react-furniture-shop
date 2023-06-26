@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +10,8 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 
 const MenuBar = ({ children }) => {
+  const { t } = useTranslation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -31,27 +34,27 @@ const MenuBar = ({ children }) => {
                 <FontAwesomeIcon icon={faTimes} />
               </span>
               <li>
-                <a href='#' className={styles.active}>
-                  Home
+                <a href='/' className={styles.active}>
+                  {t('menubar.navLinks.home')}
                 </a>
               </li>
               <li>
-                <a href='#'>Furniture</a>
+                <a href='/category/furniture'>{t('menubar.navLinks.furniture')}</a>
               </li>
               <li>
-                <a href='#'>Chair</a>
+                <a href='/category/chair'>{t('menubar.navLinks.chair')}</a>
               </li>
               <li>
-                <a href='#'>Table</a>
+                <a href='/category/table'>{t('menubar.navLinks.table')}</a>
               </li>
               <li>
-                <a href='#'>Sofa</a>
+                <a href='/category/sofa'>{t('menubar.navLinks.sofa')}</a>
               </li>
               <li>
-                <a href='#'>Bedroom</a>
+                <a href='/category/bedroom'>{t('menubar.navLinks.bedroom')}</a>
               </li>
               <li>
-                <a href='#'>Blog</a>
+                <a href='#'>{t('menubar.navLinks.blog')}</a>
               </li>
             </ul>
           </div>
