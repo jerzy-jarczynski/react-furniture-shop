@@ -67,7 +67,6 @@ const LoginModal = ({ modalOpen, toggleModal }) => {
     user ? (
       <LoginPage user={user} />
     ) : (
-      //Implementing portal
       <div className={styles.modal} ref={ref}>
         <div className={styles.LoginModalContainer}>
           <form className='col-15 col-md-10 col-lg-12'>
