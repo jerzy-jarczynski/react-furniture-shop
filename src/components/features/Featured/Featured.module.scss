@@ -1,4 +1,5 @@
 @import "../../../styles/settings.scss";
+@import "./carousel.scss";
 
 .root {
   padding: 2rem 0;
@@ -55,17 +56,6 @@
         justify-content: center;
       }
     }
-
-    .buttons {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      a {
-        display: inline-block;
-        text-align: center;
-        width: 50%;
-      }
-    }
   }
 
   .panelBar {
@@ -97,6 +87,7 @@
         padding: 0 0 0 1rem;
         list-style: none;
         background-color: $featured-dots-bg;
+
         li {
           display: inline-block;
           margin-left: 0.5rem;
@@ -117,5 +108,12 @@
         }
       }
     }
+  }
+  .productsWrapper {
+    transition: all 0.25s;
+  }
+
+  .fade {
+    opacity: 0;
   }
 }
