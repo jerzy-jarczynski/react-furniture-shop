@@ -19,10 +19,10 @@ const App = () => (
     <HashRouter>
       <MainLayout>
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/shop/:categoryId' component={ProductList} />
-        <Route exact path='/product/:productId' component={ProductPage} />
+        <Route exact path='/shop' component={ProductList} />
+        <Route exact path='/product' component={ProductPage} />
         <Route exact path='/search' component={SearchPage} />
-        <Route exact path='/category/:categoryName' component={CategoryPage} />
+        <Route exact path='/category' component={CategoryPage} />
         <Route exact path='/cart' component={Cart} />
       </MainLayout>
     </HashRouter>
