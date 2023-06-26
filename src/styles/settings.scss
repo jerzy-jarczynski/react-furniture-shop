@@ -265,6 +265,19 @@ $searchPage-text-danger: $danger;
     background-color: $primary;
     transform: scale(1);
   }
+
+}
+
+@keyframes animation-pulse-btn-carousel {
+  50% {
+    background-color: $animation-btn-color;
+    transform: scale(1.1) translateX(-50%);
+  }
+
+  100% {
+    background-color: $primary;
+    transform: scale(1) translateX(-50%);
+  }
 }
 
 @keyframes animation-pulse-text {
