@@ -19,8 +19,15 @@
     height: 100%;
   }
   .carousel-fade .carousel-item {
-    transition-duration: 0.25s; /* Adjust the duration as per your requirement */
+    opacity: 0;
+    transition: opacity 0.25s !important;
   }
+
+  .active {
+    opacity: 1 !important;
+    transition: opacity 1s !important;
+  }
+
   .btn-light:hover {
     animation: animation-pulse-btn-carousel $animation-btn-time;
   }

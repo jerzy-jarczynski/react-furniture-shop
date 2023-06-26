@@ -113,7 +113,7 @@ const Featured = () => {
           <div className='col-12 col-md-6 col-lg-8'>
             <div className='carouselContainer'>
               <Carousel
-                fade
+                fade={true}
                 interval={null}
                 indicators={false}
                 prevLabel={false}
@@ -139,7 +139,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>
@@ -154,7 +154,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>
@@ -169,7 +169,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>
