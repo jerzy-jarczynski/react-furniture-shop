@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import styles from './CompanyClaim.module.scss';
@@ -8,10 +8,10 @@ import styles from './CompanyClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-import { getCount } from '../../../redux/cartRedux';
+// import { getCount } from '../../../redux/cartRedux';
 
 const CompanyClaim = () => {
-  const totalCartAmount = useSelector(getCount);
+  // const totalCartAmount = useSelector(getCount);
 
   return (
     <div className={styles.root}>
@@ -33,7 +33,7 @@ const CompanyClaim = () => {
               <div className={styles.cartIcon}>
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
-              <div className={styles.cartCounter}>{totalCartAmount}</div>
+              <div className={styles.cartCounter}></div>
             </Link>
           </div>
         </div>

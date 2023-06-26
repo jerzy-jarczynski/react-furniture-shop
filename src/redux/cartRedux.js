@@ -1,9 +1,9 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
-export const getCount = () => {
-  let myCartStorage = JSON.parse(localStorage.getItem('myCart'));
-  return myCartStorage.length;
-};
+// export const getCount = () => {
+//   let myCartStorage = JSON.parse(localStorage.getItem('myCart'));
+//   return myCartStorage.length;
+// };
 
 /* action name creator */
 const reducerName = 'cart';
