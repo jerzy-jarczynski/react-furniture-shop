@@ -9,9 +9,10 @@ import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect, useRef } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import './carousel.scss';
 import { useTranslation } from 'react-i18next';
 import Swipeable from '../../common/Swipeable/Swipeable';
-import Carousel from 'react-bootstrap/Carousel';
 import './carousel.scss';
 
 const Featured = () => {
@@ -31,6 +32,7 @@ const Featured = () => {
       pageChange(page);
     }
   };
+
   const leftAction = () => {
     let page = activePage + 1;
     if (page < 2) {
@@ -57,7 +59,6 @@ const Featured = () => {
   };
 
   const handlePageChange = newPage => {
-    setActivePage(newPage);
     clearInterval(intervalRef.current);
     setVisible(false);
     setTimeout(() => setActivePage(newPage, time));

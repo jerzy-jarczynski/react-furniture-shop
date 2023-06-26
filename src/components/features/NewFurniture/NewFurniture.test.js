@@ -1,16 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
 import NewFurniture from './NewFurniture';
+import store from '../../../redux/store';
 
 // Create a mock store
-const mockStore = configureStore([]);
+
+jest.mock('nanoid', () => {
+  return { nanoid: () => '1234' };
+});
 
 describe('Component NewFurniture', () => {
   it('should render without crashing', () => {
-    // Provide the mock store to the component
-    const store = mockStore({});
     const component = shallow(
       <Provider store={store}>
         <NewFurniture />
