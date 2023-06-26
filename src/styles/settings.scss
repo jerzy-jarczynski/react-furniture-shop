@@ -26,7 +26,6 @@ $darker-transparent-black: rgba(0, 0, 0, 0.7);
 $light-green: rgb(30, 196, 30);
 $danger: #ff0000;
 
-
 // Button
 
 $button-bg: $black-gray;
@@ -208,11 +207,10 @@ $gallery-text-main: $dark-gray;
 $gallery-button: $green;
 $gallery-button-hover: $primary;
 $gallery-border-top-color: $primary;
-$gallery-product-price-background:$mist-gray;
+$gallery-product-price-background: $mist-gray;
 $gallery-product-background: $mist-gray;
 $gallery-text-color: $black-gray;
 $gallery-tooltip-text: $pure-white;
-
 
 $text-color: #2a2a2a;
 
@@ -235,48 +233,60 @@ $searchPage-text-danger: $danger;
 
 // Animation keyframes
 @keyframes animation-pulse-bg {
-    50% {
-        background-color: $animation-bg-color;
-        border-color: $animation-bg-color;
-    }
+  50% {
+    background-color: $animation-bg-color;
+    border-color: $animation-bg-color;
+  }
 
-    100% {
-        background-color: $primary;
-    }
+  100% {
+    background-color: $primary;
+  }
 }
 
 @keyframes animation-pulse-btn {
-    50% {
-        background-color: $animation-btn-color;
-        transform: scale(1.10);
-    }
+  50% {
+    background-color: $animation-btn-color;
+    transform: scale(1.1);
+  }
 
-    100% {
-        background-color: $primary;
-        transform: scale(1);
-    }
+  100% {
+    background-color: $primary;
+    transform: scale(1);
+  }
+}
+
+@keyframes animation-pulse-btn-carousel {
+  50% {
+    background-color: $animation-btn-color;
+    transform: scale(1.1) translateX(-50%);
+  }
+
+  100% {
+    background-color: $primary;
+    transform: scale(1) translateX(-50%);
+  }
 }
 
 @keyframes animation-pulse-text {
-    50% {
-        color: $animation-text-color;
-        font-size: 15px;
-    }
+  50% {
+    color: $animation-text-color;
+    font-size: 15px;
+  }
 
-    100% {
-        color: $primary;
-    }
+  100% {
+    color: $primary;
+  }
 }
 
 @keyframes animation-pulse-icon {
-    50% {
-        color: $animation-text-color;
-        font-size: 25px;
-    }
+  50% {
+    color: $animation-text-color;
+    font-size: 25px;
+  }
 
-    100% {
-        color: $primary;
-    }
+  100% {
+    color: $primary;
+  }
 }
 
 $basic-transition: all 0.25s ease;

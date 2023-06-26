@@ -3,17 +3,14 @@
 .root {
   background-color: $featuredproduct-bg;
   border: 1px solid $featuredproduct-border;
-  margin-bottom: 2rem;
-  height: 100%;
-  position: absolute;
-  top: 0;
 
   .button {
     visibility: hidden;
     display: flex;
     position: absolute;
     top: 40%;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 99;
   }
 
@@ -21,7 +18,7 @@
     visibility: hidden;
     position: absolute;
     z-index: 99;
-    top: 75%;
+    top: 70%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -47,6 +44,7 @@
 
   .photo {
     position: relative;
+    height: 240px;
     background: {
       color: $featuredproduct-photo-bg;
       size: contain;
@@ -56,16 +54,14 @@
     overflow: hidden;
 
     .image {
-      object-fit: cover;
-      height: 300px;
       width: 100%;
+      object-fit: cover;
     }
   }
 
   .content {
     text-align: center;
     padding: 20px;
-    width: 100%;
 
     h5 {
       color: $featuredproduct-content-header;
@@ -102,9 +98,6 @@
     padding: 15px 10px 10px 10px;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 
     .outlines > * {
       margin-right: 2px;
@@ -129,6 +122,19 @@
     }
     .counter {
       visibility: visible;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .root {
+    height: 100%;
+    .button {
+      top: 30%;
+    }
+
+    .counter {
+      top: 65%;
     }
   }
 }
