@@ -7,6 +7,7 @@ import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import dealsReducer from './dealsRedux';
 import modesReducer from './modesRedux';
+import searchReducer from './searchRedux';
 import feedbacksReducer from './feedbacksRedux';
 
 // define reducers
@@ -17,6 +18,7 @@ const reducers = {
   brands: brandsReducer,
   deals: dealsReducer,
   modes: modesReducer,
+  search: searchReducer,
   feedbacks: feedbacksReducer,
 };
 

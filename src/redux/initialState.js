@@ -62,10 +62,12 @@ const initialState = {
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
       price: 30,
+      oldPrice: 33,
       stars: 2,
       userRating: 0,
       promo: 'newFurniture.sale',
       newFurniture: true,
+      featured: true,
       isFavorite: false,
       favorite: false,
       compare: true,
@@ -95,6 +97,7 @@ const initialState = {
       userRating: 0,
       promo: 'newFurniture.sale',
       newFurniture: true,
+      featured: true,
       isFavorite: false,
       favorite: false,
       compare: false,
@@ -843,6 +846,20 @@ const initialState = {
       minWidth: 992,
       maxWidth: 9999,
       active: false,
+    },
+  ],
+  search: [
+    {
+      id: '1',
+      searchContent: 'table',
+    },
+    {
+      id: '2',
+      searchContent: 'TestValue',
+    },
+    {
+      id: '3',
+      searchContent: 'Chair',
     },
   ],
 };

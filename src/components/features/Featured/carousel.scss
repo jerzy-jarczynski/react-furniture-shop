@@ -1,0 +1,18 @@
+@import "../../../styles/settings.scss";
+
+.carouselContainer {
+  div {
+    a {
+      width: 50%;
+      top: unset;
+      opacity: 1;
+      a {
+        width: 100%;
+        background-color: $featured-carousel-button-bg;
+      }
+    }
+  }
+  .carousel-fade .carousel-item {
+    transition-duration: 0.25s; /* Adjust the duration as per your requirement */
+  }
+}
