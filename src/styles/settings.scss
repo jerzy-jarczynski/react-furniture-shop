@@ -4,6 +4,7 @@ $basic-transition: all 0.25s ease;
 // DO NOT USE THIS!
 $pure-black: #000000;
 $pure-white: #ffffff;
+$lighter-gray: #f2f2f2;
 $black-gray: #2a2a2a;
 $dark-gray: #363636;
 $gray: #434343;
@@ -217,6 +218,16 @@ $gallery-tooltip-text: $pure-white;
 $login-background: $pure-white;
 $login-color: $black-gray;
 
+//Newsletter
+$newsletter-color-bg: $lighter-gray;
+$newsletter-title-color: $primary;
+$newsletter-line-color: $light-gray;
+$newsletter-icon-color: $primary;
+$newsletter-form-wrapper-color: $mist-gray;
+$newsletter-form-group-bg: $pure-white;
+$newsletter-send-button-bg: $pure-white;
+$newsletter-send-button-color: $primary;
+
 
 $text-color: #2a2a2a;
 
@@ -259,6 +270,7 @@ $searchPage-text-danger: $danger;
     background-color: $primary;
     transform: scale(1);
   }
+
 }
 
 @keyframes animation-pulse-btn-carousel {
