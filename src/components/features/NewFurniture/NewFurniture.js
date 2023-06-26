@@ -172,7 +172,6 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-
             <div
               className={
                 'row ' + styles.productsWrapper + ' ' + (!visible && styles.fade)
@@ -193,7 +192,6 @@ class NewFurniture extends React.Component {
                   </div>
                 ))}
             </div>
-
             <div
               className={this.state.activeCompare.length >= 1 ? '' : styles.invisible}
             >
