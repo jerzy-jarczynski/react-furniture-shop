@@ -2,11 +2,10 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import ReactDom from 'react-dom'; //Importing ReactDom
 import styles from './LoginModal.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import LoginPage from '../../views/LoginPage/LoginPage';
 
 const LoginModal = ({ modalOpen, toggleModal }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -22,6 +21,12 @@ const LoginModal = ({ modalOpen, toggleModal }) => {
     setUser(user);
     localStorage.setItem('user', JSON.stringify(user));
   };
+
+  const onLogout = () => {
+    setUser(null);
+    localStorage.removeItem('user', null);
+  };
+
 
   const ref = useRef(null);
   const closeModal = useCallback(
@@ -65,7 +70,9 @@ const LoginModal = ({ modalOpen, toggleModal }) => {
 
   return ReactDom.createPortal(
     user ? (
-      <LoginPage user={user} />
+      <Button onClick={onLogout} user={user}>
+              Logout <FontAwesomeIcon className={styles.icon} icon={faUserMinus} />
+      </Button>
     ) : (
       <div className={styles.modal} ref={ref}>
         <div className={styles.LoginModalContainer}>
