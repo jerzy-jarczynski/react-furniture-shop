@@ -21,7 +21,7 @@ const GallerySlider = () => {
   return (
     <div className={styles.root}>
       <div className={'row no-gutters ' + styles.categories}>
-        <div className={'col'}>
+        <div className={'col ' + styles.featured}>
           <a href=''>Featured</a>
         </div>
         <div className='col'>
@@ -29,10 +29,10 @@ const GallerySlider = () => {
             Top seller
           </a>
         </div>
-        <div className='col'>
+        <div className={'col ' + styles.saleOff}>
           <a href=''>Sale off</a>
         </div>
-        <div className='col'>
+        <div className={'col ' + styles.topRated}>
           <a href=''>Top rated</a>
         </div>
       </div>
