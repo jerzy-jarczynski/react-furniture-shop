@@ -49,6 +49,8 @@ const ProductBox = ({
           className={styles.image}
           alt={name}
           src={`${process.env.PUBLIC_URL}/images/products/${name}.jpeg`}
+          rel='preload'
+          fetchpriority='high'
         />
         {promo && <div className={styles.sale}>{t(promo)}</div>}
         <div className={styles.buttons}>
