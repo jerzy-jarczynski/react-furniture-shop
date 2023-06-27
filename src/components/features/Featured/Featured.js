@@ -104,7 +104,12 @@ const Featured = () => {
               >
                 <Carousel.Item>
                   <div className={styles.promo}>
-                    <img src='images/featured-promo.jpg' alt='Discounted product' />
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/featured-promo.jpg`}
+                      rel='preload'
+                      fetchpriority='high'
+                      alt='Discounted product'
+                    />
                     <div className={styles.content}>
                       <p>
                         {t('featured.promo.title')}{' '}
