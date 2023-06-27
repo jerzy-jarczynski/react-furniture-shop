@@ -1,9 +1,5 @@
 /* selectors */
 export const getAll = ({ cart }) => cart.products;
-// export const getCount = () => {
-//   let myCartStorage = JSON.parse(localStorage.getItem('myCart'));
-//   return myCartStorage.length;
-// };
 
 /* action name creator */
 const reducerName = 'cart';
@@ -22,10 +18,10 @@ export const updateProduct = payload => ({ payload, type: UPDATE_PRODUCT });
 export const checkout = payload => ({ payload, type: CHECKOUT });
 export const getLocalCartData = () => {
   let localCartData = localStorage.getItem('myCart');
-  if (localCartData === []) {
-    return [];
-  } else {
+  if (localCartData) {
     return JSON.parse(localCartData);
+  } else {
+    return [];
   }
 };
 
