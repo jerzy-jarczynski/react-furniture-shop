@@ -97,7 +97,7 @@ const ProductSearch = () => {
             {allSearch.map(search => (
               <Link
                 key={search.id}
-                to={`/search/${search.searchContent}`}
+                to={`#/search?s=${search.searchContent}`}
                 onClick={handleClick}
               >
                 {search.searchContent}
