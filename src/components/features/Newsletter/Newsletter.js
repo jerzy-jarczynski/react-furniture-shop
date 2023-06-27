@@ -6,7 +6,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 //import { useForm } from 'react-hook-form';
 
+import { async } from 'q';
+
 const Newsletter = () => {
+  const mailchimp = require('@mailchimp/mailchimp_marketing');
+
+  mailchimp.setConfig({
+    apiKey: '99ed69ae75719ff1a7384d3e46e7050a-us10',
+    server: 'us10',
+  });
+  async function callPing() {
+    const response = await mailchimp.ping.get();
+    console.log(response);
+  }
+  callPing();
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -19,7 +32,7 @@ const Newsletter = () => {
       return;
     }
 
-    const allowedCharacters = /^[a-zA-Z0-9\s]+$/;
+    const allowedCharacters = /^[a-zA-Z0-9@.\s]+$/;
     if (!allowedCharacters.test(email)) {
       setEmailError('The email phrase contains invalid characters');
       return;
