@@ -69,10 +69,10 @@ const Featured = () => {
   const dots = [];
   for (let i = 0; i < 3; i++) {
     dots.push(
-      <li>
+      <li key={i}>
         <a
           onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
+          className={i === activePage ? styles.active : undefined}
         >
           page {i}
         </a>
@@ -120,20 +120,17 @@ const Featured = () => {
                 prevLabel={false}
                 nextLabel={false}
                 touch={true}
-                prevIcon={
-                  <Button variant='small'>
-                    <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                  </Button>
-                }
-                nextIcon={
-                  <Button variant='small'>
-                    <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                  </Button>
-                }
+                prevIcon={<FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>}
+                nextIcon={<FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>}
               >
                 <Carousel.Item>
                   <div className={styles.promo}>
-                    <img src='images/featured-promo.jpg' alt='Discounted product' />
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/featured-promo.jpg`}
+                      rel='preload'
+                      fetchpriority='high'
+                      alt='Discounted product'
+                    />
                     <div className={styles.content}>
                       <p>
                         {t('featured.promo.title')}{' '}

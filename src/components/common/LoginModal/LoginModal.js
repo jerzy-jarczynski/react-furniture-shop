@@ -27,7 +27,6 @@ const LoginModal = ({ modalOpen, toggleModal }) => {
     localStorage.removeItem('user', null);
   };
 
-
   const ref = useRef(null);
   const closeModal = useCallback(
     ({ target }) => {
@@ -71,7 +70,7 @@ const LoginModal = ({ modalOpen, toggleModal }) => {
   return ReactDom.createPortal(
     user ? (
       <Button onClick={onLogout} user={user}>
-              Logout <FontAwesomeIcon className={styles.icon} icon={faUserMinus} />
+        Logout <FontAwesomeIcon className={styles.icon} icon={faUserMinus} />
       </Button>
     ) : (
       <div className={styles.modal} ref={ref}>

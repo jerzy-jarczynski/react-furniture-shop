@@ -31,4 +31,17 @@
   .btn-light:hover {
     animation: animation-pulse-btn-carousel $animation-btn-time;
   }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: $featured-carousel-button-bg;
+    height: 40px;
+
+    &:not(.noHover):hover {
+      color: $button-text !important;
+      background-color: $button-hover-bg;
+      text-decoration: none;
+      animation: animation-pulse-btn $animation-btn-time;
+    }
+  }
 }

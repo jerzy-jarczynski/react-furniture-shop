@@ -50,7 +50,12 @@ const Newsletter = () => {
                   <small className={styles.invalidEmail}>{emailError}</small>
                 )}
               </div>
-              <button type='submit' variant='outline' className={styles.sendButton}>
+              <button
+                type='submit'
+                aria-label='searchButton'
+                variant='outline'
+                className={styles.sendButton}
+              >
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
