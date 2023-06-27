@@ -1,0 +1,157 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  width: 100%;
+  height: 200px;
+  background-color: $newsletter-color-bg;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    width: 143px;
+    height: 15px;
+    color: $newsletter-title-color;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+
+  .mailBox {
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      position: relative;
+      margin-bottom: 0;
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 18px;
+        background-color: $newsletter-line-color;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .icon {
+      width: 19px;
+      height: 15px;
+      color: $newsletter-icon-color;
+      font-size: 18px;
+      line-height: 28px;
+      text-align: left;
+    }
+
+    .formWrapper {
+      width: 550px;
+      color: $newsletter-form-wrapper-color;
+      font-size: 14px;
+      line-height: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+      > div {
+        width: 270px;
+        margin-bottom: 10px;
+        height: 100%;
+        background-color: $newsletter-form-group-bg;
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        > input {
+          outline: none;
+          border-radius: 0%;
+          border: 0;
+          height: 100%;
+        }
+      }
+
+      .invalidEmail {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        color: $danger;
+      }
+    }
+
+    .sendButton {
+      width: 46px;
+      height: 46px;
+      border-radius: 5px;
+      background-color: $newsletter-send-button-bg;
+      border: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $newsletter-send-button-color;
+      a {
+        width: 14px;
+        height: 15px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .root {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title {
+      margin-right: 15px;
+    }
+
+    .mailBox {
+      .formWrapper {
+        flex-direction: row;
+        > div {
+          width: 486px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .root {
+    height: 119px;
+    > div {
+      flex-direction: row;
+    }
+
+    .title {
+      margin-bottom: 1rem;
+    }
+
+    .mailBox {
+      .formWrapper {
+        flex-direction: row;
+      }
+    }
+  }
+}

@@ -36,6 +36,7 @@ const Cart = () => {
     setSubtotalPrice(subTotal);
     setDeliveryFeePrice(deliveryFee);
     setTotalPrice(total);
+    localStorage.setItem('myCart', JSON.stringify(cartProducts));
   }, [cartProducts]);
   return (
     <div className={styles.root}>
