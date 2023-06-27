@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getAllCategories } from '../../../redux/categoriesRedux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import styles from './CategoryPage.module.scss';
 import Brands from '../../layout/Brands/Brands';
@@ -11,7 +11,11 @@ import { getAllProducts } from '../../../redux/productsRedux';
 const CategoryPage = () => {
   const categories = useSelector(state => getAllCategories(state));
   const products = useSelector(state => getAllProducts(state));
-  const categoryName = useParams().categoryName.toLowerCase();
+
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const categoryName = searchParams.get('s')?.toLowerCase() || '';
+
   const filteredCategory = [];
   const filteredProducts = [];
 

@@ -47,7 +47,7 @@ const ProductSearch = () => {
     }
 
     const searchQuery = encodeURIComponent(activeSearch);
-    history.push(`/search/${searchQuery}`);
+    history.push(`/search?s=${searchQuery}`);
     dispatch(addSearch({ searchContent: activeSearch }));
     setActiveSearch('');
     setSearchError('');
@@ -97,7 +97,7 @@ const ProductSearch = () => {
             {allSearch.map(search => (
               <Link
                 key={search.id}
-                to={`/search/${search.searchContent}`}
+                to={`#/search?s=${search.searchContent}`}
                 onClick={handleClick}
               >
                 {search.searchContent}

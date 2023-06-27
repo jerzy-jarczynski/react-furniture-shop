@@ -4,13 +4,15 @@ import FeatureBoxes from '../FeatureBoxes/FeatureBoxes';
 import Brands from '../../layout/Brands/Brands';
 import { useSelector } from 'react-redux';
 import { getAllProducts } from '../../../redux/productsRedux';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
 const SearchPage = () => {
   const products = useSelector(state => getAllProducts(state));
-  const searchResult = useParams().searchResult.toLowerCase();
   const filtered = [];
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const searchResult = searchParams.get('s')?.toLowerCase() || '';
 
   for (const product of products) {
     if (product.name.toLowerCase().includes(searchResult)) {
