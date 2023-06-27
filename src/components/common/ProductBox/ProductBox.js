@@ -40,8 +40,7 @@ const ProductBox = ({
 
   const handleAddToCartClick = e => {
     e.preventDefault();
-
-    localStorage.setItem('myCart', JSON.stringify([{ id, name, price, source }]));
+    localStorage.setItem('myCart', JSON.stringify({ id, name, price, source }));
     dispatch(addProduct({ id, name, price, source, amount }));
   };
   return (
