@@ -48,6 +48,7 @@ const ProductSearch = () => {
 
     const searchQuery = encodeURIComponent(activeSearch);
     history.push(`/search?s=${searchQuery}`);
+    dispatch(addSearch({ searchContent: activeSearch }));
     setActiveSearch('');
     setSearchError('');
   };
