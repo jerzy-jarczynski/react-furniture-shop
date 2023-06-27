@@ -27,7 +27,7 @@
       color: $primary;
       border-top: 5px solid $gallery-border-top-color;
     }
-}
+  }
 }
 
 .photo {
@@ -184,104 +184,157 @@
     margin-top: 5px;
     margin-left: 10px;
     margin-bottom: 7px;
+
     &:not(.noHover):hover {
-        background-color: transparent;
-        color: $gallery-button-hover;
-        border-color: $gallery-button-hover;
-      }
-  
-      &:hover + .tooltiptext {
-        visibility: visible;
+      background-color: transparent;
+      color: $gallery-button-hover;
+      border-color: $gallery-button-hover;
+    }
+
+    &:hover+.tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  padding: 5px;
+  background-color: $gallery-text-color;
+  color: $gallery-tooltip-text;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+
+  &:first-of-type {
+    top: 0;
+    left: 10%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 87%;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid $gallery-text-color;
+      border-bottom: 13px solid transparent;
+      z-index: -1;
+    }
+  }
+
+  &:nth-of-type(2) {
+    top: 50px;
+    left: 10%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 88%;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid $gallery-text-color;
+      border-bottom: 13px solid transparent;
+      z-index: -1;
+    }
+  }
+
+  &:nth-of-type(3) {
+    top: 100px;
+    left: 10%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 83%;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid $gallery-text-color;
+      border-bottom: 13px solid transparent;
+      z-index: -1;
+    }
+  }
+
+  &:nth-of-type(4) {
+    top: 150px;
+    left: 10%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 83%;
+      top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-right: 26px solid $gallery-text-color;
+      border-bottom: 13px solid transparent;
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 577px) {
+  .categories {
+    .featured {
+      line-height: 38px;
+    }
+    .saleOff{
+      line-height: 39px;
+    }
+    a {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .categories {
+    .featured {
+      line-height: 33px;
+    }
+
+    .saleOff {
+      line-height: 16.5px;
+      text-align: center;
+    }
+
+    .active {
+      margin-right: -10px;
+    }
+
+    a {
+      font-size: 11px;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .categories {
+    .featured {
+      line-height: 42px;
+    }
+
+    .saleOff {
+      line-height: 42px;
+
+      a {
+        margin-right: 5px;
       }
     }
   }
-  
-  .tooltip {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .tooltiptext {
-    visibility: hidden;
-    white-space: nowrap;
-    width: fit-content;
-    padding: 5px;
-    background-color: $gallery-text-color;
-    color: $gallery-tooltip-text;
-    text-align: center;
-    position: absolute;
-    z-index: 1;
-  
-    &:first-of-type {
-      top: 0;
-      left: 10%;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        right: 87%;
-        top: 5px;
-        width: 0;
-        height: 0;
-        border-top: 13px solid transparent;
-        border-right: 26px solid $gallery-text-color;
-        border-bottom: 13px solid transparent;
-        z-index: -1;
-      }
-    }
-  
-    &:nth-of-type(2) {
-      top: 50px;
-      left: 10%;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        right: 88%;
-        top: 5px;
-        width: 0;
-        height: 0;
-        border-top: 13px solid transparent;
-        border-right: 26px solid $gallery-text-color;
-        border-bottom: 13px solid transparent;
-        z-index: -1;
-      }
-    }
-  
-    &:nth-of-type(3) {
-      top: 100px;
-      left: 10%;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        right: 83%;
-        top: 5px;
-        width: 0;
-        height: 0;
-        border-top: 13px solid transparent;
-        border-right: 26px solid $gallery-text-color;
-        border-bottom: 13px solid transparent;
-        z-index: -1;
-      }
-    }
-  
-    &:nth-of-type(4) {
-      top: 150px;
-      left: 10%;
-  
-      &::before {
-        content: "";
-        position: absolute;
-        right: 83%;
-        top: 5px;
-        width: 0;
-        height: 0;
-        border-top: 13px solid transparent;
-        border-right: 26px solid $gallery-text-color;
-        border-bottom: 13px solid transparent;
-        z-index: -1;
-      }
-    }
-  }
+}

@@ -26,6 +26,7 @@ const ProductBox = ({
   isFavorite,
   compare,
   source,
+  amount,
 }) => {
   const { t } = useTranslation();
   const [favoriteValue, setFavoriteValue] = useState(isFavorite);
@@ -39,7 +40,8 @@ const ProductBox = ({
 
   const handleAddToCartClick = e => {
     e.preventDefault();
-    dispatch(addProduct({ id, name, price, source }));
+    localStorage.setItem('myCart', JSON.stringify({ id, name, price, source }));
+    dispatch(addProduct({ id, name, price, source, amount }));
   };
   return (
     <div className={`${styles.root} ${isInCompare ? styles.activeOutline : ''}`}>
@@ -110,6 +112,7 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   userRating: PropTypes.number,
   source: PropTypes.string,
+  amount: PropTypes.number,
 };
 
 export default ProductBox;

@@ -8,10 +8,11 @@ import styles from './CompanyClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-import { getCount } from '../../../redux/cartRedux';
+import { getAll } from '../../../redux/cartRedux';
 
 const CompanyClaim = () => {
-  const totalCartAmount = useSelector(getCount);
+  const cartProducts = useSelector(state => getAll(state));
+  const totalCartAmount = cartProducts.length;
 
   return (
     <div className={styles.root}>

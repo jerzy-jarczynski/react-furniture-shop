@@ -12,6 +12,8 @@ import { useState, useEffect, useRef } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './carousel.scss';
 import { useTranslation } from 'react-i18next';
+import Swipeable from '../../common/Swipeable/Swipeable';
+import './carousel.scss';
 
 const Featured = () => {
   const { t } = useTranslation();
@@ -21,6 +23,22 @@ const Featured = () => {
   const [visible, setVisible] = useState(true);
   const time = 250;
   const intervalRef = useRef(null); // Store the interval reference
+  const pageChange = newPage => setActivePage(newPage);
+
+  // Swipeable action
+  const rightAction = () => {
+    if (activePage > 0) {
+      let page = activePage - 1;
+      pageChange(page);
+    }
+  };
+
+  const leftAction = () => {
+    let page = activePage + 1;
+    if (page < 2) {
+      pageChange(page);
+    }
+  };
 
   const intervalFunc = newPage => {
     setVisible(false);
@@ -66,39 +84,42 @@ const Featured = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-4'>
-            <div className={styles.panelBar}>
-              <div className='row no-gutters align-items-end'>
-                <div className={'col-auto ' + styles.heading}>
-                  <h3>{t('featured.label')}</h3>
-                </div>
-                <div className={'col-auto ' + styles.dots}>
-                  <ul>{dots}</ul>
+          <div className={'col-md-6 col-lg-4 ' + styles.hotDeals}>
+            <Swipeable leftAction={leftAction} rightAction={rightAction}>
+              <div className={styles.panelBar}>
+                <div className='row no-gutters align-items-end'>
+                  <div className={'col-auto ' + styles.heading}>
+                    <h3>{t('featured.label')}</h3>
+                  </div>
+                  <div className={'col-auto ' + styles.dots}>
+                    <ul>{dots}</ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={styles.productsWrapper + ' ' + (!visible && styles.fade)}>
-              {featuredProducts
-                .slice(activePage * 1, (activePage + 1) * 1)
-                .map(product => (
-                  <FeaturedProduct
-                    key={product.id}
-                    name={product.name}
-                    price={product.price}
-                    stars={product.stars}
-                    oldPrice={product.oldPrice}
-                  />
-                ))}
-            </div>
+              <div className={styles.productsWrapper + ' ' + (!visible && styles.fade)}>
+                {featuredProducts
+                  .slice(activePage * 1, (activePage + 1) * 1)
+                  .map(product => (
+                    <FeaturedProduct
+                      key={product.id}
+                      name={product.name}
+                      price={product.price}
+                      stars={product.stars}
+                      oldPrice={product.oldPrice}
+                    />
+                  ))}
+              </div>
+            </Swipeable>
           </div>
-          <div className='col-8'>
+          <div className='col-12 col-md-6 col-lg-8'>
             <div className='carouselContainer'>
               <Carousel
-                fade
+                fade={true}
                 interval={null}
                 indicators={false}
                 prevLabel={false}
                 nextLabel={false}
+                touch={true}
                 prevIcon={<FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>}
                 nextIcon={<FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>}
               >
@@ -116,7 +137,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>
@@ -131,7 +152,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>
@@ -146,7 +167,7 @@ const Featured = () => {
                         <span>{t('featured.promo.titleBold')}</span>
                       </p>
                       <p>{t('featured.promo.subtitle')}</p>
-                      <Button variant='outline' className='btn-light'>
+                      <Button variant='outline' className='btn btn-light'>
                         {t('featured.promo.button')}
                       </Button>
                     </div>

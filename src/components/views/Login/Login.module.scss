@@ -1,0 +1,9 @@
+@import "../../../styles/settings.scss";
+
+.modal {
+  overflow: auto;
+  padding: $base-padding 0;
+  a {
+    text-decoration: none;
+  }
+}

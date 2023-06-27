@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
+import Login from '../../views/Login/Login';
 
 const TopBar = () => {
   const { t, i18n } = useTranslation();
@@ -54,13 +55,10 @@ const TopBar = () => {
               </li>
             </ul>
           </div>
-          <div className={`col text-right ${styles.topMenu}`}>
+          <div id='modal' className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <a href='#'>
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                  {t('topbar.login')}
-                </a>
+                <Login />
               </li>
               <li>
                 <a href='#'>
