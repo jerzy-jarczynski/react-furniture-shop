@@ -15,4 +15,17 @@
   .carousel-fade .carousel-item {
     transition-duration: 0.25s; /* Adjust the duration as per your requirement */
   }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: $featured-carousel-button-bg;
+    height: 40px;
+
+    &:not(.noHover):hover {
+      color: $button-text !important;
+      background-color: $button-hover-bg;
+      text-decoration: none;
+      animation: animation-pulse-btn $animation-btn-time;
+    }
+  }
 }

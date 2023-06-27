@@ -106,7 +106,7 @@ const ProductSearch = () => {
           </div>
         )}
         {searchError && <small className={styles.invalidSearch}>{searchError}</small>}
-        <button type='submit'>
+        <button type='submit' aria-label='searchButton'>
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
         </button>
       </div>

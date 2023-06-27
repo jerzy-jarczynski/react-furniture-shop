@@ -31,7 +31,7 @@ const Feedbacks = () => {
         <li key={i}>
           <a
             onClick={() => handleFeedbackChange(i)}
-            className={i === activeFeedback && styles.active}
+            className={i === activeFeedback ? styles.active : undefined}
           >
             feedback {i}
           </a>
